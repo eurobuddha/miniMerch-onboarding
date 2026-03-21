@@ -240,11 +240,11 @@
     <!-- Step 6: Install on Node -->
     <section class="guide-section">
       <h2>Step 6: Install MiniDapps on Your Node</h2>
-      <p>You need to install both MiniDapps on your node:</p>
+      <p>As the vendor, you need to install the inbox MiniDapp on your node:</p>
       <ul>
-        <li><strong>miniMerchInbox.mds.zip</strong> - To receive and manage orders</li>
-        <li><strong>miniMerch_YourProduct.mds.zip</strong> - Your shop (install so you can test it)</li>
+        <li><strong>miniMerchInbox.mds.zip</strong> - Installs on YOUR node to receive and manage orders</li>
       </ul>
+      <p style="margin-top: var(--space-4);"><strong>Note:</strong> The shop MiniDapp (<code>miniMerch_YourProduct.mds.zip</code>) is installed by your customers on their nodes to place orders.</p>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Accessing the MiniDapp Hub</h3>
 
@@ -267,18 +267,13 @@
         <li>Navigate to the MiniDapp Hub</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Installing MiniDapps</h3>
-      <p>Install both files from your <code>dist/</code> folder:</p>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Installing the Inbox</h3>
+      <p>Install the inbox from your <code>dist/</code> folder:</p>
       <ol>
         <li>In the MiniDapp Hub, click the <strong>+ (plus)</strong> button</li>
         <li>Navigate to your <code>dist/</code> folder</li>
-        <li>Select <code>miniMerchInbox.mds.zip</code> - this is your order inbox</li>
-        <li>Click <strong>+ (plus)</strong> again</li>
-        <li>Select your shop file (e.g., <code>miniMerch_YourProduct.mds.zip</code>)</li>
-        <li>Both MiniDapps are now installed</li>
-      </ol>
         <li>Select <code>miniMerchInbox.mds.zip</code></li>
-        <li>The inbox MiniDapp is now installed</li>
+        <li>Your inbox is now installed and ready to receive orders</li>
       </ol>
 
     </section>
@@ -302,17 +297,48 @@
       </ol>
     </section>
 
-    <!-- Sharing -->
+    <!-- Distributing -->
     <section class="guide-section">
-      <h2>Sharing Your Shop</h2>
-      <p>To let customers place orders:</p>
+      <h2>Distributing Your Shop</h2>
+      <p>Once you have your shop file, there are several ways to reach customers:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Email</h3>
+      <p>Send the shop file directly to your customer list:</p>
       <ol>
-        <li>Find your shop file in the <code>dist/</code> folder (named <code>miniMerch_YourProduct.mds.zip</code>)</li>
-        <li>Share this file directly with customers</li>
-        <li>Customers install it on their own Minima node to place orders</li>
+        <li>Find your shop file in the <code>dist/</code> folder</li>
+        <li>Attach it to an email or send via a file sharing service</li>
+        <li>Customers install it on their Minima node to place orders</li>
       </ol>
 
-      <p style="margin-top: var(--space-4);">Alternatively, you can host the files on a web server or IPFS for easier access.</p>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Your Website</h3>
+      <p>Host the shop file on your existing website:</p>
+      <ol>
+        <li>Upload <code>miniMerch_YourProduct.mds.zip</code> to your web host</li>
+        <li>Link to it from your product page</li>
+        <li>Add installation instructions for Minima users</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Existing Marketplaces</h3>
+      <p>Link to your Minima shop from your existing sales channels to avoid platform fees:</p>
+      <ul>
+        <li><strong>Etsy</strong> - Link to your Minima shop in your product description or shop banner</li>
+        <li><strong>eBay</strong> - Include your Minima shop link in item listings or your seller page</li>
+        <li><strong>Facebook Marketplace</strong> - Share your shop file in posts or groups</li>
+        <li><strong>Instagram/TikTok</strong> - Bio links or pinned posts directing to your shop</li>
+      </ul>
+
+      <div class="callout callout-info" style="margin-top: var(--space-6);">
+        <div class="callout-title">💡 Avoid Fees</div>
+        <p>By directing customers to your Minima shop, you can bypass marketplace fees on repeat purchases. Customers download the MiniDapp once and can reorder directly through your shop.</p>
+      </div>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via IPFS (Advanced)</h3>
+      <p>For decentralized hosting:</p>
+      <ol>
+        <li>Upload your shop file to IPFS using Pinata, nft.storage, or similar</li>
+        <li>Share the IPFS link with customers</li>
+        <li>The link will always work as long as someone pins your file</li>
+      </ol>
     </section>
 
     <!-- CLI Reference -->
