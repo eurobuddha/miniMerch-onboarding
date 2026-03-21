@@ -34,16 +34,16 @@ const PlatformDetector = (function() {
       windows: {
         name: 'Windows',
         icon: '🪟',
-        downloadUrl: 'https://spartacusrex.com/jnlp.html',
+        downloadUrl: 'guides/windows.html',
         guides: ['windows'],
-        description: 'OpenWebStart + Minima JNLP'
+        description: 'Install Minima on Windows'
       },
       macos: {
         name: 'macOS',
         icon: '🍎',
-        downloadUrl: 'https://spartacusrex.com/jnlp.html',
+        downloadUrl: 'guides/macos.html',
         guides: ['macos'],
-        description: 'OpenWebStart + Minima JNLP'
+        description: 'Install Minima on macOS'
       },
       linux: {
         name: 'Linux',
@@ -103,16 +103,16 @@ const PlatformDetector = (function() {
         id: 'macos',
         name: 'macOS',
         icon: '🍎',
-        downloadUrl: 'https://spartacusrex.com/jnlp.html',
-        description: 'OpenWebStart + JNLP',
+        downloadUrl: 'guides/macos.html',
+        description: 'Step-by-step guide',
         badge: 'Desktop'
       },
       {
         id: 'windows',
         name: 'Windows',
         icon: '🪟',
-        downloadUrl: 'https://spartacusrex.com/jnlp.html',
-        description: 'OpenWebStart + JNLP',
+        downloadUrl: 'guides/windows.html',
+        description: 'Step-by-step guide',
         badge: 'Desktop'
       },
       {
