@@ -32,7 +32,7 @@
     <div class="container">
       <h1>🛒 miniMerch Setup Guide</h1>
       <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
-        Install and configure your miniMerch shop
+        Set up your miniMerch shop in minutes
       </p>
       
       <nav class="guide-nav">
@@ -50,234 +50,261 @@
       <ul>
         <li><strong>Minima installed</strong> - Follow the <a href="index.html">node setup guide</a> for your platform</li>
         <li><strong>Node synced</strong> - Your Minima node should be fully synced</li>
-        <li><strong>Your public key</strong> - You'll need this to receive encrypted orders</li>
-        <li><strong>Optional:</strong> CoinMarketCap API key for Minima pricing</li>
+        <li><strong>CoinMarketCap API key</strong> (optional) - For real-time Minima pricing</li>
       </ul>
-
-      <div class="callout callout-info">
-        <div class="callout-title">💡 Quick Check</div>
-        <p>Not sure if you have Minima? <a href="../index.html">Go to the homepage</a> - it will detect your node automatically.</p>
-      </div>
     </section>
 
     <!-- Step 1: Install CLI -->
     <section class="guide-section">
       <h2>Step 1: Install the CLI Tool</h2>
-      <p>miniMerch uses a command-line tool to generate and manage your shops. Install it with npm:</p>
+      <p>miniMerch uses a command-line tool to generate your shops. Install it with npm:</p>
       
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Using npx (Recommended)</h3>
-      <p>Run without installing:</p>
-      <pre><code>npx mini-merch-installer</code></pre>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
+      </div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Global Install</h3>
-      <p>Install globally on your system:</p>
-      <pre><code>npm install -g mini-merch</code></pre>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Verify Installation</h3>
-      <pre><code>mini-merch --version</code></pre>
-      <p>You should see the version number if installed correctly.</p>
-
-      <div class="callout">
-        <div class="callout-title">🔧 Need Node.js?</div>
+      <div class="callout callout-info">
+        <div class="callout-title">💡 Need Node.js?</div>
         <p>If you don't have Node.js installed, download it from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. The installer includes npm.</p>
       </div>
     </section>
 
-    <!-- Step 2: Get Public Key -->
+    <!-- Step 2: Get Your Keys -->
     <section class="guide-section">
-      <h2>Step 2: Get Your Maxima Public Key</h2>
-      <p>Your Maxima public key (called <code>mxpublickey</code>) is used to encrypt orders so only you can read delivery addresses.</p>
+      <h2>Step 2: Get Your Keys</h2>
+      <p>You'll need three pieces of information:</p>
 
-      <div class="callout callout-warning">
-        <div class="callout-title">⚠️ Important</div>
-        <p>You need the <strong>mxpublickey</strong>, not the regular public key. This can only be obtained via the Terminal MiniDapp.</p>
-      </div>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Minima Address</h3>
+      <p>Your wallet address for receiving payments:</p>
+      <ol>
+        <li>Open the Minima app</li>
+        <li>Go to <strong>Settings → My Addresses</strong></li>
+        <li>Copy your default address (starts with <code>0x</code>)</li>
+      </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">How to Find Your mxpublickey</h3>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Maxima mxpublickey</h3>
+      <p>Your public key for encrypting orders. <strong>This must be obtained from the Terminal.</strong></p>
       <ol>
         <li>Open the <strong>Terminal</strong> MiniDapp in Minima</li>
         <li>Type the following command:</li>
       </ol>
-      <pre><code>maxima</code></pre>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>maxima</code></pre>
+      </div>
       <ol start="3">
         <li>Press Enter</li>
         <li>Find the line that says <code>"mxpublickey":</code></li>
-        <li>Copy the value that starts with <code>Mx</code></li>
+        <li>Copy the value - it starts with <code>Mx</code> and is a long string</li>
       </ol>
 
-      <p style="margin-top: var(--space-4);">Your mxpublickey looks like this:</p>
-      <pre><code>"mxpublickey": "MxG18HGG6FJ038614Y8CW46US6G20810K..."</code></pre>
-
-
-    </section>
-
-    <!-- Step 3: Get API Key -->
-    <section class="guide-section">
-      <h2>Step 3: Get a CoinMarketCap API Key (Optional)</h2>
-      <p>For real-time Minima pricing, get a free API key from CoinMarketCap:</p>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">CoinMarketCap API Key (Optional)</h3>
+      <p>For accurate Minima pricing in your shop:</p>
       <ol>
         <li>Visit <a href="https://coinmarketcap.com/api/" target="_blank" rel="noopener">coinmarketcap.com/api</a></li>
-        <li>Create a free account (or sign in)</li>
-        <li>Go to <strong>Dashboard → API Keys</strong></li>
-        <li>Click <strong>Create Key</strong></li>
+        <li>Create a free account</li>
+        <li>Go to <strong>Dashboard → API Keys → Create Key</strong></li>
         <li>Copy your API key</li>
       </ol>
+      <p>If you skip this, miniMerch will use a default price.</p>
+    </section>
+
+    <!-- Step 3: Run Setup -->
+    <section class="guide-section">
+      <h2>Step 3: Run Setup Command</h2>
+      <p>Configure your vendor details with this command:</p>
+      
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>mini-merch setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
+      </div>
+
+      <p style="margin-top: var(--space-4);">Example:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0; overflow-x: auto;">
+        <pre><code>mini-merch setup 0x465CA86A9B5756F45DEB667A69B3DBEC1B82B211 c1d37f5f89564ca58 MxG18HGG6FJ038614Y8CW46US6G20810K0070CD00Z83282G60G19TUFFWSB6EEF...</code></pre>
+      </div>
+
+      <p>This saves your configuration locally. You only need to run this once.</p>
+    </section>
+
+    <!-- Step 4: Generate Shop -->
+    <section class="guide-section">
+      <h2>Step 4: Generate Your Shop</h2>
+      <p>Create your shop MiniDapp:</p>
+      
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>mini-merch generate -n "Product Name" -m weight -p 5 -w 500</code></pre>
+      </div>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Command Options</h3>
+      
+      <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <th style="text-align: left; padding: var(--space-2);">Flag</th>
+          <th style="text-align: left; padding: var(--space-2);">Description</th>
+          <th style="text-align: left; padding: var(--space-2);">Example</th>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-n</code></td>
+          <td style="padding: var(--space-2);">Product name</td>
+          <td style="padding: var(--space-2);"><code>-n "Organic Barley"</code></td>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-m</code></td>
+          <td style="padding: var(--space-2);">Mode: <code>weight</code> or <code>units</code></td>
+          <td style="padding: var(--space-2);"><code>-m weight</code></td>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-p</code></td>
+          <td style="padding: var(--space-2);">Price per gram/unit (USD)</td>
+          <td style="padding: var(--space-2);"><code>-p 5</code></td>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-w</code></td>
+          <td style="padding: var(--space-2);">Total weight in grams (for weight mode)</td>
+          <td style="padding: var(--space-2);"><code>-w 500</code></td>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-u</code></td>
+          <td style="padding: var(--space-2);">Max units (for units mode)</td>
+          <td style="padding: var(--space-2);"><code>-u 50</code></td>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-d</code></td>
+          <td style="padding: var(--space-2);">Product description</td>
+          <td style="padding: var(--space-2);"><code>-d "Premium malt"</code></td>
+        </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>-i</code></td>
+          <td style="padding: var(--space-2);">Product image path</td>
+          <td style="padding: var(--space-2);"><code>-i ./photo.jpg</code></td>
+        </tr>
+      </table>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Examples</h3>
+      
+      <p><strong>Weight mode</strong> (selling by weight):</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>mini-merch generate -n "Organic Barley" -m weight -p 5 -w 1000 -d "Premium malting barley"</code></pre>
+      </div>
+
+      <p><strong>Units mode</strong> (selling fixed items):</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>mini-merch generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides"</code></pre>
+      </div>
+    </section>
+
+    <!-- Step 5: Files Created -->
+    <section class="guide-section">
+      <h2>Step 5: Your Generated Files</h2>
+      <p>After running the generate command, your files are created in a <code>dist/</code> folder:</p>
+
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <div class="card">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">miniMerch_YourProduct.mds.zip</h3>
+          <p class="card-description">Your shop. This is what customers will use to place orders. Share this file with buyers.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📥</div>
+          <h3 class="card-title">miniMerchInbox.mds.zip</h3>
+          <p class="card-description">Your order inbox. Install this on YOUR node to receive and manage orders.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: var(--space-4);">The shop file is named after your product. For example, if you used <code>-n "Coffee"</code>, you'll get <code>miniMerch_Coffee.mds.zip</code>.</p>
+    </section>
+
+    <!-- Step 6: Install on Node -->
+    <section class="guide-section">
+      <h2>Step 6: Install Your Inbox on Your Node</h2>
+      <p>You need to install the inbox MiniDapp on your Minima node to receive orders.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Accessing the MiniDapp Hub</h3>
+
+      <p><strong>Option A: Desktop Connect (from your phone)</strong></p>
+      <p>For a better experience, you can access your phone's node from your desktop:</p>
+      <ol>
+        <li>Open the Minima app on your phone</li>
+        <li>Go to <strong>Settings → Desktop Connect</strong></li>
+        <li>Copy the URL and password shown</li>
+        <li>Open that URL in your computer's browser</li>
+        <li>Enter the password to log in</li>
+        <li>Navigate to the MiniDapp Hub</li>
+      </ol>
+
+      <p style="margin-top: var(--space-4);"><strong>Option B: Local Access (node running on this PC)</strong></p>
+      <p>If you're running Minima directly on your computer:</p>
+      <ol>
+        <li>Open your browser</li>
+        <li>Go to: <code>http://127.0.0.1:9003</code></li>
+        <li>Navigate to the MiniDapp Hub</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Installing the Inbox</h3>
+      <ol>
+        <li>In the MiniDapp Hub, click the <strong>+ (plus)</strong> button</li>
+        <li>Navigate to your <code>dist/</code> folder</li>
+        <li>Select <code>miniMerchInbox.mds.zip</code></li>
+        <li>The inbox MiniDapp is now installed</li>
+      </ol>
 
       <div class="callout callout-info">
-        <div class="callout-title">💡 Why is this optional?</div>
-        <p>If you don't provide an API key, miniMerch will use the free CoinGecko API for pricing, or a default fallback price.</p>
+        <div class="callout-title">💡 Note</div>
+        <p>You only need to install the <strong>inbox</strong> on your node. The <strong>shop</strong> file is what your customers use - you share that with buyers.</p>
       </div>
     </section>
 
-    <!-- Step 4: Run Setup Wizard -->
+    <!-- Managing MiniDapps -->
     <section class="guide-section">
-      <h2>Step 4: Run the Setup Wizard</h2>
-      <p>The setup wizard guides you through configuration:</p>
-      <pre><code>mini-merch setup</code></pre>
+      <h2>Managing Your MiniDapps</h2>
 
-      <p style="margin-top: var(--space-4);">You'll be prompted for:</p>
+      <h3 style="font-size: var(--font-size-lg);">Updating a MiniDapp</h3>
       <ol>
-        <li><strong>Minima address</strong> - Your Minima wallet address (starts with 0x)</li>
-        <li><strong>CoinMarketCap API key</strong> - Press Enter to skip</li>
-        <li><strong>Maxima mxpublickey</strong> - Your Maxima public key for encryption (starts with Mx)</li>
+        <li>Right-click on the miniMerch Inbox</li>
+        <li>Select <strong>"Update"</strong></li>
+        <li>Select the new <code>.mds.zip</code> file</li>
       </ol>
 
-      <p style="margin-top: var(--space-4);">Your configuration is saved locally. You can change it anytime with:</p>
-      <pre><code>mini-merch config</code></pre>
-    </section>
-
-    <!-- Step 5: Generate Shop -->
-    <section class="guide-section">
-      <h2>Step 5: Generate Your Shop</h2>
-      <p>Create a new miniMerch shop:</p>
-      <pre><code>mini-merch generate</code></pre>
-
-      <p style="margin-top: var(--space-4);">You'll be asked:</p>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Deleting a MiniDapp</h3>
       <ol>
-        <li><strong>Product name</strong> - What are you selling?</li>
-        <li><strong>Pricing mode</strong>:
-          <ul>
-            <li><code>weight</code> - Price per gram (for products like herbs)</li>
-            <li><code>units</code> - Fixed price per item</li>
-          </ul>
-        </li>
-        <li><strong>Price</strong> - Your base price in USD</li>
-        <li><strong>Product image</strong> - URL to product image (optional)</li>
-        <li><strong>Shipping options</strong>:
-          <ul>
-            <li>UK Domestic</li>
-            <li>International</li>
-            <li>Digital Delivery</li>
-          </ul>
-        </li>
-      </ol>
-
-      <p style="margin-top: var(--space-4);">The wizard generates two files:</p>
-      <ul>
-        <li><code>shop.mds.zip</code> - Your customer-facing shop (MiniDapp)</li>
-        <li><code>inbox.mds.zip</code> - Your order management MiniDapp</li>
-      </ul>
-    </section>
-
-    <!-- Step 6: Install MiniDapps -->
-    <section class="guide-section">
-      <h2>Step 6: Install Your MiniDapps</h2>
-      <p>Install the generated MiniDapps to your Minima node:</p>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Using the CLI (Recommended)</h3>
-      <pre><code>mini-merch install</code></pre>
-      <p>This installs both shop and inbox MiniDapps to your local node.</p>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Manual Installation</h3>
-      <ol>
-        <li>Open Minima MiniDapp Hub: <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a></li>
-        <li>Click <strong>Upload MiniDapp</strong></li>
-        <li>Select <code>shop.mds.zip</code></li>
-        <li>Repeat for <code>inbox.mds.zip</code></li>
+        <li>Right-click (or long-press on mobile) on the MiniDapp</li>
+        <li>Select <strong>"Delete MiniDapp"</strong></li>
+        <li>Confirm the deletion</li>
       </ol>
     </section>
 
-    <!-- Step 7: Test -->
-    <section class="guide-section">
-      <h2>Step 7: Test Your Shop</h2>
-      <p>Verify everything is working:</p>
-      <ol>
-        <li>Open the MiniDapp Hub</li>
-        <li>Find <strong>miniShop</strong> in your MiniDapps list</li>
-        <li>Click to open your shop</li>
-        <li>Select a product and try the checkout flow</li>
-        <li>Open <strong>miniMerch Inbox</strong> to see the test order</li>
-      </ol>
-
-      <div class="callout">
-        <div class="callout-title">🎉 Congratulations!</div>
-        <p>If you can see test orders in your inbox, your shop is working!</p>
-      </div>
-    </section>
-
-    <!-- Sharing Your Shop -->
+    <!-- Sharing -->
     <section class="guide-section">
       <h2>Sharing Your Shop</h2>
-      <p>To let customers access your shop:</p>
-      
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Local Network</h3>
+      <p>To let customers place orders:</p>
       <ol>
-        <li>Make sure Minima is running</li>
-        <li>Find your local IP address (e.g., <code>192.168.1.100</code>)</li>
-        <li>Share: <code>https://192.168.1.100:9003/minidapp?mds=shop</code></li>
+        <li>Find your shop file in the <code>dist/</code> folder (named <code>miniMerch_YourProduct.mds.zip</code>)</li>
+        <li>Share this file directly with customers</li>
+        <li>Customers install it on their own Minima node to place orders</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Public Access</h3>
-      <p>For a public shop accessible anywhere:</p>
-      <ol>
-        <li>Set up Minima with remote access enabled</li>
-        <li>Configure your router to forward port 9003</li>
-        <li>Use a dynamic DNS service if you have a dynamic IP</li>
-        <li>Or host the generated files on any static web host</li>
-      </ol>
-
-      <div class="callout callout-info">
-        <div class="callout-title">🌐 The Shop Files</div>
-        <p>The <code>shop.mds.zip</code> contains everything needed to run your shop. You can host it on IPFS, a web server, or distribute it directly.</p>
-      </div>
-    </section>
-
-    <!-- Managing Orders -->
-    <section class="guide-section">
-      <h2>Managing Orders</h2>
-      <p>Use the miniMerch Inbox MiniDapp to manage orders:</p>
-      <ul>
-        <li><strong>View Orders</strong> - See incoming orders with encrypted delivery addresses</li>
-        <li><strong>Reply to Buyers</strong> - Send encrypted messages about their order</li>
-        <li><strong>Order History</strong> - Track past orders and responses</li>
-      </ul>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Fulfillment Flow</h3>
-      <ol>
-        <li>New order arrives in inbox</li>
-        <li>View the encrypted delivery address</li>
-        <li>Pack and ship the product</li>
-        <li>Reply to buyer if needed</li>
-        <li>Mark order as fulfilled</li>
-      </ol>
+      <p style="margin-top: var(--space-4);">Alternatively, you can host the files on a web server or IPFS for easier access.</p>
     </section>
 
     <!-- CLI Reference -->
     <section class="guide-section">
       <h2>CLI Commands Reference</h2>
-      <pre><code># Setup and configuration
-mini-merch setup           # Configure vendor details
-mini-merch config          # View or change settings
-mini-merch config --show   # Display current config
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code># One-time setup
+mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
-# Shop management
-mini-merch generate        # Generate new shop MiniDapp
-mini-merch install         # Install MiniDapps to node
-mini-merch uninstall       # Remove MiniDapps from node
+# Generate shop
+mini-merch generate -n "Name" -m weight -p 5 -w 500
+
+# View config
+mini-merch config --show
+
+# Reset config
+mini-merch config --reset
 
 # Help
-mini-merch --help          # Show all commands
-mini-merch --version       # Show version</code></pre>
+mini-merch --help</code></pre>
+      </div>
     </section>
 
     <!-- Troubleshooting -->
@@ -286,23 +313,18 @@ mini-merch --version       # Show version</code></pre>
       
       <h3 style="font-size: var(--font-size-lg);">"Command not found" error</h3>
       <p>Make sure npm global bin directory is in your PATH. On macOS/Linux, add to your shell config:</p>
-      <pre><code>export PATH="$PATH:$(npm bin -g)"</code></pre>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>export PATH="$PATH:$(npm bin -g)"</code></pre>
+      </div>
 
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">MiniDapp won't install</h3>
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Can't access MiniDapp Hub</h3>
       <ul>
         <li>Make sure your Minima node is running</li>
-        <li>Check that MiniDapp System is enabled</li>
-        <li>Try installing manually via the MiniDapp Hub</li>
+        <li>For local access: go to <code>http://127.0.0.1:9003</code></li>
+        <li>For Desktop Connect: check Settings on your phone</li>
       </ul>
 
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Can't see MiniDapps</h3>
-      <ul>
-        <li>Refresh the MiniDapp Hub</li>
-        <li>Make sure MiniDapps installed successfully</li>
-        <li>Check Minima logs for errors</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need help?</h3>
       <ul>
         <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
         <li>Check the <a href="https://github.com/eurobuddha/miniMerch" target="_blank" rel="noopener">miniMerch GitHub</a></li>
@@ -316,7 +338,7 @@ mini-merch --version       # Show version</code></pre>
         <a href="../faq.html" class="card">
           <div class="card-icon">❓</div>
           <h3 class="card-title">FAQ</h3>
-          <p class="card-description">Common questions about miniMerch.</p>
+          <p class="card-description">Common questions answered.</p>
         </a>
         <a href="https://github.com/eurobuddha/miniMerch" target="_blank" rel="noopener" class="card">
           <div class="card-icon">💻</div>
