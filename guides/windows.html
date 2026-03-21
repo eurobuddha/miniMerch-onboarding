@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to install Minima on Windows">
+  <title>Windows Setup Guide - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Guides</a>
+        <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🪟 Windows Setup Guide</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Install Minima Desktop on your Windows PC
+      </p>
+      
+      <nav class="guide-nav">
+        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="macos.html" class="btn btn-secondary">macOS</a>
+        <a href="linux.html" class="btn btn-secondary">Linux</a>
+      </nav>
+    </div>
+  </main>
+
+  <article class="guide-content">
+    <!-- Prerequisites -->
+    <section class="guide-section">
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Windows 10 or Windows 11</li>
+        <li>At least 500MB of free disk space</li>
+        <li>Stable internet connection</li>
+        <li>Administrator privileges (for installation)</li>
+        <li>Optional: Java 17+ if running the JAR version</li>
+      </ul>
+    </section>
+
+    <!-- Step 1: Download -->
+    <section class="guide-section">
+      <h2>Step 1: Download Minima</h2>
+      <p>Download the Windows installer from the official Minima website:</p>
+      <ol>
+        <li>Visit <a href="https://minima.global/post/2024/04/10/minima-desktop-launch/" target="_blank" rel="noopener">minima.global/post/2024/04/10/minima-desktop-launch/</a></li>
+        <li>Click the Windows download link</li>
+        <li>Choose either:
+          <ul>
+            <li><strong>MSI Installer</strong> - For a standard Windows installation</li>
+            <li><strong>JAR File</strong> - For users who prefer Java</li>
+          </ul>
+        </li>
+        <li>The file will download to your Downloads folder</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Checking Java Version (for JAR)</h3>
+      <p>If using the JAR version, check your Java installation:</p>
+      <ol>
+        <li>Open Command Prompt (Win + R, type <code>cmd</code>, press Enter)</li>
+        <li>Type: <code>java -version</code></li>
+        <li>If you see "java version 17" or higher, you're good</li>
+        <li>If not, download Java from <a href="https://java.com" target="_blank" rel="noopener">java.com</a></li>
+      </ol>
+    </section>
+
+    <!-- Step 2: Install -->
+    <section class="guide-section">
+      <h2>Step 2: Install Minima</h2>
+      
+      <h3 style="font-size: var(--font-size-lg);">MSI Installer (Recommended)</h3>
+      <ol>
+        <li>Open the downloaded MSI file</li>
+        <li>If prompted, click <strong>Yes</strong> to allow changes</li>
+        <li>The Setup Wizard will appear</li>
+        <li>Click <strong>Next</strong></li>
+        <li>Choose installation location (default is fine)</li>
+        <li>Click <strong>Install</strong></li>
+        <li>Wait for installation to complete</li>
+        <li>Click <strong>Finish</strong></li>
+        <li>Minima should launch automatically</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">JAR Version</h3>
+      <ol>
+        <li>Create a folder for Minima (e.g., <code>C:\Minima</code>)</li>
+        <li>Move the JAR file to that folder</li>
+        <li>Open Command Prompt</li>
+        <li>Navigate to the folder: <code>cd C:\Minima</code></li>
+        <li>Run: <code>java -jar minima.jar</code></li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout-title">💡 Creating a Shortcut</div>
+        <p>For the JAR version, create a shortcut on your desktop: Right-click → New → Shortcut → enter the command above.</p>
+      </div>
+    </section>
+
+    <!-- Step 3: Create Wallet -->
+    <section class="guide-section">
+      <h2>Step 3: Create Your Wallet</h2>
+      <p>When you first open Minima, you'll see the setup wizard.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Create New Wallet</h3>
+      <ol>
+        <li>Click <strong>"Create New Wallet"</strong></li>
+        <li>Minima will generate a secure 24-word recovery phrase</li>
+        <li><strong>IMPORTANT:</strong> Write down your recovery phrase on paper</li>
+        <li>Click <strong>"I've Written It Down"</strong></li>
+        <li>Confirm your recovery phrase by entering 3 random words</li>
+        <li>Create a password for encrypting your wallet</li>
+        <li>Your wallet is ready!</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Restore Existing Wallet</h3>
+      <ol>
+        <li>Click <strong>"I Have a Seed"</strong></li>
+        <li>Enter your 24-word recovery phrase</li>
+        <li>Confirm each word carefully</li>
+        <li>Create a new password</li>
+        <li>Your existing wallet and balance will be restored</li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">⚠️ Security Warning</div>
+        <p>Never share your recovery phrase with anyone. Store it somewhere safe - this is your only key to your funds.</p>
+      </div>
+    </section>
+
+    <!-- Step 4: Sync -->
+    <section class="guide-section">
+      <h2>Step 4: Sync with the Network</h2>
+      <p>After creating your wallet, Minima will begin syncing with the blockchain.</p>
+      <ol>
+        <li>Keep Minima open while syncing</li>
+        <li>The status bar shows sync progress</li>
+        <li>Initial sync may take 15-30 minutes</li>
+        <li>Once synced, you can minimize or close the app</li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout-title">💡 Auto-start Option</div>
+        <p>To run Minima automatically when Windows starts: Settings → Startup → Enable "Launch at startup"</p>
+      </div>
+    </section>
+
+    <!-- Step 5: Get Public Key -->
+    <section class="guide-section">
+      <h2>Step 5: Find Your Public Key</h2>
+      <p>You'll need your public key for miniMerch setup:</p>
+      <ol>
+        <li>In Minima Desktop, click <strong>Maxima</strong> in the sidebar</li>
+        <li>Your public key is displayed at the top</li>
+        <li>Click the key to copy it to your clipboard</li>
+        <li>Your public key starts with <code>Mx</code></li>
+      </ol>
+      <p>Alternatively, open the Minima Terminal and type:</p>
+      <pre><code>maxima</code></pre>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="guide-section">
+      <h2>Troubleshooting</h2>
+      
+      <h3 style="font-size: var(--font-size-lg);">Windows Defender or SmartScreen blocks installation</h3>
+      <ul>
+        <li>Click <strong>More Info</strong> → <strong>Run Anyway</strong></li>
+        <li>Minima is a legitimate application - the warning is a false positive</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Java error when running JAR</h3>
+      <ul>
+        <li>Make sure Java 17+ is installed</li>
+        <li>Download from <a href="https://adoptium.net/" target="_blank" rel="noopener">adoptium.net</a> (free, open-source Java)</li>
+        <li>Restart your computer after installing Java</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Sync is very slow</h3>
+      <ul>
+        <li>Check your internet connection</li>
+        <li>Try disabling other bandwidth-heavy applications</li>
+        <li>Restart Minima</li>
+        <li>Check Windows Firewall isn't blocking Minima</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
+      <ul>
+        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
+        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
+      </ul>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="guide-section">
+      <h2>Next Steps</h2>
+      <p>Now that you have Minima installed:</p>
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <a href="mini-merch.html" class="card">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">Setup miniMerch</h3>
+          <p class="card-description">Create your first miniMerch shop.</p>
+        </a>
+        <a href="../faq.html" class="card">
+          <div class="card-icon">❓</div>
+          <h3 class="card-title">FAQ</h3>
+          <p class="card-description">Common questions answered.</p>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="index.html" class="footer-link">Guides</a>
+        <a href="../faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+</body>
+</html>

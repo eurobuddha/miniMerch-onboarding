@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently asked questions about miniMerch and Minima">
+  <title>FAQ - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="guides/index.html" class="nav-link">Guides</a>
+        <a href="guides/mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="faq.html" class="nav-link active">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Everything you need to know about miniMerch and Minima
+      </p>
+    </div>
+  </main>
+
+  <section class="guide-content">
+    <!-- About Minima -->
+    <section class="guide-section">
+      <h2>About Minima</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is Minima?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Minima is a Layer-1 blockchain that runs completely on-device. Unlike other blockchains that require powerful servers or mining hardware, Minima nodes can run on phones, IoT devices, or regular computers. This makes it perfect for truly decentralized applications like miniMerch.</p>
+            <p>Every Minima node participates in consensus, making the network extremely decentralized and secure. There's no mining or staking - all tokens are generated through running the node and contributing to network security.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do I need to run a node 24/7?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>For buying and browsing:</strong> No, you can use public nodes or access Minima through other apps.</p>
+            <p><strong>For selling with miniMerch:</strong> Yes, your node needs to be online to receive orders. However, Minima's mobile app runs efficiently in the background with minimal battery drain. For desktop, you can run Minima during business hours and check orders periodically.</p>
+            <p>Think of it like running a web server - you need to be online to receive customers, but you don't need enterprise-grade uptime for a small shop.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is Minima secure?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes. Minima uses advanced cryptography for transaction validation and message encryption. The 24-word recovery phrase is based on BIP-39 standards (same as Bitcoin and Ethereum), and all sensitive data is encrypted using your node's private keys.</p>
+            <p>The miniMerch protocol encrypts delivery addresses so only you can read them - customers, other vendors, and even miniMerch itself cannot access this information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About miniMerch -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>About miniMerch</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is miniMerch?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>miniMerch is a decentralized e-commerce solution built on the Minima blockchain. It allows anyone to create a shop that:</p>
+            <ul>
+              <li>Runs as a MiniDapp on the Minima network</li>
+              <li>Accepts crypto payments (USDT or Minima)</li>
+              <li>Encrypts customer delivery addresses</li>
+              <li>Uses no third-party servers or intermediaries</li>
+            </ul>
+            <p>Think of it as "Shopify meets Web3" - but without the company that can shut you down.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What can I sell with miniMerch?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Anything legal! miniMerch supports:</p>
+            <ul>
+              <li><strong>Physical goods</strong> - With postal delivery addresses</li>
+              <li><strong>Digital products</strong> - With email or download links</li>
+              <li><strong>Services</strong> - With delivery instructions</li>
+            </ul>
+            <p>You control shipping options, prices, and product details. You can sell one item or a full catalog.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How does payment work?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Customers can pay with:</p>
+            <ul>
+              <li><strong>USDT (ERC-20)</strong> - A stablecoin pegged to the US Dollar. Good for customers who don't want crypto volatility.</li>
+              <li><strong>Minima (MX)</strong> - The native Minima token. Converted at current market price with a small buffer for slippage.</li>
+            </ul>
+            <p>Payments go directly to your Minima wallet address - no intermediary, no payment processor, no escrow. You receive the funds instantly (or after your node syncs the block).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Are there any fees?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>miniMerch fees: None.</strong> There's no monthly fee, no transaction percentage, and no setup fee.</p>
+            <p><strong>Network fees:</strong> There are minimal blockchain transaction fees (usually fractions of a cent) for sending orders and payments. These are paid by the customer when they send their payment.</p>
+            <p>Compared to platforms like Shopify (29/month + 2.9% per transaction), miniMerch is completely free to use.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is my shop really decentralized?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! Unlike Shopify, WooCommerce, or other platforms where your store can be deleted by the company, your miniMerch shop is tied to your Minima node and the generated MiniDapp files.</p>
+            <p>As long as you run a node and host your shop files somewhere, your shop exists. There's no company that can:</p>
+            <ul>
+              <li>Ban your account</li>
+              <li>Charge unexpected fees</li>
+              <li>Deplatform your business</li>
+              <li>Go bankrupt and lose your data</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What does the buyer see?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Buyers see a simple web page (a MiniDapp) that shows:</p>
+            <ul>
+              <li>Your product image and description</li>
+              <li>Price in USD (or Minima equivalent)</li>
+              <li>Size/quantity options</li>
+              <li>Shipping options</li>
+            </ul>
+            <p>When they check out, they enter their delivery address, which is encrypted before being sent. Buyers cannot see other customers' addresses, and they cannot see your vendor information beyond what you choose to display.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do buyers find my shop?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>You share your shop URL directly with customers. Options include:</p>
+            <ul>
+              <li><strong>Local network:</strong> Share your local IP for testing</li>
+              <li><strong>Public URL:</strong> Set up port forwarding or use a static host</li>
+              <li><strong>IPFS:</strong> Host your shop files on the decentralized IPFS network</li>
+              <li><strong>Direct distribution:</strong> Give the MiniDapp ZIP file to customers to install on their own nodes</li>
+            </ul>
+            <p>Unlike traditional e-commerce, there's no app store or marketplace. You control how customers find and access your shop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & Security -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Privacy & Security</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How is customer data protected?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>miniMerch uses end-to-end encryption for all sensitive data:</p>
+            <ul>
+              <li>Customer delivery addresses are encrypted with your public key</li>
+              <li>Only you can decrypt and read delivery addresses</li>
+              <li>Messages between you and buyers are encrypted</li>
+              <li>No third party can access this data</li>
+            </ul>
+            <p>This means even if someone hacks the blockchain or your node, they cannot see customer addresses.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I see customer payment details?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>No. Payment transactions go directly on-chain between the customer and your wallet. You see:</p>
+            <ul>
+              <li>The transaction amount and currency</li>
+              <li>That payment was received (via your node)</li>
+              <li>Your balance increases</li>
+            </ul>
+            <p>You do <strong>not</strong> see:</p>
+            <ul>
+              <li>Customer wallet addresses (only your order reference)</li>
+              <li>Customer identities</li>
+              <li>Payment method details</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What if I lose my recovery phrase?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>Your Minima funds:</strong> Without the 24-word recovery phrase, you cannot access your Minima wallet. This is why it's critical to write it down and store it securely.</p>
+            <p><strong>Your miniMerch shop:</strong> The shop files are generated locally. If you lose them, you can regenerate them from your miniMerch configuration. Keep a backup of your <code>config.json</code> file.</p>
+            <p><strong>Order history:</strong> Stored in your local node's database. Without a backup, you won't be able to see past orders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Technical Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What's the difference between a MiniDapp and a regular website?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>A MiniDapp is like a web app, but with a crucial difference:</p>
+            <ul>
+              <li><strong>Regular website:</strong> Runs on servers owned by a company (AWS, Google, etc.)</li>
+              <li><strong>MiniDapp:</strong> Runs inside the user's Minima node</li>
+            </ul>
+            <p>This means:</p>
+            <ul>
+              <li>No server costs</li>
+              <li>No server to hack</li>
+              <li>No company that can shut it down</li>
+              <li>Payments are built into the protocol</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I update my shop?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>To update product info or prices:</p>
+            <ol>
+              <li>Run <code>mini-merch generate</code> again</li>
+              <li>Enter new product details</li>
+              <li>Replace the old <code>shop.mds.zip</code> with the new one</li>
+              <li>Re-install on your node or redistribute to customers</li>
+            </ol>
+            <p>Note: Existing orders are not affected by shop updates - they're tied to the original transaction.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I have multiple shops?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! You can create multiple miniMerch shops for different products or businesses. Each shop generates its own MiniDapp files and can have different:</p>
+            <ul>
+              <li>Products</li>
+              <li>Prices</li>
+              <li>Shipping options</li>
+              <li>Design/branding</li>
+            </ul>
+            <p>All orders from all shops will appear in your miniMerch Inbox.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What happens if Minima goes down?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Minima is a decentralized blockchain - it doesn't have a single point of failure. If some nodes go offline, the network continues.</p>
+            <p>If Minima as a project were to fail entirely:</p>
+            <ul>
+              <li>Your Minima tokens would be unrecoverable (like any cryptocurrency)</li>
+              <li>Your miniMerch shop would stop working</li>
+              <li>But your product inventory and business relationships remain yours</li>
+            </ul>
+            <p>This is a risk with any platform - centralized or decentralized. We believe Minima's technical design makes this outcome very unlikely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Help -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Getting Help</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Where can I get help with miniMerch?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>For miniMerch-specific help:</p>
+            <ul>
+              <li><a href="https://github.com/eurobuddha/miniMerch/issues" target="_blank" rel="noopener">GitHub Issues</a> - Report bugs or request features</li>
+              <li><a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a> - Community support in #miniMerch channel</li>
+            </ul>
+            <p>For Minima blockchain questions:</p>
+            <ul>
+              <li><a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
+              <li><a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How can I contribute to miniMerch?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>miniMerch is open source! Contributions welcome:</p>
+            <ul>
+              <li><a href="https://github.com/eurobuddha/miniMerch" target="_blank" rel="noopener">GitHub Repository</a></li>
+              <li>Report bugs</li>
+              <li>Suggest features</li>
+              <li>Submit pull requests</li>
+              <li>Improve documentation</li>
+              <li>Translate to other languages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="guides/index.html" class="footer-link">Guides</a>
+        <a href="guides/mini-merch.html" class="footer-link">Setup</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

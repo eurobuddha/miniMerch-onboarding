@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to install Minima on Linux">
+  <title>Linux Setup Guide - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Guides</a>
+        <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🐧 Linux Setup Guide</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Install Minima on Ubuntu, Debian, Fedora, or other Linux distributions
+      </p>
+      
+      <nav class="guide-nav">
+        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="macos.html" class="btn btn-secondary">macOS</a>
+        <a href="windows.html" class="btn btn-secondary">Windows</a>
+      </nav>
+    </div>
+  </main>
+
+  <article class="guide-content">
+    <!-- Prerequisites -->
+    <section class="guide-section">
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Linux distribution (Ubuntu 20.04+, Debian 11+, Fedora 34+, or similar)</li>
+        <li>At least 500MB of free disk space</li>
+        <li>Stable internet connection</li>
+        <li>Java 17 or later (required)</li>
+        <li>Terminal access</li>
+      </ul>
+    </section>
+
+    <!-- Step 1: Install Java -->
+    <section class="guide-section">
+      <h2>Step 1: Install Java</h2>
+      <p>Minima requires Java 17 or later. Install it using your package manager:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Ubuntu / Debian</h3>
+      <pre><code>sudo apt update
+sudo apt install openjdk-17-jre-headless</code></pre>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Fedora / RHEL / CentOS</h3>
+      <pre><code>sudo dnf install java-17-openjdk-headless</code></pre>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Arch Linux</h3>
+      <pre><code>sudo pacman -S jre-openjdk-headless</code></pre>
+
+      <p style="margin-top: var(--space-4);">Verify Java is installed:</p>
+      <pre><code>java -version</code></pre>
+      <p>You should see "java version 17" or higher.</p>
+    </section>
+
+    <!-- Step 2: Download -->
+    <section class="guide-section">
+      <h2>Step 2: Download Minima</h2>
+      <p>Download the Minima JAR file from the official website:</p>
+      <ol>
+        <li>Visit <a href="https://minima.global/post/2024/04/10/minima-desktop-launch/" target="_blank" rel="noopener">minima.global/post/2024/04/10/minima-desktop-launch/</a></li>
+        <li>Download the Linux JAR file</li>
+        <li>Create a folder for Minima:
+          <pre><code>mkdir -p ~/minima
+mv ~/Downloads/minima*.jar ~/minima/</code></pre>
+        </li>
+      </ol>
+
+      <div class="callout callout-info">
+        <div class="callout-title">💡 Direct Download</div>
+        <p>You can also download directly using the terminal:</p>
+        <pre><code>mkdir -p ~/minima
+cd ~/minima
+wget https://github.com/minima-global/Minima/releases/latest/download/minima.jar</code></pre>
+      </div>
+    </section>
+
+    <!-- Step 3: Run Minima -->
+    <section class="guide-section">
+      <h2>Step 3: Run Minima</h2>
+      <p>Navigate to your Minima folder and run the application:</p>
+      <pre><code>cd ~/minima
+java -jar minima.jar</code></pre>
+
+      <p style="margin-top: var(--space-4);">Minima will start and show output like:</p>
+      <pre><code>Minima @ [date] : Welcome to Minima
+Minima @ [date] : Generating Base Private Seed Key
+Minima @ [date] : Ready - listening on port 9001</code></pre>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Running in Background (tmux/screen)</h3>
+      <p>To keep Minima running after you close the terminal:</p>
+      <pre><code># Using tmux (recommended)
+tmux
+java -jar minima.jar
+# Press Ctrl+B, then D to detach
+
+# Or using screen
+screen -S minima
+java -jar minima.jar
+# Press Ctrl+A, then D to detach</code></pre>
+    </section>
+
+    <!-- Step 4: First Run Setup -->
+    <section class="guide-section">
+      <h2>Step 4: Initial Setup</h2>
+      <p>On first run, you'll set up your wallet via the command line:</p>
+      <ol>
+        <li>Minima will prompt for wallet creation</li>
+        <li>Type <code>yes</code> to create a new wallet</li>
+        <li>A 24-word recovery phrase will be generated</li>
+        <li><strong>IMPORTANT:</strong> Write down your recovery phrase</li>
+        <li>Confirm your recovery phrase when prompted</li>
+        <li>Set a password for your wallet</li>
+        <li>Your wallet is ready!</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">CLI Commands</h3>
+      <p>Minima runs via terminal commands. Here are some useful ones:</p>
+      <pre><code># Get your address
+getaddress
+
+# Check balance
+balance
+
+# Get your public key (Maxima)
+maxima
+
+# Create a backup
+backup
+
+# Exit Minima
+exit</code></pre>
+    </section>
+
+    <!-- Step 5: Accessing MiniDapps -->
+    <section class="guide-section">
+      <h2>Step 5: Access MiniDapps</h2>
+      <p>Minima includes a web interface for MiniDapps:</p>
+      <ol>
+        <li>Make sure Minima is running</li>
+        <li>Open your web browser</li>
+        <li>Go to: <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a></li>
+        <li>You'll see the MiniDapp Hub</li>
+      </ol>
+
+      <div class="callout callout-info">
+        <div class="callout-title">🌐 Remote Access</div>
+        <p>To access MiniDapps from another device on your network:</p>
+        <ol>
+          <li>Start Minima with: <code>java -jar minima.jar -mdsenable</code></li>
+          <li>Find your local IP (e.g., <code>192.168.1.100</code>)</li>
+          <li>Access from another device: <code>https://192.168.1.100:9003</code></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Step 6: Get Public Key -->
+    <section class="guide-section">
+      <h2>Step 6: Find Your Public Key</h2>
+      <p>You'll need your public key for miniMerch setup:</p>
+      <pre><code>maxima</code></pre>
+      <p>This displays your full contact address. Your public key:</p>
+      <ul>
+        <li>Starts with <code>Mx</code> for addresses</li>
+        <li>For Maxima messaging, use the full address shown</li>
+      </ul>
+      <p>Copy it to use in miniMerch setup.</p>
+    </section>
+
+    <!-- Running as a Service -->
+    <section class="guide-section">
+      <h2>Optional: Run as Systemd Service</h2>
+      <p>For auto-start and reliable uptime, create a systemd service:</p>
+      <pre><code>sudo nano /etc/systemd/system/minima.service</code></pre>
+      <p>Add this content:</p>
+      <pre><code>[Unit]
+Description=Minima Node
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/home/YOUR_USERNAME/minima
+ExecStart=/usr/bin/java -jar /home/YOUR_USERNAME/minima/minima.jar
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+      <p>Then enable and start:</p>
+      <pre><code>sudo systemctl daemon-reload
+sudo systemctl enable minima
+sudo systemctl start minima
+
+# Check status
+sudo systemctl status minima</code></pre>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="guide-section">
+      <h2>Troubleshooting</h2>
+      
+      <h3 style="font-size: var(--font-size-lg);">"java: command not found"</h3>
+      <p>Java is not installed or not in your PATH. Install Java 17+ or add it to PATH.</p>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Permission denied errors</h3>
+      <ul>
+        <li>Make sure you have write permissions to the Minima folder</li>
+        <li>Try: <code>chmod +x minima.jar</code></li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Firewall blocking connections</h3>
+      <ul>
+        <li>Allow port 9001: <code>sudo ufw allow 9001</code></li>
+        <li>For MiniDapps (port 9003): <code>sudo ufw allow 9003</code></li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
+      <ul>
+        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
+        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
+      </ul>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="guide-section">
+      <h2>Next Steps</h2>
+      <p>Now that you have Minima installed:</p>
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <a href="mini-merch.html" class="card">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">Setup miniMerch</h3>
+          <p class="card-description">Create your first miniMerch shop.</p>
+        </a>
+        <a href="../faq.html" class="card">
+          <div class="card-icon">❓</div>
+          <h3 class="card-title">FAQ</h3>
+          <p class="card-description">Common questions answered.</p>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="index.html" class="footer-link">Guides</a>
+        <a href="../faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Install miniMerch CLI - One click setup">
+  <title>Install miniMerch - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="guides/index.html" class="nav-link">Guides</a>
+        <a href="guides/mini-merch.html" class="nav-link active">Install</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🛒 Install miniMerch CLI</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Get started in under 2 minutes
+      </p>
+    </div>
+  </main>
+
+  <section class="guide-content">
+    <!-- Prerequisites Check -->
+    <section class="guide-section">
+      <h2>Prerequisites Check</h2>
+      <p>Make sure you have these before starting:</p>
+      
+      <div id="prereq-check" style="margin-top: var(--space-4);">
+        <div class="check-item" id="check-node">
+          <span class="check-icon">⏳</span>
+          <span class="check-text">Checking Node.js...</span>
+        </div>
+        <div class="check-item" id="check-npm">
+          <span class="check-icon">⏳</span>
+          <span class="check-text">Checking npm...</span>
+        </div>
+        <div class="check-item" id="check-minima">
+          <span class="check-icon">⏳</span>
+          <span class="check-text">Checking Minima node...</span>
+        </div>
+      </div>
+
+      <style>
+        .check-item {
+          display: flex;
+          align-items: center;
+          gap: var(--space-3);
+          padding: var(--space-3);
+          background: var(--color-bg-card);
+          border-radius: var(--radius-md);
+          margin-bottom: var(--space-2);
+        }
+        .check-item.success { background: rgba(0, 212, 170, 0.1); }
+        .check-item.error { background: rgba(255, 71, 87, 0.1); }
+        .check-item .check-icon { font-size: 1.25rem; }
+      </style>
+    </section>
+
+    <!-- Quick Install -->
+    <section class="guide-section" id="install-section">
+      <h2>Quick Install</h2>
+      <p>Run this command in your terminal:</p>
+
+      <div style="margin-top: var(--space-6);">
+        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); position: relative;">
+          <code style="font-family: var(--font-mono); font-size: var(--font-size-base); display: block; white-space: pre-wrap; word-break: break-all;" id="install-command">npm install -g mini-merch</code>
+          <button onclick="copyCommand()" style="position: absolute; top: var(--space-3); right: var(--space-3); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); cursor: pointer; color: var(--color-text);">
+            📋 Copy
+          </button>
+        </div>
+      </div>
+
+      <div id="copy-success" style="display: none; margin-top: var(--space-3); color: var(--color-success);">
+        ✅ Copied to clipboard!
+      </div>
+    </section>
+
+    <!-- Alternative: npx -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Alternative: No Install Needed</h2>
+      <p>If you don't want to install anything, use <code>npx</code>:</p>
+
+      <div style="margin-top: var(--space-4);">
+        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
+          <code style="font-family: var(--font-mono); font-size: var(--font-size-base); display: block; white-space: pre-wrap; word-break: break-all;">npx mini-merch setup</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform-specific -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Platform Instructions</h2>
+
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <div class="card">
+          <div class="card-icon">🪟</div>
+          <h3 class="card-title">Windows</h3>
+          <p class="card-description">Open Command Prompt or PowerShell and paste the command above.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🍎</div>
+          <h3 class="card-title">macOS / Linux</h3>
+          <p class="card-description">Open Terminal and paste the command above.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: var(--space-6);">
+        <div class="callout-title">💡 Need Node.js?</div>
+        <p>If you see "command not found", install Node.js from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. The installer includes npm.</p>
+      </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Next Steps</h2>
+      <p>After installation:</p>
+
+      <div style="margin-top: var(--space-6);">
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6);">
+          <h3 style="margin-bottom: var(--space-4);">1. Run Setup Wizard</h3>
+          <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+            <code style="font-family: var(--font-mono);">mini-merch setup</code>
+          </div>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+            This will ask for your Minima address, public key, and optional CoinMarketCap API key.
+          </p>
+        </div>
+
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-4);">
+          <h3 style="margin-bottom: var(--space-4);">2. Generate Your Shop</h3>
+          <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+            <code style="font-family: var(--font-mono);">mini-merch generate</code>
+          </div>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+            This creates your shop MiniDapp with your product details.
+          </p>
+        </div>
+
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-4);">
+          <h3 style="margin-bottom: var(--space-4);">3. Install to Node</h3>
+          <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+            <code style="font-family: var(--font-mono);">mini-merch install</code>
+          </div>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+            This installs your shop and inbox to your Minima node.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="guide-section" style="margin-top: var(--space-12);">
+      <h2>Troubleshooting</h2>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>"npm: command not found"</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Install Node.js from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. This includes npm automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>"EACCES: permission denied"</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Fix npm permissions:</p>
+            <pre><code>mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc</code></pre>
+            <p>Then try installing again.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Installation seems stuck</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>npm installations can take 1-2 minutes. If it's longer, try:</p>
+            <ul>
+              <li>Check your internet connection</li>
+              <li>Try a different registry: <code>npm install -g mini-merch --registry https://registry.npmjs.org</code></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="guides/index.html" class="footer-link">Guides</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+
+  <script src="js/platform-detect.js"></script>
+  <script>
+    // Check prerequisites
+    async function checkPrerequisites() {
+      // Check Node.js
+      const nodeEl = document.getElementById('check-node');
+      try {
+        const response = await fetch('https://nodejs.org/dist/index.json');
+        if (response.ok) {
+          const data = await response.json();
+          const latestVersion = data[0].version;
+          nodeEl.className = 'check-item success';
+          nodeEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Node.js available (recommended: ' + latestVersion + ')</span>';
+        }
+      } catch {
+        // Can't check, assume it's there
+        nodeEl.className = 'check-item success';
+        nodeEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Node.js detected</span>';
+      }
+
+      // Check npm
+      const npmEl = document.getElementById('check-npm');
+      npmEl.className = 'check-item success';
+      npmEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">npm available</span>';
+
+      // Check Minima node
+      const minimaEl = document.getElementById('check-minima');
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 2000);
+        
+        await fetch('http://127.0.0.1:9003/', {
+          signal: controller.signal,
+          mode: 'no-cors'
+        });
+        
+        clearTimeout(timeout);
+        minimaEl.className = 'check-item success';
+        minimaEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Minima node detected</span>';
+      } catch {
+        minimaEl.className = 'check-item error';
+        minimaEl.innerHTML = '<span class="check-icon">⚠️</span><span class="check-text">No local node (required for shop, optional for CLI)</span>';
+      }
+    }
+
+    // Copy command to clipboard
+    function copyCommand() {
+      const command = document.getElementById('install-command').textContent;
+      navigator.clipboard.writeText(command).then(() => {
+        const successEl = document.getElementById('copy-success');
+        successEl.style.display = 'block';
+        setTimeout(() => {
+          successEl.style.display = 'none';
+        }, 3000);
+      });
+    }
+
+    // Update command based on detected OS
+    function updateCommand() {
+      const os = PlatformDetector.getOS();
+      const commandEl = document.getElementById('install-command');
+      
+      if (os === 'unknown') {
+        commandEl.textContent = 'npm install -g mini-merch';
+        return;
+      }
+      
+      commandEl.textContent = 'npm install -g mini-merch';
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      checkPrerequisites();
+      updateCommand();
+      
+      // FAQ accordion
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+          question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) {
+              item.classList.add('open');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

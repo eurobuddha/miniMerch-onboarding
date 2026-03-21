@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to install Minima on iOS">
+  <title>iOS Setup Guide - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Guides</a>
+        <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🍎 iOS Setup Guide</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Install Minima on your iPhone or iPad
+      </p>
+      
+      <nav class="guide-nav">
+        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="android.html" class="btn btn-secondary">Android Guide</a>
+        <a href="macos.html" class="btn btn-secondary">macOS</a>
+      </nav>
+    </div>
+  </main>
+
+  <article class="guide-content">
+    <!-- Prerequisites -->
+    <section class="guide-section">
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>iPhone or iPad running iOS 14.0 or later</li>
+        <li>At least 100MB of free storage space</li>
+        <li>Stable internet connection (WiFi recommended for initial sync)</li>
+        <li>An Apple ID (required for App Store download)</li>
+      </ul>
+    </section>
+
+    <!-- Step 1: Download -->
+    <section class="guide-section">
+      <h2>Step 1: Download Minima</h2>
+      <ol>
+        <li>Open the <strong>App Store</strong> on your device</li>
+        <li>Tap the <strong>Search</strong> tab (magnifying glass icon)</li>
+        <li>Search for <strong>"Minima Wallet"</strong></li>
+        <li>Tap the <strong>Get</strong> button next to the Minima app</li>
+        <li>Authenticate with Face ID, Touch ID, or your Apple ID password</li>
+        <li>Wait for the download to complete</li>
+      </ol>
+
+      <div class="callout callout-info">
+        <div class="callout-title">💡 Tip</div>
+        <p>Direct link: <a href="https://apps.apple.com/app/minima-wallet/id6443564057" target="_blank" rel="noopener">apps.apple.com/app/minima-wallet/id6443564057</a></p>
+      </div>
+    </section>
+
+    <!-- Step 2: Install -->
+    <section class="guide-section">
+      <h2>Step 2: Install the App</h2>
+      <ol>
+        <li>Tap the Minima icon on your home screen or in your app library</li>
+        <li>On first launch, you may see a privacy notice</li>
+        <li>Tap <strong>Continue</strong> to proceed</li>
+        <li>Grant any required permissions when prompted</li>
+        <li>Wait for the app to initialize</li>
+      </ol>
+    </section>
+
+    <!-- Step 3: Create Wallet -->
+    <section class="guide-section">
+      <h2>Step 3: Create Your Wallet</h2>
+      <p>When you first open Minima, you'll see the welcome screen.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Create New Wallet</h3>
+      <ol>
+        <li>Tap <strong>"Create New Wallet"</strong></li>
+        <li>Minima will generate a secure 24-word recovery phrase</li>
+        <li><strong>IMPORTANT:</strong> Write down your recovery phrase on paper</li>
+        <li>Tap <strong>I've Written It Down</strong></li>
+        <li>Confirm your recovery phrase by selecting 3 random words</li>
+        <li>Create a 6-digit PIN or enable Face ID/Touch ID</li>
+        <li>Your wallet is ready!</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Restore Existing Wallet</h3>
+      <p>If you already have a Minima wallet:</p>
+      <ol>
+        <li>Tap <strong>"I Have a Seed"</strong></li>
+        <li>Enter your 24-word recovery phrase</li>
+        <li>Confirm each word carefully</li>
+        <li>Create a 6-digit PIN or enable Face ID/Touch ID</li>
+        <li>Your existing wallet and balance will be restored</li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">⚠️ Security Warning</div>
+        <p>Never share your recovery phrase with anyone. Minima staff will never ask for it. Write it down - don't take a screenshot.</p>
+      </div>
+    </section>
+
+    <!-- Step 4: Sync -->
+    <section class="guide-section">
+      <h2>Step 4: Sync with the Network</h2>
+      <p>After creating your wallet, Minima will sync with the blockchain.</p>
+      <ol>
+        <li>Keep the app open while syncing</li>
+        <li>You'll see a progress indicator</li>
+        <li>Once synced, you can use Minima normally</li>
+        <li>The node runs in the background even when the app is closed</li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout-title">📱 Battery & Data</div>
+        <p>Minima is designed to be battery-efficient. It runs silently in the background. If you have data restrictions, you can limit background data in Settings → Cellular → Minima.</p>
+      </div>
+    </section>
+
+    <!-- Step 5: Get Public Key -->
+    <section class="guide-section">
+      <h2>Step 5: Find Your Public Key</h2>
+      <p>You'll need your public key for miniMerch setup:</p>
+      <ol>
+        <li>Open the Minima app</li>
+        <li>Tap the <strong>Maxima</strong> icon (bottom of screen)</li>
+        <li>Your public key is displayed at the top</li>
+        <li>Tap it to copy to your clipboard</li>
+        <li>It starts with <code>Mx</code></li>
+      </ol>
+      <p>Alternatively:</p>
+      <ol>
+        <li>Go to <strong>Settings</strong> (gear icon)</li>
+        <li>Scroll to <strong>My Addresses</strong></li>
+        <li>Your default address is your public key</li>
+      </ol>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="guide-section">
+      <h2>Troubleshooting</h2>
+      
+      <h3 style="font-size: var(--font-size-lg);">App won't download</h3>
+      <ul>
+        <li>Make sure you're signed into the App Store with your Apple ID</li>
+        <li>Check that your device has enough storage</li>
+        <li>Try restarting the App Store</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Sync is stuck or very slow</h3>
+      <ul>
+        <li>Check your internet connection</li>
+        <li>Toggle Airplane Mode on and off</li>
+        <li>Restart the Minima app</li>
+        <li>Make sure your device's date/time is correct in Settings</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Face ID / Touch ID not working</h3>
+      <ul>
+        <li>Go to Settings → Face ID (or Touch ID) → Other Apps</li>
+        <li>Make sure Minima is enabled</li>
+        <li>You can always use your PIN as a backup</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
+      <ul>
+        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
+        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
+      </ul>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="guide-section">
+      <h2>Next Steps</h2>
+      <p>Now that you have Minima installed:</p>
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <a href="mini-merch.html" class="card">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">Setup miniMerch</h3>
+          <p class="card-description">Create your first miniMerch shop.</p>
+        </a>
+        <a href="../faq.html" class="card">
+          <div class="card-icon">❓</div>
+          <h3 class="card-title">FAQ</h3>
+          <p class="card-description">Common questions answered.</p>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="index.html" class="footer-link">Guides</a>
+        <a href="../faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+</body>
+</html>

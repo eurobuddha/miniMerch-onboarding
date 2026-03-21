@@ -1,0 +1,24 @@
+{
+  "name": "mini-merch-installer",
+  "version": "1.0.0",
+  "description": "One-click installer for miniMerch CLI",
+  "bin": {
+    "mini-merch-installer": "./install.js"
+  },
+  "scripts": {
+    "start": "node install.js",
+    "wizard": "node wizard.js"
+  },
+  "keywords": [
+    "minima",
+    "miniMerch",
+    "ecommerce",
+    "blockchain"
+  ],
+  "author": "miniMerch",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5"
+  }
+}

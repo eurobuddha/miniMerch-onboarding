@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get started selling on the Minima blockchain. Setup your node and miniMerch shop in minutes.">
+  <title>miniMerch - Sell on the Minima Blockchain</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="#platforms" class="nav-link">Get Node</a>
+        <a href="guides/mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="guides/index.html" class="nav-link">Guides</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge fade-in">
+        <span class="hero-badge-dot"></span>
+        <span>Built on the Minima Blockchain</span>
+      </div>
+      
+      <h1 class="hero-title fade-in fade-in-delay-1">Sell anything on the<br>Minima Blockchain</h1>
+      
+      <p class="hero-subtitle fade-in fade-in-delay-2">
+        Create your own decentralized shop. Accept crypto payments. 
+        No platform fees. No middlemen. Your store, your rules.
+      </p>
+      
+      <div class="hero-actions fade-in fade-in-delay-3">
+        <a href="#platforms" class="btn btn-primary btn-lg">
+          <span>🚀</span>
+          <span>Get Started</span>
+        </a>
+        <a href="guides/index.html" class="btn btn-secondary btn-lg">
+          <span>📖</span>
+          <span>Read Guides</span>
+        </a>
+      </div>
+
+      <!-- Node Status Card -->
+      <div class="node-status" id="node-status-card">
+        <div class="node-status-header">
+          <div class="node-status-icon" id="node-status-icon">
+            <span>⏳</span>
+          </div>
+          <div>
+            <div class="node-status-title" id="node-status-title">Checking for node...</div>
+            <div class="node-status-subtitle" id="node-status-subtitle">Looking for Minima running on your device</div>
+          </div>
+        </div>
+        <div class="node-status-body" id="node-status-body">
+          <div class="node-status-actions">
+            <a href="#" class="btn btn-primary" id="node-primary-action" style="display: none;">
+              Get Started
+            </a>
+            <a href="#" class="btn btn-secondary" id="node-secondary-action" style="display: none;">
+              View Guides
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Three simple steps to start selling on Minima</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Install Minima</h3>
+            <p>Download and run the Minima app on your phone or computer. Your node connects you to the decentralized network.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Setup miniMerch</h3>
+            <p>Use our CLI tool to configure your shop. Set your product details, prices, and payment preferences.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Start Selling</h3>
+            <p>Share your miniMerch shop link. Receive encrypted orders directly to your node. Fulfill and reply to buyers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Selection -->
+  <section class="section" id="platforms">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get Your Minima Node</h2>
+        <p class="section-subtitle">Choose your platform to download Minima</p>
+      </div>
+
+      <div class="platform-cards" id="platform-cards">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" style="background: var(--color-bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why miniMerch?</h2>
+        <p class="section-subtitle">Everything you need to run a decentralized store</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 class="card-title">Privacy First</h3>
+          <p class="card-description">Customer delivery addresses are encrypted end-to-end. Only you can read them.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💳</div>
+          <h3 class="card-title">Crypto Payments</h3>
+          <p class="card-description">Accept USDT (ERC-20) or Minima directly. No payment processor needed.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3 class="card-title">Truly Decentralized</h3>
+          <p class="card-description">Your shop runs on your node. No servers to hack, no company to shut you down.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3 class="card-title">Mobile Friendly</h3>
+          <p class="card-description">Manage orders from your phone. Receive notifications when you get a sale.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">Instant Settlements</h3>
+          <p class="card-description">Payments are settled in minutes, not days. No waiting for bank transfers.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3 class="card-title">No Fees</h3>
+          <p class="card-description">No monthly fees, no transaction fees from us. Just standard crypto network fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- miniMerch Setup CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to set up your shop?</h2>
+      <p class="section-subtitle" style="margin-bottom: var(--space-8);">
+        Our CLI installer guides you through the entire setup process.
+      </p>
+      <div class="hero-actions" style="justify-content: center;">
+        <a href="guides/mini-merch.html" class="btn btn-primary btn-lg">
+          <span>🛒</span>
+          <span>Setup miniMerch</span>
+        </a>
+        <a href="guides/index.html" class="btn btn-secondary btn-lg">
+          <span>📖</span>
+          <span>Read Guides</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--color-bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about miniMerch and Minima</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is Minima?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Minima is a Layer-1 blockchain that runs completely on-device. Unlike other blockchains that require powerful servers, Minima nodes can run on phones, IoT devices, or desktop computers. This makes it perfect for truly decentralized applications like miniMerch.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do I need to run a node 24/7?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>For buying and browsing: No, you can use public nodes or access Minima through other apps.</p>
+              <p>For selling with miniMerch: Yes, your node needs to be online to receive orders. However, Minima's mobile app runs efficiently in the background with minimal battery drain.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What can I sell with miniMerch?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Anything legal! miniMerch supports physical goods (with postal delivery), digital products (with email/URL delivery), and services. You set the shipping options, prices, and product details.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does payment work?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Customers can pay with USDT (a stablecoin pegged to the US Dollar) or Minima (the native token). Payments go directly to your Minima address - no intermediary, no payment processor, no escrow.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is my shop really decentralized?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Yes! Unlike Shopify or other platforms where your store can be deleted by the company, your miniMerch shop is tied to your Minima node. As long as you run a node, your shop exists. There's no company that can shut you down.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What does the buyer see?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Buyers see your shop as a simple web page (a MiniDapp). They select their product, choose shipping, enter their delivery address, and pay. Your delivery address is encrypted and only accessible by you - buyers can't see each other's addresses, and you can't see buyer's other information.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-8);">
+        <a href="faq.html" class="btn btn-secondary">View All FAQs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="guides/index.html" class="footer-link">Guides</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+        <a href="https://github.com/eurobuddha/miniMerch" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/node-detect.js"></script>
+  <script src="js/platform-detect.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

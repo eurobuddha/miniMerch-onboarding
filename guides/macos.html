@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to install Minima on macOS">
+  <title>macOS Setup Guide - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Guides</a>
+        <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🍎 macOS Setup Guide</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Install Minima Desktop on your Mac
+      </p>
+      
+      <nav class="guide-nav">
+        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="windows.html" class="btn btn-secondary">Windows</a>
+        <a href="linux.html" class="btn btn-secondary">Linux</a>
+      </nav>
+    </div>
+  </main>
+
+  <article class="guide-content">
+    <!-- Prerequisites -->
+    <section class="guide-section">
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Mac computer running macOS 11 (Big Sur) or later</li>
+        <li>At least 500MB of free disk space</li>
+        <li>Stable internet connection</li>
+        <li>Optional: Java 17+ if running the JAR version</li>
+      </ul>
+    </section>
+
+    <!-- Step 1: Download -->
+    <section class="guide-section">
+      <h2>Step 1: Download Minima</h2>
+      <p>Download the macOS installer from the official Minima website:</p>
+      <ol>
+        <li>Visit <a href="https://minima.global/post/2024/04/10/minima-desktop-launch/" target="_blank" rel="noopener">minima.global/post/2024/04/10/minima-desktop-launch/</a></li>
+        <li>Click the macOS download link</li>
+        <li>The DMG file will download to your Downloads folder</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Alternative: JAR Version</h3>
+      <p>If you prefer the command-line version:</p>
+      <ol>
+        <li>Download the JAR file from the same page</li>
+        <li>Make sure you have Java 17 or later installed</li>
+        <li>Run with: <code>java -jar minima.jar</code></li>
+      </ol>
+    </section>
+
+    <!-- Step 2: Install -->
+    <section class="guide-section">
+      <h2>Step 2: Install Minima</h2>
+      <h3 style="font-size: var(--font-size-lg);">DMG Version (Recommended)</h3>
+      <ol>
+        <li>Open the downloaded DMG file</li>
+        <li>Drag the Minima app to the Applications folder</li>
+        <li>Wait for the copy to complete</li>
+        <li>Eject the DMG drive</li>
+        <li>Open Minima from Applications or Spotlight</li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">⚠️ Gatekeeper Warning</div>
+        <p>On first launch, macOS may show "Minima can't be opened because it wasn't downloaded from the App Store." Click <strong>System Settings → Security → Open Anyway</strong> to allow it.</p>
+      </div>
+    </section>
+
+    <!-- Step 3: Create Wallet -->
+    <section class="guide-section">
+      <h2>Step 3: Create Your Wallet</h2>
+      <p>When you first open Minima Desktop, you'll see the setup wizard.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Create New Wallet</h3>
+      <ol>
+        <li>Click <strong>"Create New Wallet"</strong></li>
+        <li>Minima will generate a secure 24-word recovery phrase</li>
+        <li><strong>IMPORTANT:</strong> Write down your recovery phrase on paper</li>
+        <li>Click <strong>"I've Written It Down"</strong></li>
+        <li>Confirm your recovery phrase by entering 3 random words</li>
+        <li>Create a password for encrypting your wallet</li>
+        <li>Your wallet is ready!</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Restore Existing Wallet</h3>
+      <ol>
+        <li>Click <strong>"I Have a Seed"</strong></li>
+        <li>Enter your 24-word recovery phrase</li>
+        <li>Confirm each word carefully</li>
+        <li>Create a new password</li>
+        <li>Your existing wallet and balance will be restored</li>
+      </ol>
+    </section>
+
+    <!-- Step 4: Sync -->
+    <section class="guide-section">
+      <h2>Step 4: Sync with the Network</h2>
+      <p>After creating your wallet, Minima will begin syncing with the blockchain.</p>
+      <ol>
+        <li>Keep Minima open while syncing</li>
+        <li>The status bar shows sync progress</li>
+        <li>Initial sync may take 15-30 minutes</li>
+        <li>Once synced, you can minimize the app - it runs in the background</li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout-title">💡 Running in Background</div>
+        <p>Minima Desktop runs efficiently in the background. You can quit the app when not in use - your node will stop, but no funds are at risk.</p>
+      </div>
+    </section>
+
+    <!-- Step 5: Get Public Key -->
+    <section class="guide-section">
+      <h2>Step 5: Find Your Public Key</h2>
+      <p>You'll need your public key for miniMerch setup:</p>
+      <ol>
+        <li>In Minima Desktop, click <strong>Maxima</strong> in the sidebar</li>
+        <li>Your public key is displayed at the top</li>
+        <li>Click the key to copy it to your clipboard</li>
+        <li>Your public key starts with <code>Mx</code></li>
+      </ol>
+      <p>Alternatively, use the Terminal command:</p>
+      <pre><code>maxima</code></pre>
+      <p>This displays your full contact address including public key.</p>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="guide-section">
+      <h2>Troubleshooting</h2>
+      
+      <h3 style="font-size: var(--font-size-lg);">App won't open - Gatekeeper blocked</h3>
+      <ul>
+        <li>Go to <strong>System Settings → Privacy & Security</strong></li>
+        <li>Find the message about Minima</li>
+        <li>Click <strong>Open Anyway</strong></li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Sync is very slow</h3>
+      <ul>
+        <li>Check your internet connection</li>
+        <li>Try connecting to different peers</li>
+        <li>Restart Minima</li>
+        <li>Make sure your Mac isn't in sleep mode during sync</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Forgot password</h3>
+      <p>Use your 24-word recovery phrase to restore your wallet in a new installation.</p>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
+      <ul>
+        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
+        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
+      </ul>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="guide-section">
+      <h2>Next Steps</h2>
+      <p>Now that you have Minima installed:</p>
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <a href="mini-merch.html" class="card">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">Setup miniMerch</h3>
+          <p class="card-description">Create your first miniMerch shop.</p>
+        </a>
+        <a href="../faq.html" class="card">
+          <div class="card-icon">❓</div>
+          <h3 class="card-title">FAQ</h3>
+          <p class="card-description">Common questions answered.</p>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="index.html" class="footer-link">Guides</a>
+        <a href="../faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+    </div>
+  </footer>
+</body>
+</html>
