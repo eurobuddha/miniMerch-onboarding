@@ -51,7 +51,7 @@ async function getLatestRelease() {
   } catch (error) {
     console.error('❌ Failed to fetch release info:', error.message);
     console.log('\n💡 Try installing manually:');
-    console.log('   npm install -g mini-merch\n');
+    console.log('   npm install -g @eurobuddha/mini-merch\n');
     process.exit(1);
   }
 }
@@ -111,8 +111,8 @@ async function install() {
   console.log('📥 Installing miniMerch CLI...\n');
   
   try {
-    console.log('   Running: npm install -g mini-merch\n');
-    execSync('npm install -g mini-merch', { 
+    console.log('   Running: npm install -g @eurobuddha/mini-merch\n');
+    execSync('npm install -g @eurobuddha/mini-merch', { 
       stdio: 'inherit',
       env: { ...process.env }
     });
@@ -120,9 +120,9 @@ async function install() {
     console.error('\n❌ Installation failed');
     console.log('\n💡 Try one of these alternatives:\n');
     console.log('   1. Using npx (no install):');
-    console.log('      npx mini-merch setup\n');
+    console.log('      npx @eurobuddha/mini-merch setup\n');
     console.log('   2. Manual install:');
-    console.log('      npm install -g mini-merch --registry https://registry.npmjs.org\n');
+    console.log('      npm install -g @eurobuddha/mini-merch --registry https://registry.npmjs.org\n');
     process.exit(1);
   }
 
@@ -136,15 +136,15 @@ async function install() {
   Next steps:
 
   1. Run the setup wizard:
-     mini-merch setup
+     @eurobuddha/mini-merch setup
 
   2. Or generate a new shop:
-     mini-merch generate
+     @eurobuddha/mini-merch generate
 
   3. View all commands:
-     mini-merch --help
+     @eurobuddha/mini-merch --help
 
-  📖 Need help? Visit: https://minimerch.info/guides/mini-merch.html
+  📖 Need help? Visit: https://minimerch.info/guides/@eurobuddha/mini-merch.html
   💬 Get support: https://discord.gg/minima
 `);
 }
@@ -163,12 +163,12 @@ function runWithNpx() {
   `);
 
   try {
-    execSync('npx mini-merch --version', { stdio: 'inherit' });
+    execSync('npx @eurobuddha/mini-merch --version', { stdio: 'inherit' });
     console.log('\n✅ miniMerch is available via npx!\n');
     console.log('  To run setup:');
-    console.log('    npx mini-merch setup\n');
+    console.log('    npx @eurobuddha/mini-merch setup\n');
     console.log('  To install globally:');
-    console.log('    npm install -g mini-merch\n');
+    console.log('    npm install -g @eurobuddha/mini-merch\n');
   } catch {
     console.log('  ❌ miniMerch not found\n');
     console.log('  Let me try installing it...\n');
@@ -178,11 +178,11 @@ function runWithNpx() {
 
 // Run
 if (require.main === module) {
-  // Check if mini-merch is already installed
+  // Check if @eurobuddha/mini-merch is already installed
   try {
-    execSync('mini-merch --version', { stdio: 'ignore' });
+    execSync('@eurobuddha/mini-merch --version', { stdio: 'ignore' });
     console.log('✅ miniMerch is already installed!\n');
-    console.log('  Run "mini-merch setup" to configure your shop.\n');
+    console.log('  Run "@eurobuddha/mini-merch setup" to configure your shop.\n');
     process.exit(0);
   } catch {
     // Not installed, proceed with installation

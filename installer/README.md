@@ -6,7 +6,7 @@ One-click installer and setup wizard for miniMerch.
 
 ### Option 1: One-line install (recommended)
 ```bash
-npm install -g mini-merch
+npm install -g @eurobuddha/mini-merch
 ```
 
 ### Option 2: Using npx (no install needed)
