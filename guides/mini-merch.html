@@ -239,8 +239,12 @@
 
     <!-- Step 6: Install on Node -->
     <section class="guide-section">
-      <h2>Step 6: Install Your Inbox on Your Node</h2>
-      <p>You need to install the inbox MiniDapp on your Minima node to receive orders.</p>
+      <h2>Step 6: Install MiniDapps on Your Node</h2>
+      <p>You need to install both MiniDapps on your node:</p>
+      <ul>
+        <li><strong>miniMerchInbox.mds.zip</strong> - To receive and manage orders</li>
+        <li><strong>miniMerch_YourProduct.mds.zip</strong> - Your shop (install so you can test it)</li>
+      </ul>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Accessing the MiniDapp Hub</h3>
 
@@ -263,18 +267,20 @@
         <li>Navigate to the MiniDapp Hub</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Installing the Inbox</h3>
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Installing MiniDapps</h3>
+      <p>Install both files from your <code>dist/</code> folder:</p>
       <ol>
         <li>In the MiniDapp Hub, click the <strong>+ (plus)</strong> button</li>
         <li>Navigate to your <code>dist/</code> folder</li>
+        <li>Select <code>miniMerchInbox.mds.zip</code> - this is your order inbox</li>
+        <li>Click <strong>+ (plus)</strong> again</li>
+        <li>Select your shop file (e.g., <code>miniMerch_YourProduct.mds.zip</code>)</li>
+        <li>Both MiniDapps are now installed</li>
+      </ol>
         <li>Select <code>miniMerchInbox.mds.zip</code></li>
         <li>The inbox MiniDapp is now installed</li>
       </ol>
 
-      <div class="callout callout-info">
-        <div class="callout-title">💡 Note</div>
-        <p>You only need to install the <strong>inbox</strong> on your node. The <strong>shop</strong> file is what your customers use - you share that with buyers.</p>
-      </div>
     </section>
 
     <!-- Managing MiniDapps -->
