@@ -94,6 +94,61 @@
       </div>
     </section>
 
+    <!-- Install Git -->
+    <section class="guide-section">
+      <h2>Install Git</h2>
+      <p>Git is a version control system needed to download the miniMerch source code. Install it with Homebrew:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>brew install git</code></pre>
+      </div>
+      <p>To verify Git is installed, run:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>git --version</code></pre>
+      </div>
+    </section>
+
+    <!-- Install miniMerch CLI -->
+    <section class="guide-section">
+      <h2>Install miniMerch CLI</h2>
+      <p>You have two options for installing the miniMerch command-line tool:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Global Install (Quick Setup)</h3>
+      <p>Install globally with npm - use this if you just want to run miniMerch commands:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
+      </div>
+      <p>After this, you can run miniMerch commands directly.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Local Install (Full Source)</h3>
+      <p>Clone the repository to your computer - use this if you want the full source code:</p>
+      <ol>
+        <li>Open Terminal</li>
+        <li>Navigate to where you want to keep your files (e.g., Documents):</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>cd ~/Documents</code></pre>
+      </div>
+      <ol start="3">
+        <li>Clone the miniMerch repository:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>git clone https://github.com/eurobuddha/miniMerch.git</code></pre>
+      </div>
+      <ol start="5">
+        <li>Go into the folder:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>cd miniMerch</code></pre>
+      </div>
+      <ol start="7">
+        <li>Install dependencies:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npm install</code></pre>
+      </div>
+      <p>After this, run miniMerch commands with <code>node ./src/index.js</code> followed by the command.</p>
+    </section>
+
     <!-- Step 1 -->
     <section class="guide-section">
       <h2>Step 1: Download OpenWebStart</h2>

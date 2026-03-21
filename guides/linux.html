@@ -76,6 +76,69 @@ sudo apt install openjdk-17-jre-headless</code></pre>
       <p>You should see "java version 17" or higher.</p>
     </section>
 
+    <!-- Install Node.js -->
+    <section class="guide-section">
+      <h2>Install Node.js</h2>
+      <p>miniMerch uses a command-line tool that requires Node.js. Install it using your package manager:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Ubuntu / Debian</h3>
+      <pre><code>sudo apt update
+sudo apt install nodejs npm</code></pre>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Fedora / RHEL / CentOS</h3>
+      <pre><code>sudo dnf install nodejs npm</code></pre>
+
+      <p style="margin-top: var(--space-4);">Verify Node.js is installed:</p>
+      <pre><code>node --version</code></pre>
+    </section>
+
+    <!-- Install Git -->
+    <section class="guide-section">
+      <h2>Install Git</h2>
+      <p>Git is a version control system needed to download the miniMerch source code.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Ubuntu / Debian</h3>
+      <pre><code>sudo apt install git</code></pre>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Fedora / RHEL / CentOS</h3>
+      <pre><code>sudo dnf install git</code></pre>
+
+      <p style="margin-top: var(--space-4);">Verify Git is installed:</p>
+      <pre><code>git --version</code></pre>
+    </section>
+
+    <!-- Install miniMerch CLI -->
+    <section class="guide-section">
+      <h2>Install miniMerch CLI</h2>
+      <p>You have two options for installing the miniMerch command-line tool:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Global Install (Quick Setup)</h3>
+      <p>Install globally with npm - use this if you just want to run miniMerch commands:</p>
+      <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
+      <p>After this, you can run miniMerch commands directly.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Local Install (Full Source)</h3>
+      <p>Clone the repository to your computer - use this if you want the full source code:</p>
+      <ol>
+        <li>Open Terminal</li>
+        <li>Navigate to where you want to keep your files:</li>
+      </ol>
+      <pre><code>cd ~/Documents</code></pre>
+      <ol start="3">
+        <li>Clone the miniMerch repository:</li>
+      </ol>
+      <pre><code>git clone https://github.com/eurobuddha/miniMerch.git</code></pre>
+      <ol start="5">
+        <li>Go into the folder:</li>
+      </ol>
+      <pre><code>cd miniMerch</code></pre>
+      <ol start="7">
+        <li>Install dependencies:</li>
+      </ol>
+      <pre><code>npm install</code></pre>
+      <p>After this, run miniMerch commands with <code>node ./src/index.js</code> followed by the command.</p>
+    </section>
+
     <!-- Step 2: Download -->
     <section class="guide-section">
       <h2>Step 2: Download Minima</h2>

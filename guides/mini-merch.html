@@ -57,15 +57,52 @@
     <!-- Step 1: Install CLI -->
     <section class="guide-section">
       <h2>Step 1: Install the CLI Tool</h2>
-      <p>miniMerch uses a command-line tool to generate your shops. Install it with npm:</p>
-      
+      <p>miniMerch uses a command-line tool to generate your shops. You have two options:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Global Install (Quick Setup)</h3>
+      <p>Install globally with npm. Use this if you just want to run miniMerch commands:</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
       </div>
+      <p>After this, you can run commands like <code>mini-merch setup...</code></p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Local Install (Full Source)</h3>
+      <p>Clone the repository to your computer. Use this if you want the full source code:</p>
+      <ol>
+        <li>Open Terminal (or Command Prompt on Windows)</li>
+        <li>Navigate to where you want to keep your files:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>cd ~/Documents</code></pre>
+      </div>
+      <ol start="3">
+        <li>Clone the miniMerch repository:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>git clone https://github.com/eurobuddha/miniMerch.git</code></pre>
+      </div>
+      <ol start="5">
+        <li>Go into the folder:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>cd miniMerch</code></pre>
+      </div>
+      <ol start="7">
+        <li>Install dependencies:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npm install</code></pre>
+      </div>
+      <p>After this, run commands with <code>node ./src/index.js</code></p>
 
       <div class="callout callout-info">
-        <div class="callout-title">💡 Need Node.js?</div>
-        <p>If you don't have Node.js installed, download it from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. The installer includes npm.</p>
+        <div class="callout-title">💡 Need Node.js or Git?</div>
+        <p>If you don't have these installed, see the platform-specific guides for your operating system:</p>
+        <ul style="margin-top: 0.5rem;">
+          <li><a href="macos.html">macOS Guide</a> - Includes Homebrew installation for Node.js and Git</li>
+          <li><a href="windows.html">Windows Guide</a> - Includes Node.js and Git installation</li>
+          <li><a href="linux.html">Linux Guide</a> - Includes Node.js and Git installation</li>
+        </ul>
       </div>
     </section>
 
@@ -117,6 +154,16 @@
         <pre><code>node ./src/index.js setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
       </div>
 
+      <p style="margin-top: var(--space-4);"><strong>Global Install:</strong></p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>mini-merch setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
+      </div>
+
+      <p style="margin-top: var(--space-4);"><strong>Local Install:</strong></p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>node ./src/index.js setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
+      </div>
+
       <p style="margin-top: var(--space-4);">Example:</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0; overflow-x: auto;">
         <pre><code>node ./src/index.js setup 0x465CA86A9B5756F45DEB667A69B3DBEC1B82B211 c1d37f5f89564ca58 MxG18HGG6FJ038614Y8CW46US6G20810K0070CD00Z83282G60G19TUFFWSB6EEF...</code></pre>
@@ -130,8 +177,14 @@
       <h2>Step 4: Generate Your Shop</h2>
       <p>Create your shop MiniDapp:</p>
       
+      <p><strong>Global Install:</strong></p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>node ./src/index.js generate -n "Product Name" -m "units" -p 25 -d "Description here" -i ./image.jpg</code></pre>
+        <pre><code>mini-merch generate -n "Product Name" -m units -p 25</code></pre>
+      </div>
+
+      <p><strong>Local Install:</strong></p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>node ./src/index.js generate -n "Product Name" -m units -p 25</code></pre>
       </div>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Required Flags</h3>
@@ -344,6 +397,30 @@
     <!-- CLI Reference -->
     <section class="guide-section">
       <h2>CLI Commands Reference</h2>
+      
+      <h3 style="font-size: var(--font-size-lg);">Global Install Commands</h3>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code># One-time setup
+mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
+
+# Generate shop (weight mode)
+mini-merch generate -n "Product" -m weight -p 5 -w 500
+
+# Generate shop (units mode)
+mini-merch generate -n "Product" -m units -p 25 -u 50
+
+# View config
+mini-merch config --show
+
+# Reset config
+mini-merch config --reset
+
+# Help
+mini-merch --help</code></pre>
+      </div>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Local Install Commands</h3>
+      <p>Run these from the miniMerch folder:</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code># One-time setup
 node ./src/index.js setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;

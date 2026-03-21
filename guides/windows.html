@@ -57,7 +57,88 @@
         <li>Windows 10 or Windows 11</li>
         <li>About 500MB of free disk space</li>
         <li>Internet connection for download and initial sync</li>
+        <li><strong>Node.js</strong> and <strong>Git</strong> (for miniMerch CLI)</li>
       </ul>
+    </section>
+
+    <!-- Install Node.js -->
+    <section class="guide-section">
+      <h2>Install Node.js</h2>
+      <p>miniMerch uses a command-line tool that requires Node.js.</p>
+      <ol>
+        <li>Go to <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a></li>
+        <li>Download the Windows Installer (.msi) - choose the LTS version</li>
+        <li>Open the downloaded file</li>
+        <li>Follow the install wizard - click Next, accept the license, click Install</li>
+        <li>Finish the installation</li>
+      </ol>
+      <p>To verify Node.js is installed, open Command Prompt and run:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>node --version</code></pre>
+      </div>
+    </section>
+
+    <!-- Install Git -->
+    <section class="guide-section">
+      <h2>Install Git</h2>
+      <p>Git is a version control system needed to download the miniMerch source code.</p>
+      <ol>
+        <li>Go to <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com/download/win</a></li>
+        <li>The download should start automatically</li>
+        <li>Open the downloaded file</li>
+        <li>Follow the install wizard - accept defaults are fine</li>
+        <li>Finish the installation</li>
+      </ol>
+      <p>To verify Git is installed, open Command Prompt and run:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>git --version</code></pre>
+      </div>
+    </section>
+
+    <!-- Install miniMerch CLI -->
+    <section class="guide-section">
+      <h2>Install miniMerch CLI</h2>
+      <p>You have two options for installing the miniMerch command-line tool:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Global Install (Quick Setup)</h3>
+      <p>Install globally with npm - use this if you just want to run miniMerch commands:</p>
+      <ol>
+        <li>Open <strong>Command Prompt</strong> (search for "cmd" in Start menu)</li>
+        <li>Run:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
+      </div>
+      <p>After this, you can run miniMerch commands directly.</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Local Install (Full Source)</h3>
+      <p>Clone the repository to your computer - use this if you want the full source code:</p>
+      <ol>
+        <li>Open <strong>Command Prompt</strong></li>
+        <li>Navigate to where you want to keep your files (e.g., Documents):</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>cd %USERPROFILE%\Documents</code></pre>
+      </div>
+      <ol start="3">
+        <li>Clone the miniMerch repository:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>git clone https://github.com/eurobuddha/miniMerch.git</code></pre>
+      </div>
+      <ol start="5">
+        <li>Go into the folder:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>cd miniMerch</code></pre>
+      </div>
+      <ol start="7">
+        <li>Install dependencies:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npm install</code></pre>
+      </div>
+      <p>After this, run miniMerch commands with <code>node ./src/index.js</code> followed by the command.</p>
     </section>
 
     <!-- Step 1 -->
