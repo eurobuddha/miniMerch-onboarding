@@ -134,62 +134,85 @@
         <pre><code>node ./src/index.js generate -n "Product Name" -m "units" -p 25 -d "Description here" -i ./image.jpg</code></pre>
       </div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Command Options</h3>
-      
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Required Flags</h3>
       <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
         <tr style="border-bottom: 1px solid var(--color-border);">
           <th style="text-align: left; padding: var(--space-2);">Flag</th>
           <th style="text-align: left; padding: var(--space-2);">Description</th>
-          <th style="text-align: left; padding: var(--space-2);">Example</th>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-n</code></td>
           <td style="padding: var(--space-2);">Product name</td>
-          <td style="padding: var(--space-2);"><code>-n "Organic Barley"</code></td>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-m</code></td>
           <td style="padding: var(--space-2);">Mode: <code>weight</code> or <code>units</code></td>
-          <td style="padding: var(--space-2);"><code>-m weight</code></td>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-p</code></td>
           <td style="padding: var(--space-2);">Price per gram/unit (USD)</td>
-          <td style="padding: var(--space-2);"><code>-p 5</code></td>
+        </tr>
+      </table>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Mode-Specific Flags</h3>
+      
+      <div class="callout callout-info">
+        <div class="callout-title">⚠️ Important</div>
+        <p>Choose ONE mode and use the corresponding flag:</p>
+        <ul style="margin-top: 0.5rem;">
+          <li><strong>Weight mode:</strong> Use <code>-w</code> for maximum weight</li>
+          <li><strong>Units mode:</strong> Use <code>-u</code> for maximum units</li>
+        </ul>
+        <p style="margin-top: 0.5rem;">You cannot use both <code>-w</code> and <code>-u</code> together - pick one mode only.</p>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <th style="text-align: left; padding: var(--space-2);">Flag</th>
+          <th style="text-align: left; padding: var(--space-2);">Use With Mode</th>
+          <th style="text-align: left; padding: var(--space-2);">Description</th>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-w</code></td>
-          <td style="padding: var(--space-2);">Total weight in grams (for weight mode)</td>
-          <td style="padding: var(--space-2);"><code>-w 500</code></td>
+          <td style="padding: var(--space-2);"><code>-m weight</code></td>
+          <td style="padding: var(--space-2);">Maximum weight in grams</td>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-u</code></td>
-          <td style="padding: var(--space-2);">Max units (for units mode)</td>
-          <td style="padding: var(--space-2);"><code>-u 50</code></td>
+          <td style="padding: var(--space-2);"><code>-m units</code></td>
+          <td style="padding: var(--space-2);">Maximum number of units</td>
+        </tr>
+      </table>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Optional Flags</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <th style="text-align: left; padding: var(--space-2);">Flag</th>
+          <th style="text-align: left; padding: var(--space-2);">Description</th>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-d</code></td>
           <td style="padding: var(--space-2);">Product description</td>
-          <td style="padding: var(--space-2);"><code>-d "Premium malt"</code></td>
         </tr>
         <tr>
           <td style="padding: var(--space-2);"><code>-i</code></td>
           <td style="padding: var(--space-2);">Product image path</td>
-          <td style="padding: var(--space-2);"><code>-i ./photo.jpg</code></td>
         </tr>
       </table>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Examples</h3>
       
-      <p><strong>Weight mode</strong> (selling by weight):</p>
+      <p><strong>Weight mode</strong> (selling by weight - use <code>-w</code> for max weight):</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code>node ./src/index.js generate -n "Organic Barley" -m weight -p 5 -w 1000 -d "Premium malting barley"</code></pre>
       </div>
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">This sells up to 1000g at $5/gram.</p>
 
-      <p><strong>Units mode</strong> (selling fixed items):</p>
+      <p><strong>Units mode</strong> (selling fixed items - use <code>-u</code> for max units):</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code>node ./src/index.js generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides"</code></pre>
       </div>
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">This sells 50 units at $25 each.</p>
     </section>
 
     <!-- Step 5: Files Created -->
@@ -293,8 +316,11 @@
         <pre><code># One-time setup
 node ./src/index.js setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
-# Generate shop
-node ./src/index.js generate -n "Name" -m weight -p 5 -w 500
+# Generate shop (weight mode)
+node ./src/index.js generate -n "Product" -m weight -p 5 -w 500
+
+# Generate shop (units mode)
+node ./src/index.js generate -n "Product" -m units -p 25 -u 50
 
 # View config
 node ./src/index.js config --show
