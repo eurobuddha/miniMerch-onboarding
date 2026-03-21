@@ -186,46 +186,36 @@ java -jar minima.jar
 # Press Ctrl+A, then D to detach</code></pre>
     </section>
 
-    <!-- Step 4: First Run Setup -->
+    <!-- Step 4: Your Wallet -->
     <section class="guide-section">
-      <h2>Step 4: Initial Setup</h2>
-      <p>On first run, you'll set up your wallet via the command line:</p>
+      <h2>Step 4: Your Wallet</h2>
+      <p>The Minima node IS your wallet. There's a built-in Wallet MiniDapp for managing your tokens.</p>
       <ol>
-        <li>Minima will prompt for wallet creation</li>
-        <li>Type <code>yes</code> to create a new wallet</li>
-        <li>A 24-word recovery phrase will be generated</li>
-        <li><strong>IMPORTANT:</strong> Write down your recovery phrase</li>
-        <li>Confirm your recovery phrase when prompted</li>
-        <li>Set a password for your wallet</li>
-        <li>Your wallet is ready!</li>
+        <li>Look for the <strong>Wallet</strong> MiniDapp in your MiniDapp Hub</li>
+        <li>Open it to see your addresses and balance</li>
+        <li>Your 24-word recovery phrase is stored securely - back it up if you haven't already</li>
       </ol>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">CLI Commands</h3>
-      <p>Minima runs via terminal commands. Here are some useful ones:</p>
-      <pre><code># Get your address
-getaddress
-
-# Check balance
-balance
-
-# Get your public key (Maxima)
-maxima
-
-# Create a backup
-backup
-
-# Exit Minima
-exit</code></pre>
     </section>
 
-    <!-- Step 5: Accessing MiniDapps -->
+    <!-- Step 5: Connect to Network -->
     <section class="guide-section">
-      <h2>Step 5: Access MiniDapps</h2>
+      <h2>Step 5: Connect to Network</h2>
+      <p>On first run, Minima connects to the network - this takes about 10 seconds.</p>
+      <ol>
+        <li>When prompted, confirm to connect to the network</li>
+        <li>Wait a few seconds for the connection</li>
+        <li>You're ready to go!</li>
+      </ol>
+    </section>
+
+    <!-- Step 6: Accessing MiniDapps -->
+    <section class="guide-section">
+      <h2>Step 6: Access MiniDapps</h2>
       <p>Minima includes a web interface for MiniDapps:</p>
       <ol>
         <li>Make sure Minima is running</li>
         <li>Open your web browser</li>
-        <li>Go to: <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a></li>
+        <li>Go to: <a href="http://127.0.0.1:9003" target="_blank" rel="noopener">http://127.0.0.1:9003</a></li>
         <li>You'll see the MiniDapp Hub</li>
       </ol>
 
@@ -240,17 +230,27 @@ exit</code></pre>
       </div>
     </section>
 
-    <!-- Step 6: Get Public Key -->
+    <!-- Step 7: Get Your Keys -->
     <section class="guide-section">
-      <h2>Step 6: Find Your Public Key</h2>
-      <p>You'll need your public key for miniMerch setup:</p>
-      <pre><code>maxima</code></pre>
-      <p>This displays your full contact address. Your public key:</p>
-      <ul>
-        <li>Starts with <code>Mx</code> for addresses</li>
-        <li>For Maxima messaging, use the full address shown</li>
-      </ul>
-      <p>Copy it to use in miniMerch setup.</p>
+      <h2>Step 7: Get Your Keys</h2>
+      <p>You'll need your keys for miniMerch setup. Use the <strong>Minima Terminal CLI</strong>:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Minima Address</h3>
+      <p>Your address for receiving payments (starts with <code>0x</code>):</p>
+      <ol>
+        <li>Open the <strong>Wallet</strong> MiniDapp</li>
+        <li>Click <strong>Receive</strong></li>
+        <li>Copy your address</li>
+      </ol>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Maxima mxpublickey</h3>
+      <p>Your public key for encrypting orders (starts with <code>Mx</code>):</p>
+      <ol>
+        <li>Open the <strong>Terminal</strong> MiniDapp</li>
+        <li>Type <code>maxima</code> and press Enter</li>
+        <li>Find the line with <code>"mxpublickey":</code></li>
+        <li>Copy the value</li>
+      </ol>
     </section>
 
     <!-- Running as a Service -->

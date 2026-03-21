@@ -95,69 +95,48 @@
       </ol>
     </section>
 
-    <!-- Step 3: Create Wallet -->
+    <!-- Step 3: Your Wallet -->
     <section class="guide-section">
-      <h2>Step 3: Create Your Wallet</h2>
-      <p>When you first open Minima, you'll see the welcome screen. You have two options:</p>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Create New Wallet</h3>
+      <h2>Step 3: Your Wallet</h2>
+      <p>The Minima node IS your wallet. There's a built-in Wallet MiniDapp for managing your tokens.</p>
       <ol>
-        <li>Tap <strong>"Create New Wallet"</strong></li>
-        <li>Minima will generate a secure 24-word recovery phrase</li>
-        <li><strong>IMPORTANT:</strong> Write down your recovery phrase on paper</li>
-        <li>Store it somewhere safe - this is your only way to recover your funds</li>
-        <li>Confirm your recovery phrase by entering 3 random words</li>
-        <li>Create a 6-digit PIN for quick access</li>
-        <li>Your wallet is ready!</li>
+        <li>Look for the <strong>Wallet</strong> MiniDapp in your MiniDapp Hub</li>
+        <li>Open it to see your addresses and balance</li>
+        <li>Your 24-word recovery phrase is stored securely - back it up if you haven't already</li>
       </ol>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Restore Existing Wallet</h3>
-      <p>If you already have a Minima wallet:</p>
-      <ol>
-        <li>Tap <strong>"I Have a Seed"</strong></li>
-        <li>Enter your 24-word recovery phrase</li>
-        <li>Create a 6-digit PIN for quick access</li>
-        <li>Your existing wallet and balance will be restored</li>
-      </ol>
-
-      <div class="callout callout-warning">
-        <div class="callout-title">⚠️ Security Warning</div>
-        <p>Never share your recovery phrase with anyone. Minima staff will never ask for it. Anyone with your phrase can access your funds.</p>
-      </div>
     </section>
 
-    <!-- Step 4: Sync -->
+    <!-- Step 4: Connect to Network -->
     <section class="guide-section">
-      <h2>Step 4: Sync with the Network</h2>
-      <p>After creating your wallet, Minima will sync with the blockchain. This may take a few minutes.</p>
+      <h2>Step 4: Connect to Network</h2>
+      <p>On first run, Minima connects to the network - this takes about 10 seconds.</p>
       <ol>
-        <li>Keep the app open while syncing</li>
-        <li>You'll see a progress indicator</li>
-        <li>Once synced, you can use Minima normally</li>
-        <li>The node runs in the background even when the app is closed</li>
+        <li>When prompted, tap to connect to the network</li>
+        <li>Wait a few seconds for the connection</li>
+        <li>You're ready to go!</li>
       </ol>
-
-      <div class="callout">
-        <div class="callout-title">📱 Battery & Data</div>
-        <p>Minima is designed to run efficiently on mobile. It uses minimal battery and data. You can restrict background data in your phone settings if needed.</p>
-      </div>
     </section>
 
-    <!-- Step 5: Get Public Key -->
+    <!-- Step 5: Get Your Keys -->
     <section class="guide-section">
-      <h2>Step 5: Find Your Public Key</h2>
-      <p>You'll need your public key for miniMerch setup:</p>
+      <h2>Step 5: Get Your Keys</h2>
+      <p>You'll need your keys for miniMerch setup. Open the <strong>Terminal</strong> MiniDapp in Minima:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Minima Address</h3>
+      <p>Your address for receiving payments (starts with <code>0x</code>):</p>
       <ol>
-        <li>Open the Minima app</li>
-        <li>Tap the <strong>Maxima</strong> icon (bottom of screen)</li>
-        <li>Your public key is displayed at the top</li>
-        <li>Tap it to copy to your clipboard</li>
-        <li>It starts with <code>Mx</code></li>
+        <li>Open the <strong>Wallet</strong> MiniDapp</li>
+        <li>Tap <strong>Receive</strong></li>
+        <li>Copy your address</li>
       </ol>
-      <p>Alternatively:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Maxima mxpublickey</h3>
+      <p>Your public key for encrypting orders (starts with <code>Mx</code>):</p>
       <ol>
-        <li>Go to <strong>Settings</strong> → <strong>Addresses</strong></li>
-        <li>Your default address is your public key</li>
+        <li>Open the <strong>Terminal</strong> MiniDapp</li>
+        <li>Type <code>maxima</code> and press Enter</li>
+        <li>Find the line with <code>"mxpublickey":</code></li>
+        <li>Copy the value</li>
       </ol>
     </section>
 
