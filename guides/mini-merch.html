@@ -114,12 +114,12 @@
       <p>Configure your vendor details with this command:</p>
       
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>mini-merch setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
+        <pre><code>node ./src/index.js setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
       </div>
 
       <p style="margin-top: var(--space-4);">Example:</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0; overflow-x: auto;">
-        <pre><code>mini-merch setup 0x465CA86A9B5756F45DEB667A69B3DBEC1B82B211 c1d37f5f89564ca58 MxG18HGG6FJ038614Y8CW46US6G20810K0070CD00Z83282G60G19TUFFWSB6EEF...</code></pre>
+        <pre><code>node ./src/index.js setup 0x465CA86A9B5756F45DEB667A69B3DBEC1B82B211 c1d37f5f89564ca58 MxG18HGG6FJ038614Y8CW46US6G20810K0070CD00Z83282G60G19TUFFWSB6EEF...</code></pre>
       </div>
 
       <p>This saves your configuration locally. You only need to run this once.</p>
@@ -131,7 +131,7 @@
       <p>Create your shop MiniDapp:</p>
       
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>mini-merch generate -n "Product Name" -m weight -p 5 -w 500</code></pre>
+        <pre><code>node ./src/index.js generate -n "Product Name" -m "units" -p 25 -d "Description here" -i ./image.jpg</code></pre>
       </div>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Command Options</h3>
@@ -183,12 +183,12 @@
       
       <p><strong>Weight mode</strong> (selling by weight):</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>mini-merch generate -n "Organic Barley" -m weight -p 5 -w 1000 -d "Premium malting barley"</code></pre>
+        <pre><code>node ./src/index.js generate -n "Organic Barley" -m weight -p 5 -w 1000 -d "Premium malting barley"</code></pre>
       </div>
 
       <p><strong>Units mode</strong> (selling fixed items):</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>mini-merch generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides"</code></pre>
+        <pre><code>node ./src/index.js generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides"</code></pre>
       </div>
     </section>
 
@@ -291,19 +291,19 @@
       <h2>CLI Commands Reference</h2>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code># One-time setup
-mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
+node ./src/index.js setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
 # Generate shop
-mini-merch generate -n "Name" -m weight -p 5 -w 500
+node ./src/index.js generate -n "Name" -m weight -p 5 -w 500
 
 # View config
-mini-merch config --show
+node ./src/index.js config --show
 
 # Reset config
-mini-merch config --reset
+node ./src/index.js config --reset
 
 # Help
-mini-merch --help</code></pre>
+node ./src/index.js --help</code></pre>
       </div>
     </section>
 
