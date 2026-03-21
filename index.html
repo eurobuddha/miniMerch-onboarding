@@ -49,37 +49,24 @@
         No platform fees. No middlemen. Your store, your rules.
       </p>
       
-      <div class="hero-actions fade-in fade-in-delay-3">
-        <a href="#platforms" class="btn btn-primary btn-lg">
-          <span>🚀</span>
-          <span>Get Started</span>
-        </a>
-        <a href="guides/index.html" class="btn btn-secondary btn-lg">
-          <span>📖</span>
-          <span>Read Guides</span>
-        </a>
-      </div>
-
-      <!-- Node Status Card -->
-      <div class="node-status" id="node-status-card">
-        <div class="node-status-header">
-          <div class="node-status-icon" id="node-status-icon">
-            <span>⏳</span>
-          </div>
-          <div>
-            <div class="node-status-title" id="node-status-title">Checking for node...</div>
-            <div class="node-status-subtitle" id="node-status-subtitle">Looking for Minima running on your device</div>
-          </div>
+      <!-- Two Paths -->
+      <div class="cards-grid" style="margin-top: var(--space-8); max-width: 700px;">
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">✅</div>
+          <h3 class="card-title">I have a Minima node</h3>
+          <p class="card-description">Already running Minima? Set up miniMerch to start selling.</p>
+          <a href="guides/mini-merch.html" class="btn btn-primary" style="margin-top: var(--space-4);">
+            Setup miniMerch →
+          </a>
         </div>
-        <div class="node-status-body" id="node-status-body">
-          <div class="node-status-actions">
-            <a href="#" class="btn btn-primary" id="node-primary-action" style="display: none;">
-              Get Started
-            </a>
-            <a href="#" class="btn btn-secondary" id="node-secondary-action" style="display: none;">
-              View Guides
-            </a>
-          </div>
+
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">I'm new to Minima</h3>
+          <p class="card-description">Install Minima first, then come back to set up your shop.</p>
+          <a href="#platforms" class="btn btn-secondary" style="margin-top: var(--space-4);">
+            Install Minima →
+          </a>
         </div>
       </div>
     </div>
@@ -184,7 +171,7 @@
   </section>
 
   <!-- miniMerch Setup CTA -->
-  <section class="section">
+  <section class="section" style="background: var(--color-bg-secondary);">
     <div class="container text-center">
       <h2 class="section-title">Ready to set up your shop?</h2>
       <p class="section-subtitle" style="margin-bottom: var(--space-8);">
@@ -319,7 +306,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/node-detect.js"></script>
   <script src="js/platform-detect.js"></script>
   <script src="js/main.js"></script>
 </body>
