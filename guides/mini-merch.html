@@ -85,30 +85,33 @@
 
     <!-- Step 2: Get Public Key -->
     <section class="guide-section">
-      <h2>Step 2: Get Your Public Key</h2>
-      <p>Your public key is used to encrypt orders so only you can read delivery addresses.</p>
+      <h2>Step 2: Get Your Maxima Public Key</h2>
+      <p>Your Maxima public key (called <code>mxpublickey</code>) is used to encrypt orders so only you can read delivery addresses.</p>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">On Mobile</h3>
+      <div class="callout callout-warning">
+        <div class="callout-title">⚠️ Important</div>
+        <p>You need the <strong>mxpublickey</strong>, not the regular public key. This can only be obtained via the Terminal MiniDapp.</p>
+      </div>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">How to Find Your mxpublickey</h3>
       <ol>
-        <li>Open the Minima app</li>
-        <li>Tap <strong>Maxima</strong> at the bottom</li>
-        <li>Your public key is displayed at the top</li>
-        <li>Tap it to copy</li>
+        <li>Open the <strong>Terminal</strong> MiniDapp in Minima</li>
+        <li>Type the following command:</li>
       </ol>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">On Desktop</h3>
-      <ol>
-        <li>Open Minima Desktop</li>
-        <li>Click <strong>Maxima</strong> in the sidebar</li>
-        <li>Your public key is displayed</li>
-        <li>Click to copy</li>
-      </ol>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Terminal (Linux/Mac/Windows)</h3>
       <pre><code>maxima</code></pre>
-      <p>This shows your full contact address including public key.</p>
+      <ol start="3">
+        <li>Press Enter</li>
+        <li>Find the line that says <code>"mxpublickey":</code></li>
+        <li>Copy the value that starts with <code>Mx</code></li>
+      </ol>
 
-      <p style="margin-top: var(--space-4);">Your public key starts with <code>Mx</code>.</p>
+      <p style="margin-top: var(--space-4);">Your mxpublickey looks like this:</p>
+      <pre><code>"mxpublickey": "MxG18HGG6FJ038614Y8CW46US6G20810K..."</code></pre>
+
+      <div class="callout callout-info">
+        <div class="callout-title">💡 Note</div>
+        <p>You cannot use the regular public key shown in the Maxima panel. You must use the Terminal and type <code>maxima</code> to get your <code>mxpublickey</code>.</p>
+      </div>
     </section>
 
     <!-- Step 3: Get API Key -->
@@ -139,7 +142,7 @@
       <ol>
         <li><strong>Minima address</strong> - Your Minima wallet address (starts with 0x)</li>
         <li><strong>CoinMarketCap API key</strong> - Press Enter to skip</li>
-        <li><strong>Vendor public key</strong> - Your Maxima public key (starts with Mx)</li>
+        <li><strong>Maxima mxpublickey</strong> - Your Maxima public key for encryption (starts with Mx)</li>
       </ol>
 
       <p style="margin-top: var(--space-4);">Your configuration is saved locally. You can change it anytime with:</p>
