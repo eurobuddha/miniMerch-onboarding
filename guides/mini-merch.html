@@ -22,7 +22,7 @@
       <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link">Guides</a>
-        <a href="mini-merch.html" class="nav-link active">miniMerch Setup</a>
+        <a href="npx @eurobuddha/mini-merch.html" class="nav-link active">miniMerch Setup</a>
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
     </div>
@@ -62,9 +62,9 @@
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Global Install (Quick Setup)</h3>
       <p>Install globally with npm. Use this if you just want to run miniMerch commands:</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
+        <pre><code>npm install -g @eurobuddha/npx @eurobuddha/mini-merch</code></pre>
       </div>
-      <p>After this, you can run commands like <code>mini-merch setup...</code></p>
+      <p>After this, you can run commands like <code>npx @eurobuddha/mini-merch setup...</code></p>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Local Install (Full Source)</h3>
       <p>Clone the repository to your computer. Use this if you want the full source code:</p>
@@ -156,7 +156,7 @@
 
       <p style="margin-top: var(--space-4);"><strong>Global Install:</strong></p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>mini-merch setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
+        <pre><code>npx @eurobuddha/mini-merch setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
       </div>
 
       <p style="margin-top: var(--space-4);"><strong>Local Install:</strong></p>
@@ -179,7 +179,7 @@
       
       <p><strong>Global Install:</strong></p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>mini-merch generate -n "Product Name" -m units -p 25</code></pre>
+        <pre><code>npx @eurobuddha/mini-merch generate -n "Product Name" -m units -p 25</code></pre>
       </div>
 
       <p><strong>Local Install:</strong></p>
@@ -401,22 +401,22 @@
       <h3 style="font-size: var(--font-size-lg);">Global Install Commands</h3>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code># One-time setup
-mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
+npx @eurobuddha/mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
 # Generate shop (weight mode)
-mini-merch generate -n "Product" -m weight -p 5 -w 500
+npx @eurobuddha/mini-merch generate -n "Product" -m weight -p 5 -w 500
 
 # Generate shop (units mode)
-mini-merch generate -n "Product" -m units -p 25 -u 50
+npx @eurobuddha/mini-merch generate -n "Product" -m units -p 25 -u 50
 
 # View config
-mini-merch config --show
+npx @eurobuddha/mini-merch config --show
 
 # Reset config
-mini-merch config --reset
+npx @eurobuddha/mini-merch config --reset
 
 # Help
-mini-merch --help</code></pre>
+npx @eurobuddha/mini-merch --help</code></pre>
       </div>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Local Install Commands</h3>
