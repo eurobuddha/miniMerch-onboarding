@@ -57,7 +57,41 @@
         <li>Mac computer running macOS 10.15 (Catalina) or later</li>
         <li>About 500MB of free disk space</li>
         <li>Internet connection for download and initial sync</li>
+        <li><strong>Node.js</strong> (for miniMerch CLI)</li>
       </ul>
+    </section>
+
+    <!-- Install Node.js -->
+    <section class="guide-section">
+      <h2>Install Node.js</h2>
+      <p>miniMerch uses a command-line tool that requires Node.js. The easiest way to install it on Mac is with Homebrew:</p>
+      
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Homebrew (Recommended)</h3>
+      <ol>
+        <li>Open Terminal</li>
+        <li>If you don't have Homebrew, install it first:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+      </div>
+      <ol start="3">
+        <li>Install Node.js:</li>
+      </ol>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>brew install node</code></pre>
+      </div>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Download Installer</h3>
+      <ol>
+        <li>Go to <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a></li>
+        <li>Download the macOS Installer (.pkg)</li>
+        <li>Open the downloaded file and follow the install wizard</li>
+      </ol>
+
+      <p style="margin-top: var(--space-4);">To verify Node.js is installed, open Terminal and run:</p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>node --version</code></pre>
+      </div>
     </section>
 
     <!-- Step 1 -->
@@ -173,6 +207,19 @@
         <li>If you see "Downloading Minima", just wait</li>
         <li>Enter your MDS password to log in</li>
         <li>Your wallet and sync will load</li>
+      </ol>
+    </section>
+
+    <!-- Step 8 -->
+    <section class="guide-section">
+      <h2>Step 8: Set Up OpenWebStart Settings</h2>
+      <p>Before launching the macOS version of Minima, you need to copy your MDS password from OpenWebStart:</p>
+      <ol>
+        <li>In the OpenWebStart window, click the <strong>Settings</strong> tab</li>
+        <li>Find and copy your <strong>MDS password</strong></li>
+        <li>Go back to the main OpenWebStart window</li>
+        <li>Click to launch the <strong>Mac OS</strong> version of Minima</li>
+        <li>When prompted, enter the MDS password you copied</li>
       </ol>
     </section>
 
