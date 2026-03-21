@@ -20,7 +20,7 @@ const PlatformDetector = (function() {
 
     // Check mobile first
     if (/Android/.test(userAgent)) return 'android';
-    if (/iPhone|iPad|iPod/.test(userAgent)) return 'ios';
+    // No iOS - Minima can't run on Apple devices
 
     // Desktop OS detection
     const os = osMap[platform];
@@ -34,42 +34,31 @@ const PlatformDetector = (function() {
       windows: {
         name: 'Windows',
         icon: '🪟',
-        downloadUrl: 'https://minima.global/post/2024/04/10/minima-desktop-launch/',
-        installCommand: null,
+        downloadUrl: 'https://spartacusrex.com/jnlp.html',
         guides: ['windows'],
-        description: 'Download the Windows installer'
+        description: 'OpenWebStart + Minima JNLP'
       },
       macos: {
         name: 'macOS',
         icon: '🍎',
-        downloadUrl: 'https://minima.global/post/2024/04/10/minima-desktop-launch/',
-        installCommand: null,
+        downloadUrl: 'https://spartacusrex.com/jnlp.html',
         guides: ['macos'],
-        description: 'Download the macOS installer'
+        description: 'OpenWebStart + Minima JNLP'
       },
       linux: {
         name: 'Linux',
         icon: '🐧',
-        downloadUrl: 'https://minima.global/post/2024/04/10/minima-desktop-launch/',
+        downloadUrl: 'https://docs.minima.global/docs/run-a-node',
         installCommand: 'java -jar minima.jar',
         guides: ['linux'],
-        description: 'Download the JAR file'
+        description: 'JAR file (requires Java)'
       },
       android: {
         name: 'Android',
         icon: '📱',
-        downloadUrl: 'https://play.google.com/store/apps/details?id=com.minima.global',
-        installCommand: null,
+        downloadUrl: 'https://play.google.com/store/apps/details?id=com.minima.android&utm_source=emea_Med',
         guides: ['android'],
-        description: 'Get from Google Play or APK'
-      },
-      ios: {
-        name: 'iOS',
-        icon: '📱',
-        downloadUrl: 'https://apps.apple.com/app/minima-wallet/id6443564057',
-        installCommand: null,
-        guides: ['ios'],
-        description: 'Get from the App Store'
+        description: 'Google Play Store'
       }
     };
 
@@ -93,7 +82,7 @@ const PlatformDetector = (function() {
   }
 
   function isMobile() {
-    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    return /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
   }
 
   function isDesktop() {
@@ -106,40 +95,31 @@ const PlatformDetector = (function() {
         id: 'android',
         name: 'Android',
         icon: '📱',
-        downloadUrl: 'https://play.google.com/store/apps/details?id=com.minima.global',
-        altDownload: 'https://minima.global/post/2024/04/10/minima-mobile-launch/',
-        description: 'Google Play or direct APK',
-        badge: 'Mobile'
-      },
-      {
-        id: 'ios',
-        name: 'iOS',
-        icon: '🍎',
-        downloadUrl: 'https://apps.apple.com/app/minima-wallet/id6443564057',
-        description: 'App Store',
+        downloadUrl: 'https://play.google.com/store/apps/details?id=com.minima.android&utm_source=emea_Med',
+        description: 'Google Play Store',
         badge: 'Mobile'
       },
       {
         id: 'macos',
         name: 'macOS',
         icon: '🍎',
-        downloadUrl: 'https://minima.global/post/2024/04/10/minima-desktop-launch/',
-        description: 'Intel & Apple Silicon',
+        downloadUrl: 'https://spartacusrex.com/jnlp.html',
+        description: 'OpenWebStart + JNLP',
         badge: 'Desktop'
       },
       {
         id: 'windows',
         name: 'Windows',
         icon: '🪟',
-        downloadUrl: 'https://minima.global/post/2024/04/10/minima-desktop-launch/',
-        description: 'x64 architecture',
+        downloadUrl: 'https://spartacusrex.com/jnlp.html',
+        description: 'OpenWebStart + JNLP',
         badge: 'Desktop'
       },
       {
         id: 'linux',
         name: 'Linux',
         icon: '🐧',
-        downloadUrl: 'https://minima.global/post/2024/04/10/minima-desktop-launch/',
+        downloadUrl: 'https://docs.minima.global/docs/run-a-node',
         description: 'JAR file (requires Java)',
         badge: 'Desktop'
       }

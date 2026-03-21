@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How to install Minima on macOS">
+  <meta name="description" content="How to install Minima on macOS using OpenWebStart">
   <title>macOS Setup Guide - miniMerch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
     <div class="container">
       <h1>🍎 macOS Setup Guide</h1>
       <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
-        Install Minima Desktop on your Mac
+        Install Minima on your Mac using OpenWebStart
       </p>
       
       <nav class="guide-nav">
@@ -48,53 +48,65 @@
     <section class="guide-section">
       <h2>Prerequisites</h2>
       <ul>
-        <li>Mac computer running macOS 11 (Big Sur) or later</li>
+        <li>Mac computer running macOS 10.15 (Catalina) or later</li>
         <li>At least 500MB of free disk space</li>
         <li>Stable internet connection</li>
-        <li>Optional: Java 17+ if running the JAR version</li>
       </ul>
     </section>
 
-    <!-- Step 1: Download -->
+    <!-- Step 1: Install OpenWebStart -->
     <section class="guide-section">
-      <h2>Step 1: Download Minima</h2>
-      <p>Download the macOS installer from the official Minima website:</p>
+      <h2>Step 1: Install OpenWebStart</h2>
+      <p>OpenWebStart is a free tool that allows you to run Java applications like Minima.</p>
       <ol>
-        <li>Visit <a href="https://minima.global/post/2024/04/10/minima-desktop-launch/" target="_blank" rel="noopener">minima.global/post/2024/04/10/minima-desktop-launch/</a></li>
-        <li>Click the macOS download link</li>
-        <li>The DMG file will download to your Downloads folder</li>
-      </ol>
-
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Alternative: JAR Version</h3>
-      <p>If you prefer the command-line version:</p>
-      <ol>
-        <li>Download the JAR file from the same page</li>
-        <li>Make sure you have Java 17 or later installed</li>
-        <li>Run with: <code>java -jar minima.jar</code></li>
-      </ol>
-    </section>
-
-    <!-- Step 2: Install -->
-    <section class="guide-section">
-      <h2>Step 2: Install Minima</h2>
-      <h3 style="font-size: var(--font-size-lg);">DMG Version (Recommended)</h3>
-      <ol>
+        <li>Download OpenWebStart from <a href="https://openwebstart.com/" target="_blank" rel="noopener">openwebstart.com</a></li>
+        <li>Click the <strong>Download</strong> button</li>
         <li>Open the downloaded DMG file</li>
-        <li>Drag the Minima app to the Applications folder</li>
-        <li>Wait for the copy to complete</li>
+        <li>Drag <strong>OpenWebStart</strong> to your Applications folder</li>
         <li>Eject the DMG drive</li>
-        <li>Open Minima from Applications or Spotlight</li>
       </ol>
 
-      <div class="callout callout-warning">
-        <div class="callout-title">⚠️ Gatekeeper Warning</div>
-        <p>On first launch, macOS may show "Minima can't be opened because it wasn't downloaded from the App Store." Click <strong>System Settings → Security → Open Anyway</strong> to allow it.</p>
+      <div class="callout callout-info">
+        <div class="callout-title">💡 First Run</div>
+        <p>On first run, macOS may ask you to allow OpenWebStart. Go to System Settings → Privacy & Security → find the message and click "Open Anyway".</p>
       </div>
     </section>
 
-    <!-- Step 3: Create Wallet -->
+    <!-- Step 2: Download Minima JNLP -->
     <section class="guide-section">
-      <h2>Step 3: Create Your Wallet</h2>
+      <h2>Step 2: Download Minima</h2>
+      <p>Download the Minima launcher file:</p>
+      <ol>
+        <li>Visit <a href="https://spartacusrex.com/jnlp.html" target="_blank" rel="noopener">spartacusrex.com/jnlp.html</a></li>
+        <li>Click the <strong>Download Minima JNLP</strong> link</li>
+        <li>The file will download to your Downloads folder</li>
+      </ol>
+    </section>
+
+    <!-- Step 3: Launch Minima -->
+    <section class="guide-section">
+      <h2>Step 3: Launch Minima</h2>
+      <p>Double-click the downloaded JNLP file to start Minima:</p>
+      <ol>
+        <li>Navigate to your Downloads folder</li>
+        <li>Double-click <strong>minima.jnlp</strong></li>
+        <li>OpenWebStart will download the Minima application</li>
+        <li>The first launch may take a few minutes</li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout-title">📍 Creating a Shortcut</div>
+        <p>To create a shortcut in your Dock:</p>
+        <ol>
+          <li>Right-click the Minima icon in the Dock</li>
+          <li>Click <strong>Options → Keep in Dock</strong></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Step 4: Create Wallet -->
+    <section class="guide-section">
+      <h2>Step 4: Create Your Wallet</h2>
       <p>When you first open Minima Desktop, you'll see the setup wizard.</p>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Create New Wallet</h3>
@@ -118,26 +130,26 @@
       </ol>
     </section>
 
-    <!-- Step 4: Sync -->
+    <!-- Step 5: Sync -->
     <section class="guide-section">
-      <h2>Step 4: Sync with the Network</h2>
+      <h2>Step 5: Sync with the Network</h2>
       <p>After creating your wallet, Minima will begin syncing with the blockchain.</p>
       <ol>
         <li>Keep Minima open while syncing</li>
         <li>The status bar shows sync progress</li>
         <li>Initial sync may take 15-30 minutes</li>
-        <li>Once synced, you can minimize the app - it runs in the background</li>
+        <li>Once synced, you can close the app</li>
       </ol>
 
       <div class="callout">
         <div class="callout-title">💡 Running in Background</div>
-        <p>Minima Desktop runs efficiently in the background. You can quit the app when not in use - your node will stop, but no funds are at risk.</p>
+        <p>You can minimize Minima - it will continue running in the background via OpenWebStart.</p>
       </div>
     </section>
 
-    <!-- Step 5: Get Public Key -->
+    <!-- Step 6: Get Public Key -->
     <section class="guide-section">
-      <h2>Step 5: Find Your Public Key</h2>
+      <h2>Step 6: Find Your Public Key</h2>
       <p>You'll need your public key for miniMerch setup:</p>
       <ol>
         <li>In Minima Desktop, click <strong>Maxima</strong> in the sidebar</li>
@@ -145,36 +157,46 @@
         <li>Click the key to copy it to your clipboard</li>
         <li>Your public key starts with <code>Mx</code></li>
       </ol>
-      <p>Alternatively, use the Terminal command:</p>
-      <pre><code>maxima</code></pre>
-      <p>This displays your full contact address including public key.</p>
+    </section>
+
+    <!-- Updating Minima -->
+    <section class="guide-section">
+      <h2>Updating Minima</h2>
+      <p>One of the benefits of OpenWebStart is automatic updates:</p>
+      <ol>
+        <li>Close Minima</li>
+        <li>Double-click <strong>minima.jnlp</strong> again</li>
+        <li>OpenWebStart will check for and install any updates</li>
+        <li>Your wallet and settings are preserved</li>
+      </ol>
     </section>
 
     <!-- Troubleshooting -->
     <section class="guide-section">
       <h2>Troubleshooting</h2>
       
-      <h3 style="font-size: var(--font-size-lg);">App won't open - Gatekeeper blocked</h3>
+      <h3 style="font-size: var(--font-size-lg);">OpenWebStart won't open JNLP files</h3>
+      <ul>
+        <li>Right-click the JNLP file → Open With → OpenWebStart</li>
+        <li>Or drag the JNLP file onto the OpenWebStart icon</li>
+      </ul>
+
+      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Security warning on first run</h3>
       <ul>
         <li>Go to <strong>System Settings → Privacy & Security</strong></li>
-        <li>Find the message about Minima</li>
+        <li>Find the message about OpenWebStart or Minima</li>
         <li>Click <strong>Open Anyway</strong></li>
       </ul>
 
       <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Sync is very slow</h3>
       <ul>
         <li>Check your internet connection</li>
-        <li>Try connecting to different peers</li>
-        <li>Restart Minima</li>
-        <li>Make sure your Mac isn't in sleep mode during sync</li>
+        <li>Try restarting Minima</li>
       </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Forgot password</h3>
-      <p>Use your 24-word recovery phrase to restore your wallet in a new installation.</p>
 
       <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
       <ul>
-        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
+        <li>Visit <a href="https://docs.minima.global" target="_blank" rel="noopener">docs.minima.global</a></li>
         <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
       </ul>
     </section>
