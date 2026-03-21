@@ -268,7 +268,7 @@ source ~/.bashrc</code></pre>
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 2000);
         
-        await fetch('http://127.0.0.1:9003/', {
+        await fetch('https://127.0.0.1:9003/', {
           signal: controller.signal,
           mode: 'no-cors'
         });
