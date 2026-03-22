@@ -176,16 +176,25 @@
     <!-- Step 4: Generate Shop -->
     <section class="guide-section">
       <h2>Step 4: Generate Your Shop</h2>
-      <p>Create your shop MiniDapp:</p>
-      
+      <p>miniMerch gives you two ways to generate a shop — a single-product shop or a multi-product shop with up to 8 items.</p>
+
+      <div class="callout callout-info" style="margin-bottom: var(--space-6);">
+        <div class="callout-title">🛍️ New: Multi-Product Shops</div>
+        <p>You can now put up to 8 products in a single shop. Buyers browse all your products and add items to a cart before checking out — all in one transaction. Use <code>generate-multi</code> to set up a multi-product shop.</p>
+      </div>
+
+      <!-- Option A: Single product -->
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Single-Product Shop</h3>
+      <p>Use this if you want a shop with one product. Pass all product details as command-line flags:</p>
+
       <p><strong>Global Install:</strong></p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>npx mini-merch generate -n "Product Name" -m units -p 25</code></pre>
+        <pre><code>npx mini-merch generate -n "Product Name" -m units -p 25 -u 50</code></pre>
       </div>
 
       <p><strong>Local Install:</strong></p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>node ./src/index.js generate -n "Product Name" -m units -p 25</code></pre>
+        <pre><code>node ./src/index.js generate -n "Product Name" -m units -p 25 -u 50</code></pre>
       </div>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Required Flags</h3>
@@ -209,15 +218,15 @@
       </table>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Mode-Specific Flags</h3>
-      
+
       <div class="callout callout-info">
         <div class="callout-title">⚠️ Important</div>
         <p>Choose ONE mode and use the corresponding flag:</p>
         <ul style="margin-top: 0.5rem;">
-          <li><strong>Weight mode:</strong> Use <code>-w</code> for maximum weight</li>
-          <li><strong>Units mode:</strong> Use <code>-u</code> for maximum units</li>
+          <li><strong>Weight mode:</strong> Use <code>-w</code> for maximum weight in grams</li>
+          <li><strong>Units mode:</strong> Use <code>-u</code> for maximum number of units</li>
         </ul>
-        <p style="margin-top: 0.5rem;">You cannot use both <code>-w</code> and <code>-u</code> together - pick one mode only.</p>
+        <p style="margin-top: 0.5rem;">You cannot use both <code>-w</code> and <code>-u</code> together.</p>
       </div>
 
       <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
@@ -252,43 +261,76 @@
           <td style="padding: var(--space-2);"><code>-i</code></td>
           <td style="padding: var(--space-2);">Product image path</td>
         </tr>
+        <tr>
+          <td style="padding: var(--space-2);"><code>--slippage</code></td>
+          <td style="padding: var(--space-2);">Slippage % added to Minima price at checkout to cover volatility (default: 10)</td>
+        </tr>
       </table>
 
       <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Examples</h3>
-      
-      <p><strong>Weight mode</strong> (selling by weight - use <code>-w</code> for max weight):</p>
+
+      <p><strong>Weight mode</strong> (selling by weight):</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
         <pre><code>node ./src/index.js generate -n "Organic Barley" -m weight -p 5 -w 1000 -d "Premium malting barley"</code></pre>
       </div>
-      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">This sells up to 1000g at $5/gram.</p>
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Sells up to 1000g at $5/gram.</p>
 
-      <p><strong>Units mode</strong> (selling fixed items - use <code>-u</code> for max units):</p>
+      <p><strong>Units mode</strong> (selling fixed items):</p>
       <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-        <pre><code>node ./src/index.js generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides"</code></pre>
+        <pre><code>node ./src/index.js generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides" --slippage 5</code></pre>
       </div>
-      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">This sells 50 units at $25 each.</p>
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Sells 50 units at $25 each, with 5% Minima slippage buffer.</p>
+
+      <!-- Option B: Multi-product -->
+      <h3 style="margin-top: var(--space-8); font-size: var(--font-size-lg);">Option B: Multi-Product Shop (up to 8 items)</h3>
+      <p>Use the interactive wizard to add up to 8 products to a single shop. The wizard prompts you for each product's details one by one, then generates everything in one go.</p>
+
+      <p><strong>Global Install:</strong></p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>npx mini-merch generate-multi</code></pre>
+      </div>
+
+      <p><strong>Local Install:</strong></p>
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+        <pre><code>node ./src/index.js generate-multi</code></pre>
+      </div>
+
+      <p>The wizard will ask you for each product:</p>
+      <ul>
+        <li><strong>Name</strong> — the product title</li>
+        <li><strong>Mode</strong> — <code>weight</code> or <code>units</code> (press Enter for weight)</li>
+        <li><strong>Price</strong> — in USD per gram or per unit</li>
+        <li><strong>Weight or units</strong> — maximum available</li>
+        <li><strong>Description</strong> — short product description (optional)</li>
+        <li><strong>Image path</strong> — local file path to the product image (optional)</li>
+      </ul>
+      <p>After all products are entered, the wizard asks for a <strong>slippage %</strong> (the buffer added to the Minima price at checkout to cover volatility — default 10%). Then it builds both zip files automatically.</p>
+
+      <p style="margin-top: var(--space-4);">Leave the product name blank at any point to stop adding products and proceed to generation.</p>
     </section>
 
     <!-- Step 5: Files Created -->
     <section class="guide-section">
       <h2>Step 5: Your Generated Files</h2>
-      <p>After running the generate command, your files are created in a <code>dist/</code> folder:</p>
+      <p>After running either generate command, your files are created in a <code>dist/</code> folder:</p>
 
       <div class="cards-grid" style="margin-top: var(--space-6);">
         <div class="card">
           <div class="card-icon">🛒</div>
-          <h3 class="card-title">miniMerch_YourProduct.mds.zip</h3>
-          <p class="card-description">Your shop. This is what customers will use to place orders. Share this file with buyers.</p>
+          <h3 class="card-title">Shop MiniDapp</h3>
+          <p class="card-description">Your shop. Share this file with buyers — they install it on their Minima node to browse and order.</p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-2);">
+            Single product: <code>miniMerch_ProductName.mds.zip</code><br>
+            Multi-product: <code>miniMerch_Shop.mds.zip</code>
+          </p>
         </div>
 
         <div class="card">
           <div class="card-icon">📥</div>
           <h3 class="card-title">miniMerchInbox.mds.zip</h3>
-          <p class="card-description">Your order inbox. Install this on YOUR node to receive and manage orders.</p>
+          <p class="card-description">Your order inbox. Install this on YOUR node to receive and manage all orders.</p>
         </div>
       </div>
-
-      <p style="margin-top: var(--space-4);">The shop file is named after your product. For example, if you used <code>-n "Coffee"</code>, you'll get <code>miniMerch_Coffee.mds.zip</code>.</p>
     </section>
 
     <!-- Step 6: Install on Node -->
@@ -403,11 +445,17 @@
         <pre><code># One-time setup
 npx mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
-# Generate shop (weight mode)
+# Generate single-product shop (weight mode)
 npx mini-merch generate -n "Product" -m weight -p 5 -w 500
 
-# Generate shop (units mode)
+# Generate single-product shop (units mode)
 npx mini-merch generate -n "Product" -m units -p 25 -u 50
+
+# Generate single-product shop with custom slippage
+npx mini-merch generate -n "Product" -m units -p 25 -u 50 --slippage 5
+
+# Generate multi-product shop (interactive wizard, up to 8 products)
+npx mini-merch generate-multi
 
 # View config
 npx mini-merch config --show
@@ -425,11 +473,17 @@ npx mini-merch --help</code></pre>
         <pre><code># One-time setup
 node ./src/index.js setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
-# Generate shop (weight mode)
+# Generate single-product shop (weight mode)
 node ./src/index.js generate -n "Product" -m weight -p 5 -w 500
 
-# Generate shop (units mode)
+# Generate single-product shop (units mode)
 node ./src/index.js generate -n "Product" -m units -p 25 -u 50
+
+# Generate single-product shop with custom slippage
+node ./src/index.js generate -n "Product" -m units -p 25 -u 50 --slippage 5
+
+# Generate multi-product shop (interactive wizard, up to 8 products)
+node ./src/index.js generate-multi
 
 # View config
 node ./src/index.js config --show

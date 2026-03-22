@@ -129,7 +129,7 @@
               <li><strong>Digital products</strong> - With email or download links</li>
               <li><strong>Services</strong> - With delivery instructions</li>
             </ul>
-            <p>You control shipping options, prices, and product details. You can sell one item or a full catalog.</p>
+            <p>You control shipping options, prices, and product details. Use <code>generate</code> for a single-product shop or <code>generate-multi</code> to create a shop with up to 8 products — all in one ZIP file, with a built-in shopping cart.</p>
           </div>
         </div>
       </div>
@@ -199,14 +199,9 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>Buyers see a simple web page (a MiniDapp) that shows:</p>
-            <ul>
-              <li>Your product image and description</li>
-              <li>Price in USD (or Minima equivalent)</li>
-              <li>Size/quantity options</li>
-              <li>Shipping options</li>
-            </ul>
-            <p>When they check out, they enter their delivery address, which is encrypted before being sent. Buyers cannot see other customers' addresses, and they cannot see your vendor information beyond what you choose to display.</p>
+            <p>Buyers see a clean shop MiniDapp showing your products with images, descriptions, and prices in USD (and the Minima equivalent). Multi-product shops display all items in a responsive grid on desktop, or as a swipeable carousel on mobile.</p>
+            <p>Buyers can add multiple items to a shopping cart and check out in a single transaction — one encrypted order message and one payment covers everything in the cart.</p>
+            <p>At checkout they enter their delivery address, which is encrypted before being sent. No one else — not other customers, not miniMerch, not anyone — can read it except you.</p>
           </div>
         </div>
       </div>
@@ -340,12 +335,28 @@
           <div class="faq-answer-inner">
             <p>To update product info or prices:</p>
             <ol>
-              <li>Run <code>mini-merch generate</code> again</li>
+              <li>Run <code>mini-merch generate</code> (single product) or <code>mini-merch generate-multi</code> (multi-product) again</li>
               <li>Enter new product details</li>
-              <li>Replace the old <code>shop.mds.zip</code> with the new one</li>
+              <li>Replace the old shop ZIP with the new one</li>
               <li>Re-install on your node or redistribute to customers</li>
             </ol>
             <p>Note: Existing orders are not affected by shop updates - they're tied to the original transaction.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I have multiple products in one shop?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! Use the <code>generate-multi</code> command to create a shop with up to 8 products in a single MiniDapp ZIP file. The interactive wizard walks you through adding each product one by one.</p>
+            <p>On desktop, buyers see all products displayed side by side in a grid. On a phone, products are shown one at a time with swipe navigation. In both cases, buyers can add items from any product to their cart and check out in one transaction.</p>
+            <p>All products in a multi-product shop share the same shipping options and checkout flow.</p>
           </div>
         </div>
       </div>
