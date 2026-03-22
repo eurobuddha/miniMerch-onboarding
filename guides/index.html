@@ -25,13 +25,26 @@
         <a href="../guides/mini-merch.html" class="nav-link">miniMerch Setup</a>
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
+
+    <nav class="nav-drawer" aria-label="Mobile navigation">
+  <a href="../index.html" class="nav-link">Home</a>
+          <a href="../guides/index.html" class="nav-link active">Guides</a>
+          <a href="../guides/mini-merch.html" class="nav-link">miniMerch Setup</a>
+          <a href="../faq.html" class="nav-link">FAQ</a>
+    </nav>
+    <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>Setup Guides</h1>
-      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+      <p >
         Step-by-step guides to get you up and running
       </p>
       
@@ -54,7 +67,7 @@
         <p>Minima cannot run on iOS devices due to Apple's restrictions. Please use Android or a desktop computer.</p>
       </div>
 
-      <div class="cards-grid" style="margin-top: var(--space-8);">
+      <div class="cards-grid">
         <a href="android.html" class="card">
           <div class="card-icon">📱</div>
           <h3 class="card-title">Android</h3>
@@ -94,11 +107,11 @@
     </section>
 
     <!-- miniMerch Section -->
-    <section id="mini-merch" class="guide-section" style="margin-top: var(--space-16);">
+    <section id="mini-merch" class="guide-section">
       <h2>🛒 Setup miniMerch</h2>
       <p>Once you have Minima installed, set up your miniMerch shop.</p>
 
-      <div class="cards-grid" style="margin-top: var(--space-8);">
+      <div class="cards-grid">
         <a href="studio.html" class="card">
           <div class="card-icon">🖥</div>
           <h3 class="card-title">miniMerch Studio <span style="font-size:0.7rem; background:var(--color-primary); color:#000; padding:0.1em 0.4em; border-radius:4px; font-weight:700; vertical-align:middle; margin-left:0.3rem;">NEW</span></h3>
@@ -120,7 +133,7 @@
     </section>
 
     <!-- Quick Links -->
-    <section class="guide-section" style="margin-top: var(--space-16);">
+    <section class="guide-section">
       <h2>Quick Links</h2>
       
       <div class="cards-grid" style="margin-top: var(--space-6);">

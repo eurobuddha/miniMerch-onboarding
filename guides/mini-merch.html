@@ -25,13 +25,26 @@
         <a href="mini-merch.html" class="nav-link active">miniMerch Setup</a>
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
+
+    <nav class="nav-drawer" aria-label="Mobile navigation">
+  <a href="../index.html" class="nav-link">Home</a>
+          <a href="index.html" class="nav-link">Guides</a>
+          <a href="mini-merch.html" class="nav-link active">miniMerch Setup</a>
+          <a href="../faq.html" class="nav-link">FAQ</a>
+    </nav>
+    <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>🛒 miniMerch Setup Guide</h1>
-      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+      <p >
         Set up your miniMerch shop in minutes
       </p>
       
@@ -67,38 +80,38 @@
       <h2>Step 1: Install the CLI Tool</h2>
       <p>miniMerch uses a command-line tool to generate your shops. You have two options:</p>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Global Install (Quick Setup)</h3>
+      <h3>Option A: Global Install (Quick Setup)</h3>
       <p>Install globally with npm. Use this if you just want to run miniMerch commands:</p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
       </div>
       <p>After this, you can run commands like <code>npx mini-merch setup...</code></p>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option B: Local Install (Full Source)</h3>
+      <h3>Option B: Local Install (Full Source)</h3>
       <p>Clone the repository to your computer. Use this if you want the full source code:</p>
       <ol>
         <li>Open Terminal (or Command Prompt on Windows)</li>
         <li>Navigate to where you want to keep your files:</li>
       </ol>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>cd ~/Documents</code></pre>
       </div>
       <ol start="3">
         <li>Clone the miniMerch repository:</li>
       </ol>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>git clone https://github.com/eurobuddha/miniMerch.git</code></pre>
       </div>
       <ol start="5">
         <li>Go into the folder:</li>
       </ol>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>cd miniMerch</code></pre>
       </div>
       <ol start="7">
         <li>Install dependencies:</li>
       </ol>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>npm install</code></pre>
       </div>
       <p>After this, run commands with <code>node ./src/index.js</code></p>
@@ -119,7 +132,7 @@
       <h2>Step 2: Get Your Keys</h2>
       <p>You'll need three pieces of information:</p>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Minima Address</h3>
+      <h3>Minima Address</h3>
       <p>Your address for receiving payments:</p>
       <ol>
         <li>Open the <strong>Wallet</strong> MiniDapp</li>
@@ -127,13 +140,13 @@
         <li>Copy one of your receive addresses. Use the address that's formatted starting with <code>0x</code>, not <code>Mx</code></li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Maxima mxpublickey</h3>
+      <h3>Maxima mxpublickey</h3>
       <p>Your public key for encrypting orders. <strong>This must be obtained from the Terminal.</strong></p>
       <ol>
         <li>Open the <strong>Terminal</strong> MiniDapp in Minima</li>
         <li>Type the following command:</li>
       </ol>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>maxima</code></pre>
       </div>
       <ol start="3">
@@ -143,7 +156,7 @@
         <li><strong>Be accurate when copying.</strong></li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">CoinMarketCap API Key (Optional)</h3>
+      <h3>CoinMarketCap API Key (Optional)</h3>
       <p>For accurate Minima pricing in your shop:</p>
       <ol>
         <li>Visit <a href="https://coinmarketcap.com/api/" target="_blank" rel="noopener">coinmarketcap.com/api</a></li>
@@ -159,22 +172,22 @@
       <h2>Step 3: Run Setup Command</h2>
       <p>Configure your vendor details with this command:</p>
       
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>node ./src/index.js setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
       </div>
 
       <p style="margin-top: var(--space-4);"><strong>Global Install:</strong></p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>npx mini-merch setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
       </div>
 
       <p style="margin-top: var(--space-4);"><strong>Local Install:</strong></p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>node ./src/index.js setup &lt;minima-address&gt; &lt;cmc-api-key&gt; &lt;mxpublickey&gt;</code></pre>
       </div>
 
       <p style="margin-top: var(--space-4);">Example:</p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0; overflow-x: auto;">
+      <div class="code-block">
         <pre><code>node ./src/index.js setup 0x465CA86A9B5756F45DEB667A69B3DBEC1B82B211 c1d37f5f89564ca58 MxG18HGG6FJ038614Y8CW46US6G20810K0070CD00Z83282G60G19TUFFWSB6EEF...</code></pre>
       </div>
 
@@ -192,21 +205,21 @@
       </div>
 
       <!-- Option A: Single product -->
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Option A: Single-Product Shop</h3>
+      <h3>Option A: Single-Product Shop</h3>
       <p>Use this if you want a shop with one product. Pass all product details as command-line flags:</p>
 
       <p><strong>Global Install:</strong></p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>npx mini-merch generate -n "Product Name" -m units -p 25 -u 50</code></pre>
       </div>
 
       <p><strong>Local Install:</strong></p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>node ./src/index.js generate -n "Product Name" -m units -p 25 -u 50</code></pre>
       </div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Required Flags</h3>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+      <h3>Required Flags</h3>
+      <div class="table-wrap"><table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
         <tr style="border-bottom: 1px solid var(--color-border);">
           <th style="text-align: left; padding: var(--space-2);">Flag</th>
           <th style="text-align: left; padding: var(--space-2);">Description</th>
@@ -223,9 +236,9 @@
           <td style="padding: var(--space-2);"><code>-p</code></td>
           <td style="padding: var(--space-2);">Price per gram/unit (USD)</td>
         </tr>
-      </table>
+      </table></div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Mode-Specific Flags</h3>
+      <h3>Mode-Specific Flags</h3>
 
       <div class="callout callout-info">
         <div class="callout-title">⚠️ Important</div>
@@ -237,7 +250,7 @@
         <p style="margin-top: 0.5rem;">You cannot use both <code>-w</code> and <code>-u</code> together.</p>
       </div>
 
-      <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+      <div class="table-wrap"><table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
         <tr style="border-bottom: 1px solid var(--color-border);">
           <th style="text-align: left; padding: var(--space-2);">Flag</th>
           <th style="text-align: left; padding: var(--space-2);">Use With Mode</th>
@@ -253,10 +266,10 @@
           <td style="padding: var(--space-2);"><code>-m units</code></td>
           <td style="padding: var(--space-2);">Maximum number of units</td>
         </tr>
-      </table>
+      </table></div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Optional Flags</h3>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+      <h3>Optional Flags</h3>
+      <div class="table-wrap"><table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
         <tr style="border-bottom: 1px solid var(--color-border);">
           <th style="text-align: left; padding: var(--space-2);">Flag</th>
           <th style="text-align: left; padding: var(--space-2);">Description</th>
@@ -273,18 +286,18 @@
           <td style="padding: var(--space-2);"><code>--slippage</code></td>
           <td style="padding: var(--space-2);">Slippage % added to Minima price at checkout to cover volatility (default: 10)</td>
         </tr>
-      </table>
+      </table></div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Examples</h3>
+      <h3>Examples</h3>
 
       <p><strong>Weight mode</strong> (selling by weight):</p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>node ./src/index.js generate -n "Organic Barley" -m weight -p 5 -w 1000 -d "Premium malting barley"</code></pre>
       </div>
       <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Sells up to 1000g at $5/gram.</p>
 
       <p><strong>Units mode</strong> (selling fixed items):</p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>node ./src/index.js generate -n "PDF Bundle" -m units -p 25 -u 50 -d "Collection of guides" --slippage 5</code></pre>
       </div>
       <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Sells 50 units at $25 each, with 5% Minima slippage buffer.</p>
@@ -294,12 +307,12 @@
       <p>Use the interactive wizard to add up to 8 products to a single shop. The wizard prompts you for each product's details one by one, then generates everything in one go.</p>
 
       <p><strong>Global Install:</strong></p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>npx mini-merch generate-multi</code></pre>
       </div>
 
       <p><strong>Local Install:</strong></p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>node ./src/index.js generate-multi</code></pre>
       </div>
 
@@ -350,7 +363,7 @@
       </ul>
       <p style="margin-top: var(--space-4);"><strong>Note:</strong> The shop MiniDapp (<code>miniMerch_YourProduct.mds.zip</code>) is installed by your customers on their nodes to place orders.</p>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Accessing the MiniDapp Hub</h3>
+      <h3>Accessing the MiniDapp Hub</h3>
 
       <p><strong>Option A: In Browser</strong></p>
       <p>If you're using macOS, Linux, or Windows:</p>
@@ -370,7 +383,7 @@
         <li>Enter the password to log in</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Installing the Inbox</h3>
+      <h3>Installing the Inbox</h3>
       <p>Install the inbox from your <code>dist/</code> folder:</p>
       <ol>
         <li>In the MiniDapp Hub, click the <strong>+ (plus)</strong> button</li>
@@ -392,7 +405,7 @@
         <li>Select the new <code>.mds.zip</code> file</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Deleting a MiniDapp</h3>
+      <h3>Deleting a MiniDapp</h3>
       <ol>
         <li>Right-click (or long-press on mobile) on the MiniDapp</li>
         <li>Select <strong>"Delete MiniDapp"</strong></li>
@@ -405,7 +418,7 @@
       <h2>Distributing Your Shop</h2>
       <p>Once you have your shop file, there are several ways to reach customers:</p>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Email</h3>
+      <h3>Via Email</h3>
       <p>Send the shop file directly to your customer list:</p>
       <ol>
         <li>Find your shop file in the <code>dist/</code> folder</li>
@@ -413,7 +426,7 @@
         <li>Customers install it on their Minima node to place orders</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Your Website</h3>
+      <h3>Via Your Website</h3>
       <p>Host the shop file on your existing website:</p>
       <ol>
         <li>Upload <code>miniMerch_YourProduct.mds.zip</code> to your web host</li>
@@ -421,7 +434,7 @@
         <li>Add a link to these instructions for your new users</li>
       </ol>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via Existing Marketplaces</h3>
+      <h3>Via Existing Marketplaces</h3>
       <p>Link to your Minima shop from your existing sales channels to avoid platform fees:</p>
       <ul>
         <li><strong>Etsy</strong> - Link to your Minima shop in your product description or shop banner</li>
@@ -435,7 +448,7 @@
         <p>By directing customers to your Minima shop, you can bypass marketplace fees on repeat purchases. Customers download the MiniDapp once and can reorder directly through your shop.</p>
       </div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Via IPFS (Advanced)</h3>
+      <h3>Via IPFS (Advanced)</h3>
       <p>For decentralized hosting:</p>
       <ol>
         <li>Upload your shop file to IPFS using Pinata, nft.storage, or similar</li>
@@ -449,7 +462,7 @@
       <h2>CLI Commands Reference</h2>
       
       <h3 style="font-size: var(--font-size-lg);">Global Install Commands</h3>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code># One-time setup
 npx mini-merch setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
@@ -478,9 +491,9 @@ npx mini-merch config --reset
 npx mini-merch --help</code></pre>
       </div>
 
-      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Local Install Commands</h3>
+      <h3>Local Install Commands</h3>
       <p>Run these from the miniMerch folder:</p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code># One-time setup
 node ./src/index.js setup &lt;address&gt; &lt;cmc-key&gt; &lt;mxpublickey&gt;
 
@@ -516,7 +529,7 @@ node ./src/index.js --help</code></pre>
       
       <h3 style="font-size: var(--font-size-lg);">"Command not found" error</h3>
       <p>Make sure npm global bin directory is in your PATH. On macOS/Linux, add to your shell config:</p>
-      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+      <div class="code-block">
         <pre><code>export PATH="$PATH:$(npm bin -g)"</code></pre>
       </div>
 

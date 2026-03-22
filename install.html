@@ -25,13 +25,26 @@
         <a href="guides/mini-merch.html" class="nav-link active">Install</a>
         <a href="faq.html" class="nav-link">FAQ</a>
       </nav>
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
+
+    <nav class="nav-drawer" aria-label="Mobile navigation">
+  <a href="index.html" class="nav-link">Home</a>
+          <a href="guides/index.html" class="nav-link">Guides</a>
+          <a href="guides/mini-merch.html" class="nav-link active">Install</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+    </nav>
+    <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>🛒 Install miniMerch</h1>
-      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+      <p >
         Choose the option that works for you
       </p>
     </div>
@@ -55,7 +68,7 @@
         </a>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top: var(--space-4);" class="platform-grid">
+      <div class="platform-grid">
         <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-4);">
           <strong>🍎 macOS</strong>
           <ol style="margin-top:0.5rem; padding-left:1.2rem; font-size:0.9rem; color:var(--color-text-secondary);">
@@ -101,20 +114,7 @@
         </div>
       </div>
 
-      <style>
-        .check-item {
-          display: flex;
-          align-items: center;
-          gap: var(--space-3);
-          padding: var(--space-3);
-          background: var(--color-bg-card);
-          border-radius: var(--radius-md);
-          margin-bottom: var(--space-2);
-        }
-        .check-item.success { background: rgba(0, 212, 170, 0.1); }
-        .check-item.error { background: rgba(255, 71, 87, 0.1); }
-        .check-item .check-icon { font-size: 1.25rem; }
-      </style>
+      <!-- check-item styles are in styles.css -->
     </section>
 
     <!-- Quick Install -->
@@ -137,19 +137,19 @@
     </section>
 
     <!-- Alternative: npx -->
-    <section class="guide-section" style="margin-top: var(--space-12);">
+    <section class="guide-section">
       <h2>Alternative: No Install Needed</h2>
       <p>If you don't want to install anything, use <code>npx</code>:</p>
 
       <div style="margin-top: var(--space-4);">
         <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
-          <code style="font-family: var(--font-mono); font-size: var(--font-size-base); display: block; white-space: pre-wrap; word-break: break-all;">npx mini-merch setup</code>
+          <code>npx mini-merch setup</code>
         </div>
       </div>
     </section>
 
     <!-- Platform-specific -->
-    <section class="guide-section" style="margin-top: var(--space-12);">
+    <section class="guide-section">
       <h2>Platform Instructions</h2>
 
       <div class="cards-grid" style="margin-top: var(--space-6);">
@@ -173,35 +173,35 @@
     </section>
 
     <!-- Next Steps -->
-    <section class="guide-section" style="margin-top: var(--space-12);">
+    <section class="guide-section">
       <h2>Next Steps</h2>
       <p>After installation:</p>
 
       <div style="margin-top: var(--space-6);">
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6);">
+        <div class="code-block">
           <h3 style="margin-bottom: var(--space-4);">1. Run Setup Wizard</h3>
           <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
-            <code style="font-family: var(--font-mono);">mini-merch setup</code>
+            <code>mini-merch setup</code>
           </div>
           <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
             This will ask for your Minima address, public key, and optional CoinMarketCap API key.
           </p>
         </div>
 
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-4);">
+        <div class="code-block">
           <h3 style="margin-bottom: var(--space-4);">2. Generate Your Shop</h3>
           <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
-            <code style="font-family: var(--font-mono);">mini-merch generate</code>
+            <code>mini-merch generate</code>
           </div>
           <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
             This creates your shop MiniDapp with your product details.
           </p>
         </div>
 
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-4);">
+        <div class="code-block">
           <h3 style="margin-bottom: var(--space-4);">3. Install to Node</h3>
           <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
-            <code style="font-family: var(--font-mono);">mini-merch install</code>
+            <code>mini-merch install</code>
           </div>
           <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
             This installs your shop and inbox to your Minima node.
@@ -211,7 +211,7 @@
     </section>
 
     <!-- Troubleshooting -->
-    <section class="guide-section" style="margin-top: var(--space-12);">
+    <section class="guide-section">
       <h2>Troubleshooting</h2>
       
       <div class="faq-item">
