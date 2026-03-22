@@ -43,6 +43,14 @@
   </main>
 
   <article class="guide-content">
+    <!-- Studio callout -->
+    <section class="guide-section">
+      <div class="callout callout-info">
+        <div class="callout-title">🖥 Prefer a desktop app?</div>
+        <p>miniMerch Studio is a visual shop builder for macOS and Windows — no terminal required. <a href="studio.html">Download Studio →</a></p>
+      </div>
+    </section>
+
     <!-- Prerequisites -->
     <section class="guide-section">
       <h2>Prerequisites</h2>
@@ -457,6 +465,9 @@ npx mini-merch generate -n "Product" -m units -p 25 -u 50 --slippage 5
 # Generate multi-product shop (interactive wizard, up to 8 products)
 npx mini-merch generate-multi
 
+# Open miniMerch Studio web UI (visual shop builder)
+npx mini-merch studio
+
 # View config
 npx mini-merch config --show
 
@@ -484,6 +495,9 @@ node ./src/index.js generate -n "Product" -m units -p 25 -u 50 --slippage 5
 
 # Generate multi-product shop (interactive wizard, up to 8 products)
 node ./src/index.js generate-multi
+
+# Open miniMerch Studio web UI (visual shop builder)
+node ./src/index.js studio
 
 # View config
 node ./src/index.js config --show

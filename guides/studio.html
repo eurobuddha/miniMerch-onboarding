@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="miniMerch Studio — desktop app for building Minima shops on macOS and Windows">
+  <title>miniMerch Studio — Desktop App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <style>
+    .platform-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--color-border); margin-bottom: var(--space-6); }
+    .platform-tab { background: none; border: none; color: var(--color-text-secondary); font-family: inherit; font-size: 1rem; font-weight: 600; padding: 0.75rem 1.5rem; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color 0.15s, border-color 0.15s; }
+    .platform-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .platform-tab:hover:not(.active) { color: var(--color-text); }
+    .platform-pane { display: none; }
+    .platform-pane.active { display: block; }
+    .download-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-primary); color: #000; font-weight: 700; font-size: 1.05rem; padding: 0.85rem 2rem; border-radius: var(--radius-lg); text-decoration: none; transition: background 0.15s, transform 0.1s; }
+    .download-btn:hover { background: var(--color-primary-hover, #ffe440); transform: translateY(-1px); }
+    .download-btn-secondary { background: var(--color-bg-card); color: var(--color-text); border: 1px solid var(--color-border); }
+    .download-btn-secondary:hover { background: var(--color-bg-secondary); }
+    .download-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin: var(--space-6) 0; }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 1.8rem; height: 1.8rem; background: var(--color-primary); color: #000; font-weight: 800; font-size: 0.85rem; border-radius: 50%; flex-shrink: 0; margin-right: 0.5rem; }
+    .step-row { display: flex; align-items: flex-start; gap: 0; margin-bottom: var(--space-3); }
+    .step-content { flex: 1; }
+    .warning-box { background: rgba(255, 200, 0, 0.08); border: 1px solid rgba(255, 200, 0, 0.3); border-radius: var(--radius-md); padding: var(--space-4); margin: var(--space-4) 0; }
+    .warning-box strong { color: var(--color-primary); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>miniMerch</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Guides</a>
+        <a href="studio.html" class="nav-link active">Studio</a>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🖥 miniMerch Studio</h1>
+      <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
+        Desktop app for building Minima shops — no Terminal required
+      </p>
+      <nav class="guide-nav" style="margin-top: var(--space-6);">
+        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="../install.html" class="btn btn-secondary">CLI Install</a>
+      </nav>
+    </div>
+  </main>
+
+  <article class="guide-content">
+
+    <!-- What is Studio -->
+    <section class="guide-section">
+      <h2>What is miniMerch Studio?</h2>
+      <p>miniMerch Studio is a desktop application that provides a visual interface for building and managing your miniMerch shops. Instead of using the command line, you fill in a form, drop in images, and click Build.</p>
+      <ul style="margin-top: var(--space-4);">
+        <li>Add up to <strong>8 products</strong> per shop</li>
+        <li>Drag cards to reorder your products</li>
+        <li>Drop images directly onto each product card</li>
+        <li>Set Minima slippage % for the whole shop</li>
+        <li>One-click build — generates shop + inbox zips automatically</li>
+        <li>Generated files saved to <code>Documents/miniMerch/dist/</code></li>
+      </ul>
+      <p style="margin-top: var(--space-4);">When launched, Studio starts a local server and opens your browser at <code>http://localhost:3456</code>. Everything runs on your own computer — nothing is sent anywhere.</p>
+    </section>
+
+    <!-- Download -->
+    <section class="guide-section">
+      <h2>Download</h2>
+      <div class="download-row">
+        <a href="https://github.com/eurobuddha/miniMerch/releases/download/v0.2.0/miniMerch-Studio-0.2.0.dmg"
+           class="download-btn">
+          🍎 Download for Mac
+          <span style="font-size:0.8rem; font-weight:400; opacity:0.7;">(28MB · Apple Silicon)</span>
+        </a>
+        <a href="https://github.com/eurobuddha/miniMerch/releases/download/v0.2.0/miniMerch-Studio-0.2.0-Setup.exe"
+           class="download-btn download-btn-secondary">
+          🪟 Download for Windows
+          <span style="font-size:0.8rem; font-weight:400; opacity:0.7;">(21MB · x64)</span>
+        </a>
+      </div>
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+        All releases: <a href="https://github.com/eurobuddha/miniMerch/releases" target="_blank" rel="noopener">github.com/eurobuddha/miniMerch/releases</a>
+      </p>
+    </section>
+
+    <!-- Platform tabs -->
+    <section class="guide-section">
+      <h2>Installation Instructions</h2>
+
+      <div class="platform-tabs">
+        <button class="platform-tab active" data-tab="mac">🍎 macOS</button>
+        <button class="platform-tab" data-tab="win">🪟 Windows</button>
+      </div>
+
+      <!-- macOS -->
+      <div id="tab-mac" class="platform-pane active">
+
+        <div class="warning-box">
+          <strong>⚠️ First-time launch:</strong> macOS will warn "unidentified developer" because the app isn't signed with an Apple Developer certificate. This is normal for indie apps. Right-click → Open to bypass it — you only need to do this once.
+        </div>
+
+        <div class="step-row"><span class="step-num">1</span><div class="step-content"><strong>Open the .dmg file</strong><br>Double-click <code>miniMerch-Studio-0.2.0.dmg</code> to mount it.</div></div>
+        <div class="step-row"><span class="step-num">2</span><div class="step-content"><strong>Drag to Applications</strong><br>Drag <code>miniMerch Studio</code> into the <code>Applications</code> folder shown in the disk image.</div></div>
+        <div class="step-row"><span class="step-num">3</span><div class="step-content"><strong>First launch — bypass Gatekeeper</strong><br>Do <em>not</em> double-click. Instead: <strong>right-click</strong> on miniMerch Studio in Applications → <strong>Open</strong> → click <strong>Open</strong> again in the dialog. You only do this once.</div></div>
+        <div class="step-row"><span class="step-num">4</span><div class="step-content"><strong>Browser opens</strong><br>Your default browser opens at <code>http://localhost:3456</code> — the Studio is ready.</div></div>
+        <div class="step-row"><span class="step-num">5</span><div class="step-content"><strong>Next launches</strong><br>Double-click the app in Applications normally — the Gatekeeper prompt won't appear again.</div></div>
+        <div class="step-row" style="margin-top: var(--space-4);"><span class="step-num" style="background:var(--color-bg-secondary); color:var(--color-text-secondary);">✕</span><div class="step-content"><strong>To stop Studio</strong><br>Right-click the app in the Dock → Quit, or press Ctrl+C in any terminal where it's running.</div></div>
+
+        <div class="callout callout-info" style="margin-top: var(--space-6);">
+          <div class="callout-title">💡 Generated files location</div>
+          <p>Shop and inbox zips are saved to: <code>~/Documents/miniMerch/dist/</code></p>
+        </div>
+      </div>
+
+      <!-- Windows -->
+      <div id="tab-win" class="platform-pane">
+
+        <div class="warning-box">
+          <strong>⚠️ SmartScreen warning:</strong> Windows Defender SmartScreen will warn "Windows protected your PC" because the app isn't signed with a commercial certificate. Click <strong>More info</strong> → <strong>Run anyway</strong>. You only need to do this once.
+        </div>
+
+        <div class="step-row"><span class="step-num">1</span><div class="step-content"><strong>Run the installer</strong><br>Double-click <code>miniMerch-Studio-0.2.0-Setup.exe</code>.</div></div>
+        <div class="step-row"><span class="step-num">2</span><div class="step-content"><strong>Bypass SmartScreen</strong><br>Click <strong>More info</strong>, then <strong>Run anyway</strong>.</div></div>
+        <div class="step-row"><span class="step-num">3</span><div class="step-content"><strong>One-click install</strong><br>No admin password required. Installs to your user folder. Click through the installer.</div></div>
+        <div class="step-row"><span class="step-num">4</span><div class="step-content"><strong>Launch from desktop shortcut</strong><br>Double-click the <strong>miniMerch Studio</strong> shortcut on your desktop. The server starts silently in the background.</div></div>
+        <div class="step-row"><span class="step-num">5</span><div class="step-content"><strong>Browser opens</strong><br>Your default browser opens at <code>http://localhost:3456</code> — the Studio is ready.</div></div>
+        <div class="step-row" style="margin-top: var(--space-4);"><span class="step-num" style="background:var(--color-bg-secondary); color:var(--color-text-secondary);">✕</span><div class="step-content"><strong>To stop Studio</strong><br>Open Task Manager → find <code>node.exe</code> → End Task. Or uninstall via Add/Remove Programs which also stops it.</div></div>
+        <div class="step-row"><span class="step-num" style="background:var(--color-bg-secondary); color:var(--color-text-secondary);">🗑</span><div class="step-content"><strong>To uninstall</strong><br>Settings → Apps → miniMerch Studio → Uninstall. This also removes the desktop shortcut.</div></div>
+
+        <div class="callout callout-info" style="margin-top: var(--space-6);">
+          <div class="callout-title">💡 Generated files location</div>
+          <p>Shop and inbox zips are saved to: <code>Documents\miniMerch\dist\</code></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Using Studio -->
+    <section class="guide-section">
+      <h2>Using miniMerch Studio</h2>
+      <p>Once the browser is open at <code>http://localhost:3456</code> you'll see two tabs:</p>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Tab 1: Vendor Setup</h3>
+      <p>Complete this once before building your first shop:</p>
+      <ol>
+        <li>Enter your <strong>Minima address</strong> — from Wallet MiniDapp → Receive (starts with <code>0x</code>)</li>
+        <li>Enter your <strong>Maxima public key</strong> — open Terminal MiniDapp, type <code>maxima</code>, copy the <code>mxpublickey</code> value (starts with <code>Mx</code>)</li>
+        <li>Optionally enter a <strong>CoinMarketCap API key</strong> for live Minima pricing</li>
+        <li>Click <strong>Save Configuration</strong></li>
+      </ol>
+
+      <div class="callout callout-info" style="margin-top: var(--space-4);">
+        <div class="callout-title">💡 Keys and addresses</div>
+        <p>See <a href="mini-merch.html#step-2">Step 2 of the miniMerch Setup Guide</a> for detailed instructions on finding your Minima address and Maxima public key.</p>
+      </div>
+
+      <h3 style="margin-top: var(--space-6); font-size: var(--font-size-lg);">Tab 2: Build Shop</h3>
+      <ol>
+        <li>Enter a <strong>shop name</strong> (appears as the MiniDapp title)</li>
+        <li>Set the <strong>Minima slippage %</strong> — buffer added to the Minima price at checkout to cover volatility (default 10%)</li>
+        <li>Click <strong>+ Add Product</strong> to add products (up to 8)</li>
+        <li>For each product fill in: name, mode (units or weight), price, quantity, description, and optionally drop an image</li>
+        <li>Drag the ⠿ handle on any card to reorder products</li>
+        <li>Click <strong>Build Shop</strong></li>
+      </ol>
+      <p style="margin-top: var(--space-4);">After a successful build, two download buttons appear:</p>
+      <ul>
+        <li><strong>Download Shop ZIP</strong> — give this to buyers, they install it on their Minima node</li>
+        <li><strong>Download Inbox ZIP</strong> — install this on your own Minima node to receive orders</li>
+      </ul>
+      <p style="margin-top: var(--space-4);">Both files are also saved automatically to <code>Documents/miniMerch/dist/</code>.</p>
+    </section>
+
+    <!-- Next steps -->
+    <section class="guide-section">
+      <h2>Next Steps</h2>
+      <div class="cards-grid" style="margin-top: var(--space-6);">
+        <a href="mini-merch.html#step-6" class="card">
+          <div class="card-icon">📥</div>
+          <h3 class="card-title">Install on Your Node</h3>
+          <p class="card-description">How to install the inbox MiniDapp on your Minima node to receive orders.</p>
+        </a>
+        <a href="mini-merch.html#distributing" class="card">
+          <div class="card-icon">📤</div>
+          <h3 class="card-title">Distribute Your Shop</h3>
+          <p class="card-description">How to share the shop MiniDapp with buyers.</p>
+        </a>
+        <a href="../faq.html" class="card">
+          <div class="card-icon">❓</div>
+          <h3 class="card-title">FAQ</h3>
+          <p class="card-description">Common questions about miniMerch.</p>
+        </a>
+      </div>
+    </section>
+
+  </article>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="index.html" class="footer-link">Guides</a>
+        <a href="../faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch © 2026. Built on Minima.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.platform-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.platform-pane').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

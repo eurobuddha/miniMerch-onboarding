@@ -30,17 +30,60 @@
 
   <main class="guide-header">
     <div class="container">
-      <h1>🛒 Install miniMerch CLI</h1>
+      <h1>🛒 Install miniMerch</h1>
       <p style="color: var(--color-text-secondary); margin-top: var(--space-4); font-size: var(--font-size-lg);">
-        Get started in under 2 minutes
+        Choose the option that works for you
       </p>
     </div>
   </main>
 
   <section class="guide-content">
-    <!-- Prerequisites Check -->
+
+    <!-- Option A: Studio desktop app -->
     <section class="guide-section">
-      <h2>Prerequisites Check</h2>
+      <h2>Option A: miniMerch Studio (Easiest)</h2>
+      <p>A desktop app for macOS and Windows. No terminal, no npm. Download, install, and build shops visually.</p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin: var(--space-6) 0;">
+        <a href="guides/studio.html"
+           style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--color-primary); color:#000; font-weight:700; font-size:1rem; padding:0.8rem 1.75rem; border-radius:var(--radius-lg); text-decoration:none;">
+          🖥 Download miniMerch Studio
+        </a>
+        <a href="guides/studio.html"
+           style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--color-bg-card); color:var(--color-text); border:1px solid var(--color-border); font-weight:600; font-size:0.95rem; padding:0.8rem 1.5rem; border-radius:var(--radius-lg); text-decoration:none;">
+          📖 Installation guide
+        </a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top: var(--space-4);" class="platform-grid">
+        <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-4);">
+          <strong>🍎 macOS</strong>
+          <ol style="margin-top:0.5rem; padding-left:1.2rem; font-size:0.9rem; color:var(--color-text-secondary);">
+            <li>Download the .dmg</li>
+            <li>Drag to Applications</li>
+            <li>Right-click → Open (once)</li>
+            <li>Browser opens at localhost:3456</li>
+          </ol>
+        </div>
+        <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-4);">
+          <strong>🪟 Windows</strong>
+          <ol style="margin-top:0.5rem; padding-left:1.2rem; font-size:0.9rem; color:var(--color-text-secondary);">
+            <li>Download the Setup.exe</li>
+            <li>SmartScreen → More info → Run anyway</li>
+            <li>One-click install (no admin)</li>
+            <li>Desktop shortcut → browser opens</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section">
+      <h2>Option B: CLI Tool (Advanced)</h2>
+      <p>For developers who prefer the command line. Requires Node.js.</p>
+
+    <!-- Prerequisites Check -->
+    <section class="guide-section" style="margin-top: var(--space-6);">
+      <h3 style="font-size: var(--font-size-lg);">Prerequisites Check</h3>
       <p>Make sure you have these before starting:</p>
       
       <div id="prereq-check" style="margin-top: var(--space-4);">
@@ -221,6 +264,7 @@ source ~/.bashrc</code></pre>
           </div>
         </div>
       </div>
+    </section>
     </section>
   </section>
 
