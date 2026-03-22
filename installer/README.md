@@ -1,63 +1,67 @@
 # miniMerch Installer
 
-One-click installer and setup wizard for miniMerch.
+Get started with miniMerch — the multi-product Minima blockchain shop builder.
 
-## Quick Start
+## Option A: Desktop App (Recommended — no terminal needed)
 
-### Option 1: One-line install (recommended)
+Download miniMerch Studio and install it like any other app.
+
+| Platform | Download |
+|---|---|
+| **macOS** | [miniMerch-Studio-0.2.0.dmg](https://github.com/eurobuddha/miniMerch/releases/download/v0.2.0/miniMerch-Studio-0.2.0.dmg) |
+| **Windows** | [miniMerch-Studio-0.2.0-Setup.exe](https://github.com/eurobuddha/miniMerch/releases/download/v0.2.0/miniMerch-Studio-0.2.0-Setup.exe) |
+
+**macOS:** Open the .dmg, drag to Applications, right-click → Open on first launch.
+
+**Windows:** Run the Setup.exe, SmartScreen → More info → Run anyway.
+
+Browser opens at `http://localhost:3456` — visual shop builder, no terminal needed.
+
+See the full guide: [minimerch.info/guides/studio.html](https://minimerch.info/guides/studio.html)
+
+---
+
+## Option B: CLI Tool (Advanced)
+
+Requires Node.js 18+.
+
 ```bash
 npm install -g @eurobuddha/mini-merch
 ```
 
-### Option 2: Using npx (no install needed)
+### Setup (one-time)
 ```bash
-npx mini-merch-installer
+mini-merch setup <minima-address> <cmc-api-key> <mxpublickey>
 ```
 
-## What It Does
-
-1. **Installs** the miniMerch CLI tool
-2. **Configures** your vendor settings
-3. **Generates** your shop MiniDapp
-4. **Helps** you install to your Minima node
-
-## Usage
-
-### Install miniMerch
+### Generate a single-product shop
 ```bash
-npx mini-merch-installer
+mini-merch generate -n "My Product" -m units -p 25 -u 50
 ```
 
-### Run Setup Wizard
+### Generate a multi-product shop (up to 8 products)
 ```bash
-mini-merch setup
+mini-merch generate-multi
 ```
 
-### Generate a Shop
+### Open Studio from the CLI
 ```bash
-mini-merch generate
+mini-merch studio
 ```
 
-### View Configuration
+### View configuration
 ```bash
 mini-merch config --show
 ```
 
 ## Requirements
 
-- Node.js 16+ (for CLI)
-- Minima node (for shop)
-- npm or yarn (for installation)
-
-## Platform Support
-
-- ✅ Windows
-- ✅ macOS
-- ✅ Linux
+- Minima node (for shop and inbox to work)
+- Node.js 18+ (CLI only — not needed for Studio desktop app)
 
 ## Documentation
 
-Visit [minimerch.info](https://minimerch.info) for full documentation.
+[minimerch.info](https://minimerch.info) — full guides, FAQ, and download links.
 
 ## Support
 
