@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Install miniMerch CLI - One click setup">
+  <meta name="description" content="Install miniMerch Studio - The easiest way to create a shop on Minima">
   <title>Install miniMerch - miniMerch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,120 +70,108 @@
 
       <!-- Prerequisites Check -->
       <div id="prereq-check" style="margin-top: var(--space-6);">
-        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">Status Check</h3>
         <div class="check-item" id="check-minima">
           <span class="check-icon">⏳</span>
           <span class="check-text">Checking Minima node...</span>
-        </div>
-        <div class="check-item" id="check-node">
-          <span class="check-icon">⏳</span>
-          <span class="check-text">Checking Node.js...</span>
-        </div>
-        <div class="check-item" id="check-npm">
-          <span class="check-icon">⏳</span>
-          <span class="check-text">Checking npm...</span>
         </div>
       </div>
 
       <!-- check-item styles are in styles.css -->
     </section>
 
-    <!-- Step 2: Install miniMerch -->
+    <!-- Step 2: Install miniMerch Studio -->
     <section class="guide-section">
-      <h2>Step 2: Install miniMerch</h2>
-      <p>Choose how you want to run miniMerch:</p>
+      <h2>Step 2: Install miniMerch Studio</h2>
+      <p>The easiest way to create a shop. No terminal, no commands — just download and build.</p>
 
-      <!-- Option A: Studio desktop app -->
-      <div style="margin: var(--space-6) 0; padding: var(--space-6); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
-        <h3>🖥 Option A: miniMerch Studio (Recommended)</h3>
-        <p>A desktop app for macOS and Windows. No terminal, no npm. Download, install, and build shops visually.</p>
-
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin: var(--space-4) 0;">
-          <a href="guides/studio.html"
-             style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--color-primary); color:#000; font-weight:700; font-size:1rem; padding:0.8rem 1.75rem; border-radius:var(--radius-lg); text-decoration:none;">
-            🖥 Download miniMerch Studio
-          </a>
-          <a href="guides/studio.html"
-             style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--color-bg-card); color:var(--color-text); border:1px solid var(--color-border); font-weight:600; font-size:0.95rem; padding:0.8rem 1.5rem; border-radius:var(--radius-lg); text-decoration:none;">
-            📖 Installation guide
-          </a>
+      <div class="callout callout-info" style="margin: var(--space-6) 0;">
+        <div class="callout-title">🖥 Download the App</div>
+        <p style="margin-bottom: var(--space-4);">Available for macOS and Windows:</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="guides/studio.html" class="btn btn-primary">🍎 Download for macOS</a>
+          <a href="guides/studio.html" class="btn btn-primary">🪟 Download for Windows</a>
         </div>
       </div>
 
-      <!-- Option B: CLI Tool -->
-      <div style="margin: var(--space-6) 0; padding: var(--space-6); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
-        <h3>⌨️ Option B: CLI Tool (Developers)</h3>
-        <p>For those who prefer the command line. Requires Node.js.</p>
+      <h3>Quick Setup</h3>
+      <ol>
+        <li>Download the installer for your platform</li>
+        <li>Run the installer (macOS: drag to Applications, Windows: run the .exe)</li>
+        <li>Open miniMerch Studio</li>
+        <li>Enter your Minima address and public key</li>
+        <li>Add your products</li>
+        <li>Click "Generate Shop" — done!</li>
+      </ol>
 
-        <p style="margin-top: var(--space-4);">Run this command in your terminal:</p>
-
-        <div style="margin-top: var(--space-4);">
-          <div class="code-block" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); position: relative;">
-            <code style="font-family: var(--font-mono); font-size: var(--font-size-base); display: block; white-space: pre-wrap; word-break: break-all;" id="install-command">npm install -g @eurobuddha/mini-merch</code>
-            <button onclick="copyCommand()" style="position: absolute; top: var(--space-3); right: var(--space-3); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); cursor: pointer; color: var(--color-text);">
-              📋 Copy
-            </button>
-          </div>
-        </div>
-
-        <div id="copy-success" style="display: none; margin-top: var(--space-3); color: var(--color-success);">
-          ✅ Copied to clipboard!
-        </div>
-
-        <!-- Alternative: npx -->
-        <div style="margin-top: var(--space-6);">
-          <h4>Alternative: No Install Needed</h4>
-          <p>If you don't want to install anything globally, use <code>npx</code>:</p>
-
-          <div style="margin-top: var(--space-4);">
-            <div class="code-block" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
-              <code>npx mini-merch setup</code>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout" style="margin-top: var(--space-6);">
-        <div class="callout-title">💡 Need Node.js?</div>
-        <p>If you see "command not found", install Node.js from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. The installer includes npm.</p>
-      </div>
+      <p style="margin-top: var(--space-4);">
+        <a href="guides/studio.html">📖 View full installation guide →</a>
+      </p>
     </section>
 
     <!-- Step 3: Next Steps -->
     <section class="guide-section">
-      <h2>Step 3: Configure Your Shop</h2>
-      <p>After installing miniMerch, run these commands:</p>
+      <h2>Step 3: Access Your Shop</h2>
+      <p>Once you've built your shop in miniMerch Studio:</p>
+
+      <ol>
+        <li><strong>Install to your node:</strong> The Studio will install your shop and inbox MiniDapps directly to your Minima node.</li>
+        <li><strong>Open your Wallet:</strong> Go to the MiniDapp Hub at <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a></li>
+        <li><strong>Start selling:</strong> Your shop is live! Share your shop link with customers.</li>
+      </ol>
+
+      <div class="callout" style="margin-top: var(--space-6);">
+        <div class="callout-title">💡 Manage Orders</div>
+        <p>The miniMerch Inbox MiniDapp will appear in your MiniDapp Hub. Use it to view and manage orders from your customers.</p>
+      </div>
+    </section>
+
+    <!-- Advanced: CLI Option -->
+    <section class="guide-section">
+      <h2>Developers: CLI Option</h2>
+      <p>Prefer the command line? Use the CLI version. Requires Node.js.</p>
+
+      <div style="margin-top: var(--space-4);">
+        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); position: relative;">
+          <code style="font-family: var(--font-mono); font-size: var(--font-size-base); display: block; white-space: pre-wrap; word-break: break-all;" id="install-command">npm install -g @eurobuddha/mini-merch</code>
+          <button onclick="copyCommand()" style="position: absolute; top: var(--space-3); right: var(--space-3); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); cursor: pointer; color: var(--color-text);">
+            📋 Copy
+          </button>
+        </div>
+      </div>
+
+      <div id="copy-success" style="display: none; margin-top: var(--space-3); color: var(--color-success);">
+        ✅ Copied to clipboard!
+      </div>
 
       <div style="margin-top: var(--space-6);">
-        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-4);">
-          <h3 style="margin-bottom: var(--space-4);">1. Run Setup Wizard</h3>
-          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+        <h4>CLI Commands</h4>
+        <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
+          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-2);">
             <code>mini-merch setup</code>
           </div>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-            This will ask for your Minima address, public key, and optional CoinMarketCap API key.
-          </p>
-        </div>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4);">Configure your shop settings</p>
 
-        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-4);">
-          <h3 style="margin-bottom: var(--space-4);">2. Generate Your Shop</h3>
-          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-2);">
             <code>mini-merch generate</code>
           </div>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-            This creates your shop MiniDapp with your product details.
-          </p>
-        </div>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4);">Generate your shop MiniDapp</p>
 
-        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
-          <h3 style="margin-bottom: var(--space-4);">3. Install to Node</h3>
-          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-4);">
+          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3);">
             <code>mini-merch install</code>
           </div>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-            This installs your shop and inbox to your Minima node.
-          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Install to your Minima node</p>
         </div>
+      </div>
+
+      <div class="callout callout-info" style="margin-top: var(--space-6);">
+        <div class="callout-title">💡 No Install Needed</div>
+        <p>Use <code>npx</code> to run without installing:</p>
+        <pre><code>npx mini-merch setup</code></pre>
+      </div>
+
+      <div class="callout" style="margin-top: var(--space-6);">
+        <div class="callout-title">💡 Need Node.js?</div>
+        <p>Install from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> if you see "command not found".</p>
       </div>
     </section>
 
@@ -193,7 +181,40 @@
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>"npm: command not found"</span>
+          <span>"Download blocked" or "App can't be opened"</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>macOS:</strong> Go to System Settings → Privacy & Security → scroll down and click "Open Anyway".</p>
+            <p><strong>Windows:</strong> Click "More info" then "Run anyway" on the SmartScreen warning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Where do I find my Minima address and public key?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Open your Minima node and go to:</p>
+            <ul>
+              <li><strong>MDS → Status</strong> for your Public Key</li>
+              <li><strong>Wallet MiniDapp</strong> for your Address (starts with Mx...)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>"npm: command not found" (CLI only)</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
@@ -207,7 +228,7 @@
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>"EACCES: permission denied"</span>
+          <span>"EACCES: permission denied" (CLI only)</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
@@ -220,24 +241,6 @@ npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc</code></pre>
             <p>Then try installing again.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Installation seems stuck</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>npm installations can take 1-2 minutes. If it's longer, try:</p>
-            <ul>
-              <li>Check your internet connection</li>
-              <li>Try a different registry: <code>npm install -g @eurobuddha/mini-merch --registry https://registry.npmjs.org</code></li>
-            </ul>
           </div>
         </div>
       </div>
@@ -257,11 +260,9 @@ source ~/.bashrc</code></pre>
     </div>
   </footer>
 
-  <script src="js/platform-detect.js"></script>
   <script>
-    // Check prerequisites
-    async function checkPrerequisites() {
-      // Check Minima node FIRST
+    // Check if Minima node is running
+    async function checkMinimaNode() {
       const minimaEl = document.getElementById('check-minima');
       try {
         const controller = new AbortController();
@@ -274,32 +275,11 @@ source ~/.bashrc</code></pre>
 
         clearTimeout(timeout);
         minimaEl.className = 'check-item success';
-        minimaEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Minima node detected</span>';
+        minimaEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Minima node detected — ready for miniMerch!</span>';
       } catch {
         minimaEl.className = 'check-item error';
         minimaEl.innerHTML = '<span class="check-icon">⚠️</span><span class="check-text">No local node detected. <a href="guides/index.html">Install Minima first →</a></span>';
       }
-
-      // Check Node.js
-      const nodeEl = document.getElementById('check-node');
-      try {
-        const response = await fetch('https://nodejs.org/dist/index.json');
-        if (response.ok) {
-          const data = await response.json();
-          const latestVersion = data[0].version;
-          nodeEl.className = 'check-item success';
-          nodeEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Node.js available (recommended: ' + latestVersion + ')</span>';
-        }
-      } catch {
-        // Can't check, assume it's there
-        nodeEl.className = 'check-item success';
-        nodeEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Node.js detected</span>';
-      }
-
-      // Check npm
-      const npmEl = document.getElementById('check-npm');
-      npmEl.className = 'check-item success';
-      npmEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">npm available</span>';
     }
 
     // Copy command to clipboard
@@ -314,24 +294,10 @@ source ~/.bashrc</code></pre>
       });
     }
 
-    // Update command based on detected OS
-    function updateCommand() {
-      const os = PlatformDetector.getOS();
-      const commandEl = document.getElementById('install-command');
-      
-      if (os === 'unknown') {
-        commandEl.textContent = 'npm install -g @eurobuddha/mini-merch';
-        return;
-      }
-      
-      commandEl.textContent = 'npm install -g @eurobuddha/mini-merch';
-    }
-
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      checkPrerequisites();
-      updateCommand();
-      
+      checkMinimaNode();
+
       // FAQ accordion
       document.querySelectorAll('.faq-item').forEach(item => {
         const question = item.querySelector('.faq-question');
