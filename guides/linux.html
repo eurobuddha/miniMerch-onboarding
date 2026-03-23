@@ -47,7 +47,7 @@
       <p >
         Install Minima on Ubuntu, Debian, Fedora, or other Linux distributions
       </p>
-      
+
       <nav class="guide-nav">
         <a href="index.html" class="btn btn-secondary">← All Guides</a>
         <a href="macos.html" class="btn btn-secondary">macOS</a>
@@ -87,69 +87,6 @@ sudo apt install openjdk-17-jre-headless</code></pre>
       <p style="margin-top: var(--space-4);">Verify Java is installed:</p>
       <pre><code>java -version</code></pre>
       <p>You should see "java version 17" or higher.</p>
-    </section>
-
-    <!-- Install Node.js -->
-    <section class="guide-section">
-      <h2>Install Node.js</h2>
-      <p>miniMerch uses a command-line tool that requires Node.js. Install it using your package manager:</p>
-
-      <h3>Ubuntu / Debian</h3>
-      <pre><code>sudo apt update
-sudo apt install nodejs npm</code></pre>
-
-      <h3>Fedora / RHEL / CentOS</h3>
-      <pre><code>sudo dnf install nodejs npm</code></pre>
-
-      <p style="margin-top: var(--space-4);">Verify Node.js is installed:</p>
-      <pre><code>node --version</code></pre>
-    </section>
-
-    <!-- Install Git -->
-    <section class="guide-section">
-      <h2>Install Git</h2>
-      <p>Git is a version control system needed to download the miniMerch source code.</p>
-
-      <h3>Ubuntu / Debian</h3>
-      <pre><code>sudo apt install git</code></pre>
-
-      <h3>Fedora / RHEL / CentOS</h3>
-      <pre><code>sudo dnf install git</code></pre>
-
-      <p style="margin-top: var(--space-4);">Verify Git is installed:</p>
-      <pre><code>git --version</code></pre>
-    </section>
-
-    <!-- Install miniMerch CLI -->
-    <section class="guide-section">
-      <h2>Install miniMerch CLI</h2>
-      <p>You have two options for installing the miniMerch command-line tool:</p>
-
-      <h3>Option A: Global Install (Quick Setup)</h3>
-      <p>Install globally with npm - use this if you just want to run miniMerch commands:</p>
-      <pre><code>npm install -g @eurobuddha/mini-merch</code></pre>
-      <p>After this, you can run miniMerch commands directly.</p>
-
-      <h3>Option B: Local Install (Full Source)</h3>
-      <p>Clone the repository to your computer - use this if you want the full source code:</p>
-      <ol>
-        <li>Open Terminal</li>
-        <li>Navigate to where you want to keep your files:</li>
-      </ol>
-      <pre><code>cd ~/Documents</code></pre>
-      <ol start="3">
-        <li>Clone the miniMerch repository:</li>
-      </ol>
-      <pre><code>git clone https://github.com/eurobuddha/miniMerch.git</code></pre>
-      <ol start="5">
-        <li>Go into the folder:</li>
-      </ol>
-      <pre><code>cd miniMerch</code></pre>
-      <ol start="7">
-        <li>Install dependencies:</li>
-      </ol>
-      <pre><code>npm install</code></pre>
-      <p>After this, run miniMerch commands with <code>node ./src/index.js</code> followed by the command.</p>
     </section>
 
     <!-- Step 2: Download -->
@@ -243,29 +180,6 @@ java -jar minima.jar
       </div>
     </section>
 
-    <!-- Step 7: Get Your Keys -->
-    <section class="guide-section">
-      <h2>Step 7: Get Your Keys</h2>
-      <p>You'll need your keys for miniMerch setup. Use the <strong>Minima Terminal CLI</strong>:</p>
-
-      <h3>Minima Address</h3>
-      <p>Your address for receiving payments (starts with <code>0x</code>):</p>
-      <ol>
-        <li>Open the <strong>Wallet</strong> MiniDapp</li>
-        <li>Click <strong>Receive</strong></li>
-        <li>Copy your address</li>
-      </ol>
-
-      <h3>Maxima mxpublickey</h3>
-      <p>Your public key for encrypting orders (starts with <code>Mx</code>):</p>
-      <ol>
-        <li>Open the <strong>Terminal</strong> MiniDapp</li>
-        <li>Type <code>maxima</code> and press Enter</li>
-        <li>Find the line with <code>"mxpublickey":</code></li>
-        <li>Copy the value</li>
-      </ol>
-    </section>
-
     <!-- Running as a Service -->
     <section class="guide-section">
       <h2>Optional: Run as Systemd Service</h2>
@@ -298,7 +212,7 @@ sudo systemctl status minima</code></pre>
     <!-- Troubleshooting -->
     <section class="guide-section">
       <h2>Troubleshooting</h2>
-      
+
       <h3 style="font-size: var(--font-size-lg);">"java: command not found"</h3>
       <p>Java is not installed or not in your PATH. Install Java 17+ or add it to PATH.</p>
 
