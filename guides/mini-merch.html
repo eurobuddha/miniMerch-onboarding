@@ -197,11 +197,11 @@
     <!-- Step 4: Generate Shop -->
     <section class="guide-section">
       <h2>Step 4: Generate Your Shop</h2>
-      <p>miniMerch gives you two ways to generate a shop — a single-product shop or a multi-product shop with up to 8 items.</p>
+      <p>miniMerch gives you two ways to generate a shop — a single-product shop or a multi-product shop with up to 40 items.</p>
 
       <div class="callout callout-info" style="margin-bottom: var(--space-6);">
         <div class="callout-title">🛍️ New: Multi-Product Shops</div>
-        <p>You can now put up to 8 products in a single shop. Buyers browse all your products and add items to a cart before checking out — all in one transaction. Use <code>generate-multi</code> to set up a multi-product shop.</p>
+        <p>You can now put up to 40 products in a single shop. Buyers browse all your products and add items to a cart before checking out — all in one transaction. Use <code>generate-multi</code> to set up a multi-product shop.</p>
       </div>
 
       <!-- Option A: Single product -->
@@ -303,8 +303,8 @@
       <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Sells 50 units at $25 each, with 5% Minima slippage buffer.</p>
 
       <!-- Option B: Multi-product -->
-      <h3 style="margin-top: var(--space-8); font-size: var(--font-size-lg);">Option B: Multi-Product Shop (up to 8 items)</h3>
-      <p>Use the interactive wizard to add up to 8 products to a single shop. The wizard prompts you for each product's details one by one, then generates everything in one go.</p>
+      <h3 style="margin-top: var(--space-8); font-size: var(--font-size-lg);">Option B: Multi-Product Shop (up to 40 items)</h3>
+      <p>Use the interactive wizard to add up to 40 products to a single shop. The wizard prompts you for each product's details one by one, then generates everything in one go.</p>
 
       <p><strong>Global Install:</strong></p>
       <div class="code-block">
@@ -475,7 +475,7 @@ npx mini-merch generate -n "Product" -m units -p 25 -u 50
 # Generate single-product shop with custom slippage
 npx mini-merch generate -n "Product" -m units -p 25 -u 50 --slippage 5
 
-# Generate multi-product shop (interactive wizard, up to 8 products)
+# Generate multi-product shop (interactive wizard, up to 40 products)
 npx mini-merch generate-multi
 
 # Open miniMerch Studio web UI (visual shop builder)
@@ -506,7 +506,7 @@ node ./src/index.js generate -n "Product" -m units -p 25 -u 50
 # Generate single-product shop with custom slippage
 node ./src/index.js generate -n "Product" -m units -p 25 -u 50 --slippage 5
 
-# Generate multi-product shop (interactive wizard, up to 8 products)
+# Generate multi-product shop (interactive wizard, up to 40 products)
 node ./src/index.js generate-multi
 
 # Open miniMerch Studio web UI (visual shop builder)

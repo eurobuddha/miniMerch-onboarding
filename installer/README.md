@@ -39,7 +39,7 @@ mini-merch setup <minima-address> <cmc-api-key> <mxpublickey>
 mini-merch generate -n "My Product" -m units -p 25 -u 50
 ```
 
-### Generate a multi-product shop (up to 8 products)
+### Generate a multi-product shop (up to 40 products)
 ```bash
 mini-merch generate-multi
 ```
