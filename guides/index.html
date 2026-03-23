@@ -49,8 +49,8 @@
       </p>
       
       <nav class="guide-nav">
+        <a href="#mini-merch" class="btn btn-primary">🛒 Get miniMerch Studio</a>
         <a href="#node-setup" class="btn btn-secondary">Node Setup</a>
-        <a href="#mini-merch" class="btn btn-secondary">miniMerch</a>
         <a href="../index.html" class="btn btn-secondary">← Back Home</a>
       </nav>
     </div>
@@ -107,28 +107,75 @@
     </section>
 
     <!-- miniMerch Section -->
-    <section id="mini-merch" class="guide-section">
-      <h2>🛒 Setup miniMerch</h2>
-      <p>Once you have Minima installed, set up your miniMerch shop.</p>
+    <section id="mini-merch" class="guide-section" style="background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%); border-radius: var(--radius-xl); padding: var(--space-8); margin: var(--space-8) 0;">
+      <div style="text-align: center; margin-bottom: var(--space-6);">
+        <h2 style="font-size: 2rem; margin-bottom: var(--space-3);">🛒 Get miniMerch Studio</h2>
+        <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
+          The easiest way to create a shop on Minima. No coding required.
+        </p>
+      </div>
 
-      <div class="cards-grid">
-        <a href="studio.html" class="card">
-          <div class="card-icon">🖥</div>
-          <h3 class="card-title">miniMerch Studio <span style="font-size:0.7rem; background:var(--color-primary); color:#000; padding:0.1em 0.4em; border-radius:4px; font-weight:700; vertical-align:middle; margin-left:0.3rem;">NEW</span></h3>
-          <p class="card-description">Desktop app for macOS and Windows. Visual shop builder — no terminal needed. Download and double-click to install.</p>
-          <span class="card-link">
-            Download & Install →
-          </span>
-        </a>
+      <div style="background: var(--color-bg-card); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: var(--space-6) 0;">
+        <div style="display: grid; grid-template-columns: auto 1fr; gap: var(--space-6); align-items: center;">
+          <div style="font-size: 4rem;">🖥</div>
+          <div>
+            <h3 style="font-size: 1.5rem; margin-bottom: var(--space-3);">
+              miniMerch Studio
+              <span style="font-size:0.7rem; background:var(--color-success); color:#000; padding:0.2em 0.5em; border-radius:4px; font-weight:700; vertical-align:middle; margin-left:0.5rem;">RECOMMENDED</span>
+            </h3>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
+              Desktop app for macOS and Windows. Visual shop builder — just fill in the forms and click generate.
+            </p>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="studio.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">
+                🍎 Download for macOS
+              </a>
+              <a href="studio.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">
+                🪟 Download for Windows
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <a href="mini-merch.html" class="card">
-          <div class="card-icon">⌨️</div>
-          <h3 class="card-title">miniMerch CLI</h3>
-          <p class="card-description">Command-line tool for advanced users. Full control over shop generation, single and multi-product shops.</p>
-          <span class="card-link">
-            View Guide →
-          </span>
-        </a>
+        <div style="margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--color-border);">
+          <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-4); color: var(--color-text-secondary);">Why Studio?</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <span style="font-size: 1.2rem;">✨</span>
+              <div>
+                <strong>No terminal</strong>
+                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Point and click interface</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <span style="font-size: 1.2rem;">🎨</span>
+              <div>
+                <strong>Visual builder</strong>
+                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">See your shop as you build it</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <span style="font-size: 1.2rem;">🚀</span>
+              <div>
+                <strong>One-click install</strong>
+                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Direct to your Minima node</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
+              <span style="font-size: 1.2rem;">💾</span>
+              <div>
+                <strong>Auto-save</strong>
+                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Never lose your work</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-4);">
+        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+          Prefer the command line? <a href="mini-merch.html">Use the CLI version →</a>
+        </p>
       </div>
     </section>
 
