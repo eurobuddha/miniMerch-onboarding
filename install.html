@@ -55,18 +55,33 @@
     <!-- Step 1: Get a Minima Node -->
     <section class="guide-section">
       <h2>Step 1: Get a Minima Node</h2>
-      <p>miniMerch runs on the Minima blockchain. You need a Minima node first.</p>
+      <p>One command installs everything. Pick your platform.</p>
 
-      <div class="callout callout-info" style="margin: var(--space-6) 0;">
-        <div class="callout-title">📱 Choose Your Platform</div>
-        <p style="margin-bottom: var(--space-4);">Install Minima on your device:</p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="guides/android.html" class="btn btn-secondary">🤖 Android</a>
-          <a href="guides/macos.html" class="btn btn-secondary">🍎 macOS</a>
-          <a href="guides/windows.html" class="btn btn-secondary">🪟 Windows</a>
-          <a href="guides/linux.html" class="btn btn-secondary">🐧 Linux</a>
+      <div style="display:flex; flex-direction:column; gap:1.5rem; margin-top:1.5rem;">
+        <!-- Mac -->
+        <div style="background:var(--color-bg-secondary, #1a1a2e); border:1px solid var(--color-border, #333); border-radius:12px; padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">🍎 Mac</h3>
+          <p style="margin-bottom:0.75rem;">Open <strong>Terminal</strong> and paste this:</p>
+          <div style="background:var(--color-bg-card, #111); border:1px solid var(--color-border, #333); border-radius:8px; padding:12px; font-family:var(--font-mono, monospace); font-size:0.85rem; overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -sL https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.command | bash</div>
+          <p style="font-size:0.85rem; color:var(--color-text-secondary, #888); margin-top:0.5rem;">Installs Java and everything else automatically. A setup wizard opens in your browser.</p>
+        </div>
+
+        <!-- Windows -->
+        <div style="background:var(--color-bg-secondary, #1a1a2e); border:1px solid var(--color-border, #333); border-radius:12px; padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">🪟 Windows</h3>
+          <p style="margin-bottom:0.75rem;">Open <strong>Command Prompt</strong> and paste this:</p>
+          <div style="background:var(--color-bg-card, #111); border:1px solid var(--color-border, #333); border-radius:8px; padding:12px; font-family:var(--font-mono, monospace); font-size:0.85rem; overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -o %TEMP%\setup-minima.bat https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.bat && %TEMP%\setup-minima.bat</div>
+          <p style="font-size:0.85rem; color:var(--color-text-secondary, #888); margin-top:0.5rem;">Installs Java and everything else automatically. A setup wizard opens in your browser.</p>
+        </div>
+
+        <!-- Android -->
+        <div style="background:var(--color-bg-secondary, #1a1a2e); border:1px solid var(--color-border, #333); border-radius:12px; padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">📱 Android</h3>
+          <p>Download the <strong>Minima</strong> app from the <a href="https://play.google.com/store/apps/details?id=com.minima.android" target="_blank">Google Play Store</a>. Open it — your node starts automatically.</p>
         </div>
       </div>
+
+      <p style="font-size:0.85rem; color:var(--color-text-secondary, #888); margin-top:1rem;">After your node is running, write down your seed phrase: open the <strong>Security</strong> MiniDapp and back it up immediately.</p>
 
       <!-- Prerequisites Check -->
       <div id="prereq-check" style="margin-top: var(--space-6);">
@@ -75,9 +90,16 @@
           <span class="check-text">Checking Minima node...</span>
         </div>
       </div>
-
-      <!-- check-item styles are in styles.css -->
     </section>
+
+    <script>
+    function copyCmd(el) {
+      navigator.clipboard.writeText(el.textContent.trim());
+      var orig = el.style.borderColor;
+      el.style.borderColor = '#f0c040';
+      setTimeout(function() { el.style.borderColor = orig; }, 1000);
+    }
+    </script>
 
     <!-- Step 2: Install miniMerch Studio -->
     <section class="guide-section">
