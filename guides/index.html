@@ -12,13 +12,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-icon">🛒</span>
-        <span>miniMerch</span>
-      </a>
+      <a href="../index.html" class="logo"><span class="logo-icon">🛒</span><span>miniMerch</span></a>
       <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="../guides/index.html" class="nav-link active">Guides</a>
@@ -26,85 +22,83 @@
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
       </button>
     </div>
   </header>
-
-    <nav class="nav-drawer" aria-label="Mobile navigation">
-  <a href="../index.html" class="nav-link">Home</a>
-          <a href="../guides/index.html" class="nav-link active">Guides</a>
-          <a href="../guides/mini-merch.html" class="nav-link">miniMerch Setup</a>
-          <a href="../faq.html" class="nav-link">FAQ</a>
-    </nav>
-    <div class="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-drawer" aria-label="Mobile navigation">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../guides/index.html" class="nav-link active">Guides</a>
+    <a href="../guides/mini-merch.html" class="nav-link">miniMerch Setup</a>
+    <a href="../faq.html" class="nav-link">FAQ</a>
+  </nav>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>Setup Guides</h1>
-      <p >
-        Step-by-step guides to get you up and running
-      </p>
-      
+      <p>Step-by-step guides to get you up and running</p>
       <nav class="guide-nav">
         <a href="#mini-merch" class="btn btn-primary">🛒 Get miniMerch Studio</a>
         <a href="#node-setup" class="btn btn-secondary">Node Setup</a>
-        <a href="../index.html" class="btn btn-secondary">← Back Home</a>
+        <a href="../index.html" class="btn btn-secondary">&larr; Back Home</a>
       </nav>
     </div>
   </main>
 
   <section class="guide-content">
-    <!-- Node Setup Section -->
+
+    <!-- Node Setup — one-command installers -->
     <section id="node-setup" class="guide-section">
-      <h2>📱 Install Your Minima Node</h2>
-      <p>Choose your platform below to get started with Minima.</p>
-      
-      <div class="callout callout-info" style="margin-top: var(--space-6);">
-        <div class="callout-title">💡 Note on iOS</div>
-        <p>Minima cannot run on iOS devices due to Apple's restrictions. Please use Android or a desktop computer.</p>
+      <h2>Install Your Minima Node</h2>
+      <p>One command installs everything. Pick your platform.</p>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem;">
+        <!-- Mac -->
+        <div style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">🍎 Mac</h3>
+          <p style="margin-bottom:0.75rem;">Open <strong>Terminal</strong> and paste this:</p>
+          <div style="background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:8px;padding:12px;font-family:var(--font-mono);font-size:0.85rem;overflow-x:auto;cursor:pointer" onclick="copyCmd(this)" title="Click to copy">curl -sL https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.command | bash</div>
+          <p style="font-size:0.85rem;color:var(--color-text-secondary);margin-top:0.5rem">Installs Java and everything else automatically. A setup wizard opens in your browser. <a href="macos.html">More details &rarr;</a></p>
+        </div>
+
+        <!-- Windows -->
+        <div style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">🪟 Windows</h3>
+          <p style="margin-bottom:0.75rem;">Open <strong>Command Prompt</strong> and paste this:</p>
+          <div style="background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:8px;padding:12px;font-family:var(--font-mono);font-size:0.85rem;overflow-x:auto;cursor:pointer" onclick="copyCmd(this)" title="Click to copy">curl -o %TEMP%\setup-minima.bat https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.bat && %TEMP%\setup-minima.bat</div>
+          <p style="font-size:0.85rem;color:var(--color-text-secondary);margin-top:0.5rem">Installs Java and everything else automatically. A setup wizard opens in your browser. <a href="windows.html">More details &rarr;</a></p>
+        </div>
+
+        <!-- Android -->
+        <div style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">📱 Android</h3>
+          <p>Download the <strong>Minima</strong> app from the <a href="https://play.google.com/store/apps/details?id=com.minima.android" target="_blank" rel="noopener">Google Play Store</a>. Open it &mdash; your node starts automatically. <a href="android.html">More details &rarr;</a></p>
+        </div>
+
+        <!-- Linux -->
+        <div style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;">
+          <h3 style="margin-bottom:0.5rem;">🐧 Linux</h3>
+          <p>Two commands: install Java, then run <code>java -jar minima.jar</code>. <a href="linux.html">View guide &rarr;</a></p>
+        </div>
       </div>
 
-      <div class="cards-grid">
-        <a href="android.html" class="card">
-          <div class="card-icon">📱</div>
-          <h3 class="card-title">Android</h3>
-          <p class="card-description">Install Minima on your Android phone or tablet.</p>
-          <span class="card-link">
-            View Guide →
-          </span>
-        </a>
+      <p style="font-size:0.85rem;color:var(--color-text-secondary);margin-top:1rem">After your node is running, write down your seed phrase: open the <strong>Security</strong> MiniDapp and back it up immediately.</p>
 
-        <a href="macos.html" class="card">
-          <div class="card-icon">🍎</div>
-          <h3 class="card-title">macOS</h3>
-          <p class="card-description">Install Minima Desktop on your Mac.</p>
-          <span class="card-link">
-            View Guide →
-          </span>
-        </a>
-
-        <a href="windows.html" class="card">
-          <div class="card-icon">🪟</div>
-          <h3 class="card-title">Windows</h3>
-          <p class="card-description">Install Minima Desktop on your PC.</p>
-          <span class="card-link">
-            View Guide →
-          </span>
-        </a>
-
-        <a href="linux.html" class="card">
-          <div class="card-icon">🐧</div>
-          <h3 class="card-title">Linux</h3>
-          <p class="card-description">Install Minima on Ubuntu, Debian, or other Linux distributions.</p>
-          <span class="card-link">
-            View Guide →
-          </span>
-        </a>
+      <div class="callout callout-info" style="margin-top:var(--space-4)">
+        <div class="callout-title">💡 Note on iOS</div>
+        <p>Minima cannot run on iOS devices. Please use Android or a desktop computer.</p>
       </div>
     </section>
+
+    <script>
+    function copyCmd(el) {
+      navigator.clipboard.writeText(el.textContent.trim());
+      var orig = el.style.borderColor;
+      el.style.borderColor = '#f0c040';
+      setTimeout(function() { el.style.borderColor = orig; }, 1000);
+    }
+    </script>
 
     <!-- miniMerch Section -->
     <section id="mini-merch" class="guide-section" style="background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%); border-radius: var(--radius-xl); padding: var(--space-8); margin: var(--space-8) 0;">
@@ -124,7 +118,7 @@
               <span style="font-size:0.7rem; background:var(--color-success); color:#000; padding:0.2em 0.5em; border-radius:4px; font-weight:700; vertical-align:middle; margin-left:0.5rem;">RECOMMENDED</span>
             </h3>
             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
-              Desktop app for macOS and Windows. Visual shop builder — just fill in the forms and click generate.
+              Desktop app for macOS and Windows. Visual shop builder &mdash; just fill in the forms and click generate.
             </p>
             <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
               <a href="studio.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">
@@ -142,31 +136,19 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <span style="font-size: 1.2rem;">✨</span>
-              <div>
-                <strong>No terminal</strong>
-                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Point and click interface</p>
-              </div>
+              <div><strong>No terminal</strong><p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Point and click interface</p></div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <span style="font-size: 1.2rem;">🎨</span>
-              <div>
-                <strong>Visual builder</strong>
-                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">See your shop as you build it</p>
-              </div>
+              <div><strong>Visual builder</strong><p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">See your shop as you build it</p></div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <span style="font-size: 1.2rem;">🚀</span>
-              <div>
-                <strong>One-click install</strong>
-                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Direct to your Minima node</p>
-              </div>
+              <div><strong>One-click install</strong><p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Direct to your Minima node</p></div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: var(--space-3);">
               <span style="font-size: 1.2rem;">💾</span>
-              <div>
-                <strong>Auto-save</strong>
-                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Never lose your work</p>
-              </div>
+              <div><strong>Auto-save</strong><p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Never lose your work</p></div>
             </div>
           </div>
         </div>
@@ -174,7 +156,7 @@
 
       <div style="text-align: center; margin-top: var(--space-4);">
         <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-          Prefer the command line? <a href="mini-merch.html">Use the CLI version →</a>
+          Prefer the command line? <a href="mini-merch.html">Use the CLI version &rarr;</a>
         </p>
       </div>
     </section>
@@ -182,26 +164,22 @@
     <!-- Quick Links -->
     <section class="guide-section">
       <h2>Quick Links</h2>
-      
       <div class="cards-grid" style="margin-top: var(--space-6);">
         <a href="https://docs.minima.global" target="_blank" rel="noopener" class="card">
           <div class="card-icon">📖</div>
           <h3 class="card-title">Minima Docs</h3>
           <p class="card-description">Official Minima documentation and developer resources.</p>
         </a>
-
         <a href="https://minima.global" target="_blank" rel="noopener" class="card">
           <div class="card-icon">🌐</div>
           <h3 class="card-title">Minima Global</h3>
           <p class="card-description">Official Minima website for downloads and news.</p>
         </a>
-
         <a href="https://discord.gg/minima" target="_blank" rel="noopener" class="card">
           <div class="card-icon">💬</div>
           <h3 class="card-title">Discord Community</h3>
           <p class="card-description">Join the Minima community for help and discussion.</p>
         </a>
-
         <a href="https://github.com/eurobuddha/miniMerch" target="_blank" rel="noopener" class="card">
           <div class="card-icon">💻</div>
           <h3 class="card-title">miniMerch GitHub</h3>
@@ -211,7 +189,6 @@
     </section>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-links">
@@ -220,7 +197,7 @@
         <a href="../guides/index.html" class="footer-link">Guides</a>
         <a href="../faq.html" class="footer-link">FAQ</a>
       </div>
-      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+      <p class="footer-copy">miniMerch &copy; 2025. Built on Minima.</p>
     </div>
   </footer>
 

@@ -12,13 +12,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-icon">🛒</span>
-        <span>miniMerch</span>
-      </a>
+      <a href="../index.html" class="logo"><span class="logo-icon">🛒</span><span>miniMerch</span></a>
       <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link active">Guides</a>
@@ -26,30 +22,24 @@
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
       </button>
     </div>
   </header>
-
-    <nav class="nav-drawer" aria-label="Mobile navigation">
-  <a href="../index.html" class="nav-link">Home</a>
-          <a href="index.html" class="nav-link active">Guides</a>
-          <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
-          <a href="../faq.html" class="nav-link">FAQ</a>
-    </nav>
-    <div class="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-drawer" aria-label="Mobile navigation">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link active">Guides</a>
+    <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+    <a href="../faq.html" class="nav-link">FAQ</a>
+  </nav>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>🪟 Windows Setup Guide</h1>
-      <p >
-        Install Minima on your Windows PC
-      </p>
-
+      <p>Get a Minima node running on your PC in under a minute</p>
       <nav class="guide-nav">
-        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="index.html" class="btn btn-secondary">&larr; All Guides</a>
         <a href="macos.html" class="btn btn-secondary">macOS</a>
         <a href="linux.html" class="btn btn-secondary">Linux</a>
       </nav>
@@ -57,182 +47,29 @@
   </main>
 
   <article class="guide-content">
-    <!-- Overview -->
     <section class="guide-section">
-      <h2>Overview</h2>
-      <p>Minima on Windows uses OpenWebStart to run. OpenWebStart is a free tool that lets your PC run Java applications like Minima. This guide will walk you through installing everything you need.</p>
+      <h2>Install Minima</h2>
+      <p>Open <strong>Command Prompt</strong> and paste this:</p>
+      <div style="background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:8px;padding:12px;font-family:var(--font-mono);font-size:0.85rem;overflow-x:auto;cursor:pointer;margin:var(--space-4) 0" onclick="navigator.clipboard.writeText(this.textContent.trim());this.style.borderColor='var(--color-primary)';setTimeout(()=>this.style.borderColor='',1000)" title="Click to copy">curl -o %TEMP%\setup-minima.bat https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.bat && %TEMP%\setup-minima.bat</div>
+      <p>This installs Java (if needed), downloads Minima, and opens a setup wizard in your browser. Everything is automatic.</p>
     </section>
 
-    <!-- Prerequisites -->
     <section class="guide-section">
-      <h2>What You'll Need</h2>
-      <ul>
-        <li>Windows 10 or Windows 11</li>
-        <li>About 500MB of free disk space</li>
-        <li>Internet connection for download and initial sync</li>
-      </ul>
-    </section>
-
-    <!-- Step 1 -->
-    <section class="guide-section">
-      <h2>Step 1: Download OpenWebStart</h2>
-      <p>OpenWebStart is a free application that allows your PC to run Java programs like Minima.</p>
-      <ol>
-        <li>Open your web browser and go to <a href="https://openwebstart.com/" target="_blank" rel="noopener">openwebstart.com</a></li>
-        <li>Click the big <strong>Download</strong> button</li>
-        <li>Save the file to your Downloads folder</li>
-      </ol>
-    </section>
-
-    <!-- Step 2 -->
-    <section class="guide-section">
-      <h2>Step 2: Install OpenWebStart</h2>
-      <ol>
-        <li>Open your <strong>Downloads</strong> folder</li>
-        <li>Find the file starting with <strong>OWS-Setup</strong></li>
-        <li>Double-click it to run the installer</li>
-        <li>If Windows shows a warning, click <strong>Run anyway</strong></li>
-        <li>The installer will open - click <strong>Next</strong></li>
-        <li>Accept the license agreement and click <strong>Next</strong></li>
-        <li>Click <strong>Install</strong></li>
-        <li>Wait for installation to complete, then click <strong>Finish</strong></li>
-      </ol>
-
-      <div class="callout callout-info">
-        <div class="callout-title">💡 SmartScreen Warning</div>
-        <p>Windows SmartScreen may show a warning about OpenWebStart. This happens because OpenWebStart is not a well-known app. Click <strong>More info</strong> then <strong>Run anyway</strong>. OpenWebStart is safe and legitimate.</p>
+      <h2>After Install</h2>
+      <p>Once the setup wizard finishes, your node is running. Open <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a> to access your MiniDapp Hub.</p>
+      <div class="callout callout-warning">
+        <div class="callout-title">&#9888;&#65039; Write Down Your Seed Phrase</div>
+        <p>Open the <strong>Security</strong> MiniDapp and back up your 24-word seed phrase immediately. It is the <em>only</em> way to recover your coins. Write it on paper and store it safely.</p>
       </div>
     </section>
 
-    <!-- Step 3 -->
-    <section class="guide-section">
-      <h2>Step 3: Download Minima JNLP from SpartacusRex.com</h2>
-      <p>The Minima application is downloaded as a JNLP file from SpartacusRex.com. This file tells OpenWebStart what to download.</p>
-      <div class="code-block">
-        <a href="https://spartacusrex.com/javaws/minima.jnlpx" class="btn btn-primary" download>
-          📥 minima.jnlp
-        </a>
-        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-3);">
-          Right-click and "Save Link As..." to save the file
-        </p>
-      </div>
-      <ol>
-        <li>Right-click the button above</li>
-        <li>Select <strong>"Save Link As..."</strong> or <strong>"Download Linked File As..."</strong></li>
-        <li>Save the file as <code>minima.jnlp</code> to your <strong>Downloads</strong> folder</li>
-      </ol>
-    </section>
-
-    <!-- Step 4 -->
-    <section class="guide-section">
-      <h2>Step 4: Launch Minima</h2>
-      <p>Now let's start Minima for the first time:</p>
-      <ol>
-        <li>Open your <strong>Downloads</strong> folder</li>
-        <li>Find the <strong>minima.jnlp</strong> file</li>
-        <li>Right-click it and select <strong>Open with</strong></li>
-        <li>Choose <strong>OpenWebStart</strong></li>
-        <li>If OpenWebStart isn't in the list, click <strong>Choose another app</strong> and browse for OpenWebStart (usually in C:\Program Files\OpenWebStart)</li>
-        <li>OpenWebStart will download and install Minima</li>
-        <li>This may take a few minutes - be patient!</li>
-      </ol>
-
-    </section>
-
-    <!-- Step 5 -->
-    <section class="guide-section">
-      <h2>Step 5: Your Wallet</h2>
-      <p>The Minima node IS your wallet. There's a built-in Wallet MiniDapp for managing your tokens.</p>
-      <ol>
-        <li>Look for the <strong>Wallet</strong> MiniDapp in your MiniDapp Hub</li>
-        <li>Open it to see your addresses and balance</li>
-        <li>Your 24-word recovery phrase is stored securely - back it up if you haven't already</li>
-      </ol>
-    </section>
-
-    <!-- Step 6 -->
-    <section class="guide-section">
-      <h2>Step 6: Connect to Network</h2>
-      <p>On first run, Minima connects to the network - this takes about 10 seconds.</p>
-      <ol>
-        <li>When prompted, click to connect to the network</li>
-        <li>Wait a few seconds for the connection</li>
-        <li>You're ready to go!</li>
-      </ol>
-    </section>
-
-    <!-- Step 7 -->
-    <section class="guide-section">
-      <h2>Step 7: Create a Shortcut</h2>
-      <p>Let's create a shortcut so you can easily start Minima in the future:</p>
-      <ol>
-        <li>Right-click the <strong>minima.jnlp</strong> file in your Downloads</li>
-        <li>Select <strong>Create shortcut</strong></li>
-        <li>Move the shortcut to your Desktop for easy access</li>
-      </ol>
-      <p>Now to start Minima, just double-click the shortcut on your Desktop!</p>
-    </section>
-
-    <!-- Updating -->
-    <section class="guide-section">
-      <h2>Updating Minima</h2>
-      <p>When a new version of Minima is released:</p>
-      <ol>
-        <li>Close Minima completely</li>
-        <li>Double-click <strong>minima.jnlp</strong> again (or your shortcut)</li>
-        <li>OpenWebStart will download and install the new version</li>
-        <li>Your wallet and history are preserved</li>
-      </ol>
-    </section>
-
-    <!-- Troubleshooting -->
-    <section class="guide-section">
-      <h2>Troubleshooting</h2>
-
-      <h3 style="font-size: var(--font-size-lg);">OpenWebStart doesn't open JNLP files</h3>
-      <ul>
-        <li>Right-click minima.jnlp → <strong>Open with</strong> → Choose OpenWebStart</li>
-        <li>Make sure "Always use this app" is checked</li>
-        <li>If OpenWebStart isn't listed, browse to C:\Program Files\OpenWebStart\</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">SmartScreen blocks the installer</h3>
-      <ul>
-        <li>Click <strong>More info</strong></li>
-        <li>Click <strong>Run anyway</strong></li>
-        <li>OpenWebStart is safe - it's an open source project</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Sync is stuck</h3>
-      <ul>
-        <li>Check your internet connection</li>
-        <li>Close Minima and restart it</li>
-        <li>Make sure Windows isn't in sleep mode during sync</li>
-        <li>Check that Windows Firewall isn't blocking Minima</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Minima won't start</h3>
-      <ul>
-        <li>Make sure OpenWebStart is properly installed</li>
-        <li>Try right-clicking minima.jnlp and choosing "Run as administrator"</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need help?</h3>
-      <ul>
-        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
-        <li>Visit <a href="https://docs.minima.global" target="_blank" rel="noopener">docs.minima.global</a></li>
-      </ul>
-    </section>
-
-    <!-- Next Steps -->
     <section class="guide-section">
       <h2>Next Steps</h2>
-      <p>Now that you have Minima installed:</p>
-      <div class="cards-grid" style="margin-top: var(--space-6);">
+      <div class="cards-grid" style="margin-top:var(--space-4)">
         <a href="mini-merch.html" class="card">
           <div class="card-icon">🛒</div>
           <h3 class="card-title">Setup miniMerch</h3>
-          <p class="card-description">Create your first miniMerch shop.</p>
+          <p class="card-description">Create your first shop.</p>
         </a>
         <a href="../faq.html" class="card">
           <div class="card-icon">❓</div>
@@ -241,9 +78,44 @@
         </a>
       </div>
     </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Troubleshooting</summary>
+        <div style="margin-top:var(--space-4)">
+          <h3 style="font-size:var(--font-size-lg)">SmartScreen blocks the installer</h3>
+          <p>Click <strong>More info</strong> then <strong>Run anyway</strong>. The installer is safe.</p>
+          <h3 style="font-size:var(--font-size-lg);margin-top:var(--space-6)">Sync is stuck</h3>
+          <ul><li>Check your internet connection</li><li>Restart Minima</li><li>Check that Windows Firewall isn't blocking Minima</li></ul>
+          <h3 style="font-size:var(--font-size-lg);margin-top:var(--space-6)">Need help?</h3>
+          <ul><li><a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li><li><a href="https://docs.minima.global" target="_blank" rel="noopener">docs.minima.global</a></li></ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Advanced: Alternative Install Methods</summary>
+        <div style="margin-top:var(--space-4)">
+          <h3>OpenWebStart (Desktop App)</h3>
+          <ol>
+            <li>Download <a href="https://openwebstart.com/" target="_blank" rel="noopener">OpenWebStart</a> and install with default settings</li>
+            <li>If SmartScreen warns, click <strong>More info</strong> &rarr; <strong>Run anyway</strong></li>
+            <li>Download <a href="https://spartacusrex.com/javaws/minima.jnlpx" download>minima.jnlp</a> (right-click &rarr; Save Link As)</li>
+            <li>Double-click the JNLP file &mdash; choose OpenWebStart if prompted</li>
+            <li>Set a password (12+ chars) in Settings: <code>-mdspassword YOUR_PASSWORD</code></li>
+          </ol>
+          <p><strong>Important:</strong> Always shut down Minima before shutting down your PC to avoid database corruption.</p>
+
+          <h3 style="margin-top:var(--space-6)">Command Line (JAR)</h3>
+          <pre><code>cd C:\Users\YourName\minima
+java -jar minima.jar -data .minima -mdsenable -mdspassword INSERTPASSWORD</code></pre>
+          <p>Requires Java 17+. Download from <a href="https://www.java.com/en/download/" target="_blank" rel="noopener">java.com</a>. Get <code>minima.jar</code> from <a href="https://github.com/minima-global/Minima/releases" target="_blank" rel="noopener">GitHub releases</a>. Closing the terminal stops Minima.</p>
+        </div>
+      </details>
+    </section>
   </article>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-links">
@@ -252,7 +124,7 @@
         <a href="index.html" class="footer-link">Guides</a>
         <a href="../faq.html" class="footer-link">FAQ</a>
       </div>
-      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+      <p class="footer-copy">miniMerch &copy; 2025. Built on Minima.</p>
     </div>
   </footer>
 </body>

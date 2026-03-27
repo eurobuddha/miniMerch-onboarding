@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to run Minima in a Docker container">
+  <title>Docker Setup Guide - miniMerch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo"><span class="logo-icon">🛒</span><span>miniMerch</span></a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link active">Guides</a>
+        <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="nav-drawer" aria-label="Mobile navigation">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link active">Guides</a>
+    <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+    <a href="../faq.html" class="nav-link">FAQ</a>
+  </nav>
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <main class="guide-header">
+    <div class="container">
+      <h1>🐳 Docker Setup Guide</h1>
+      <p>Run Minima on a Linux VPS using Docker</p>
+      <nav class="guide-nav">
+        <a href="index.html" class="btn btn-secondary">&larr; All Guides</a>
+        <a href="linux.html" class="btn btn-secondary">Linux</a>
+      </nav>
+    </div>
+  </main>
+
+  <article class="guide-content">
+
+    <section class="guide-section">
+      <h2>Quick Start</h2>
+      <div class="callout callout-error">
+        <div class="callout-title">&#9888;&#65039; Firewall Warning</div>
+        <p><strong>Docker bypasses UFW.</strong> Use your VPS provider's firewall manager. Open port 9001 (P2P) to all, and port 9003 (MDS) to your IP only.</p>
+      </div>
+      <p>Replace <code>INSERTPASSWORD</code> with a strong password (12+ characters):</p>
+      <pre><code># Create user and install Docker
+sudo adduser minima
+sudo usermod -aG sudo minima
+su - minima
+sudo curl -fsSL https://get.docker.com/ -o get-docker.sh
+sudo chmod +x ./get-docker.sh && ./get-docker.sh
+sudo usermod -aG docker $USER
+exit && su - minima
+
+# Start Minima
+docker run -d \
+  -e minima_mdspassword=INSERTPASSWORD \
+  -e minima_server=true \
+  -v ~/minimadocker9001:/home/minima/data \
+  -p 9001:9001 -p 127.0.0.1:9003:9003 \
+  --restart unless-stopped \
+  --name minima9001 minimaglobal/minima:latest
+
+# Auto-updates via Watchtower
+docker run -d --restart unless-stopped --name watchtower \
+  -e WATCHTOWER_CLEANUP=true -e WATCHTOWER_TIMEOUT=60s \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower
+
+# Enable Docker on boot
+sudo systemctl enable docker.service containerd.service</code></pre>
+    </section>
+
+    <section class="guide-section">
+      <h2>Log In</h2>
+      <p>MDS is bound to localhost. Use an SSH tunnel to access it: <code>ssh -L 9003:127.0.0.1:9003 minima@YourServerIP</code>, then open <a href="https://localhost:9003" target="_blank" rel="noopener">https://localhost:9003</a> (accept the self-signed certificate warning).</p>
+      <div class="callout callout-warning">
+        <div class="callout-title">&#9888;&#65039; Write Down Your Seed Phrase</div>
+        <p>Open the <strong>Security</strong> MiniDapp and back up your 24-word seed phrase immediately. It is the <em>only</em> way to recover your coins.</p>
+      </div>
+    </section>
+
+    <section class="guide-section">
+      <h2>Next Steps</h2>
+      <div class="cards-grid" style="margin-top:var(--space-4)">
+        <a href="mini-merch.html" class="card">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">Setup miniMerch</h3>
+          <p class="card-description">Create your first shop.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Useful Docker Commands</summary>
+        <div style="margin-top:var(--space-4)">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Command</th><th>What It Does</th></tr></thead>
+              <tbody>
+                <tr><td><code>docker logs minima9001</code></td><td>View logs</td></tr>
+                <tr><td><code>docker stop minima9001</code></td><td>Stop</td></tr>
+                <tr><td><code>docker start minima9001</code></td><td>Start</td></tr>
+                <tr><td><code>docker restart minima9001</code></td><td>Restart</td></tr>
+                <tr><td><code>docker ps -a</code></td><td>List all containers</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Changing Password / Removing Node</summary>
+        <div style="margin-top:var(--space-4)">
+          <h3>Change Password</h3>
+          <p><code>docker stop minima9001 && docker rm minima9001</code>, then re-run the <code>docker run</code> command with a new password. Your data folder is preserved.</p>
+          <h3 style="margin-top:var(--space-6)">Remove Node</h3>
+          <div class="callout callout-error">
+            <div class="callout-title">&#9888;&#65039; Back up your seed phrase first</div>
+            <p>Removing the data folder deletes your coins permanently.</p>
+          </div>
+          <pre><code>docker stop minima9001 && docker rm minima9001
+sudo rm -rf ~/minimadocker9001</code></pre>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Optional Startup Parameters</summary>
+        <div style="margin-top:var(--space-4)">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><code>-e minima_clean=true</code></td><td>Fresh start (WARNING: deletes all data)</td></tr>
+                <tr><td><code>-e minima_archive=true</code></td><td>Archive node (full chain history)</td></tr>
+                <tr><td><code>-e minima_desktop=true</code></td><td>Disable incoming connections</td></tr>
+                <tr><td><code>-e minima_rpcenable=true</code></td><td>Enable RPC (add <code>-p 127.0.0.1:9005:9005</code>)</td></tr>
+                <tr><td><code>-e minima_rpcpassword=PASS</code></td><td>RPC auth password</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+  </article>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
+        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
+        <a href="index.html" class="footer-link">Guides</a>
+        <a href="../faq.html" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">miniMerch &copy; 2025. Built on Minima.</p>
+    </div>
+  </footer>
+</body>
+</html>

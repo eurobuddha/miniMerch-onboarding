@@ -12,13 +12,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-icon">🛒</span>
-        <span>miniMerch</span>
-      </a>
+      <a href="../index.html" class="logo"><span class="logo-icon">🛒</span><span>miniMerch</span></a>
       <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link active">Guides</a>
@@ -26,224 +22,65 @@
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
       </button>
     </div>
   </header>
-
-    <nav class="nav-drawer" aria-label="Mobile navigation">
-  <a href="../index.html" class="nav-link">Home</a>
-          <a href="index.html" class="nav-link active">Guides</a>
-          <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
-          <a href="../faq.html" class="nav-link">FAQ</a>
-    </nav>
-    <div class="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-drawer" aria-label="Mobile navigation">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link active">Guides</a>
+    <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+    <a href="../faq.html" class="nav-link">FAQ</a>
+  </nav>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>🐧 Linux Setup Guide</h1>
-      <p >
-        Install Minima on Ubuntu, Debian, Fedora, or other Linux distributions
-      </p>
-
+      <p>Get a Minima node running on Linux in two commands</p>
       <nav class="guide-nav">
-        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="index.html" class="btn btn-secondary">&larr; All Guides</a>
         <a href="macos.html" class="btn btn-secondary">macOS</a>
         <a href="windows.html" class="btn btn-secondary">Windows</a>
+        <a href="docker.html" class="btn btn-secondary">Docker</a>
       </nav>
     </div>
   </main>
 
   <article class="guide-content">
-    <!-- Prerequisites -->
     <section class="guide-section">
-      <h2>Prerequisites</h2>
-      <ul>
-        <li>Linux distribution (Ubuntu 20.04+, Debian 11+, Fedora 34+, or similar)</li>
-        <li>At least 500MB of free disk space</li>
-        <li>Stable internet connection</li>
-        <li>Java 17 or later (required)</li>
-        <li>Terminal access</li>
-      </ul>
+      <h2>Quick Start</h2>
+      <p>Install Java, download Minima, and run it. Replace <code>INSERTPASSWORD</code> with a password of 12+ characters.</p>
+      <pre><code># Ubuntu/Debian — install Java
+sudo apt update && sudo apt install -y openjdk-17-jre-headless
+
+# Download and run Minima
+mkdir -p ~/minima && cd ~/minima
+wget https://github.com/minima-global/Minima/releases/latest/download/minima.jar
+java -jar minima.jar -data .minima -mdsenable -mdspassword INSERTPASSWORD</code></pre>
+      <p style="margin-top:var(--space-3)">For <strong>Fedora/RHEL</strong>: <code>sudo dnf install java-17-openjdk-headless</code>. For <strong>Arch</strong>: <code>sudo pacman -S jre-openjdk-headless</code>.</p>
+      <p>Minima starts and logs appear in the terminal. Open <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a> to access your MiniDapp Hub (accept the self-signed certificate warning).</p>
     </section>
 
-    <!-- Step 1: Install Java -->
     <section class="guide-section">
-      <h2>Step 1: Install Java</h2>
-      <p>Minima requires Java 17 or later. Install it using your package manager:</p>
-
-      <h3>Ubuntu / Debian</h3>
-      <pre><code>sudo apt update
-sudo apt install openjdk-17-jre-headless</code></pre>
-
-      <h3>Fedora / RHEL / CentOS</h3>
-      <pre><code>sudo dnf install java-17-openjdk-headless</code></pre>
-
-      <h3>Arch Linux</h3>
-      <pre><code>sudo pacman -S jre-openjdk-headless</code></pre>
-
-      <p style="margin-top: var(--space-4);">Verify Java is installed:</p>
-      <pre><code>java -version</code></pre>
-      <p>You should see "java version 17" or higher.</p>
-    </section>
-
-    <!-- Step 2: Download -->
-    <section class="guide-section">
-      <h2>Step 2: Download Minima</h2>
-      <p>Download the Minima JAR file from the official website:</p>
-      <ol>
-        <li>Visit <a href="https://minima.global/post/2024/04/10/minima-desktop-launch/" target="_blank" rel="noopener">minima.global/post/2024/04/10/minima-desktop-launch/</a></li>
-        <li>Download the Linux JAR file</li>
-        <li>Create a folder for Minima:
-          <pre><code>mkdir -p ~/minima
-mv ~/Downloads/minima*.jar ~/minima/</code></pre>
-        </li>
-      </ol>
-
-      <div class="callout callout-info">
-        <div class="callout-title">💡 Direct Download</div>
-        <p>You can also download directly using the terminal:</p>
-        <pre><code>mkdir -p ~/minima
-cd ~/minima
-wget https://github.com/minima-global/Minima/releases/latest/download/minima.jar</code></pre>
+      <h2>After Install</h2>
+      <div class="callout callout-warning">
+        <div class="callout-title">&#9888;&#65039; Write Down Your Seed Phrase</div>
+        <p>Open the <strong>Security</strong> MiniDapp and back up your 24-word seed phrase immediately. It is the <em>only</em> way to recover your coins. Write it on paper and store it safely.</p>
+      </div>
+      <div class="callout callout-info" style="margin-top:var(--space-4)">
+        <div class="callout-title">💡 Keep It Running</div>
+        <p>Closing the terminal stops Minima. Use <code>tmux</code> or <code>screen</code> to keep it running in the background, or see the Systemd Service section below for always-on operation.</p>
       </div>
     </section>
 
-    <!-- Step 3: Run Minima -->
-    <section class="guide-section">
-      <h2>Step 3: Run Minima</h2>
-      <p>Navigate to your Minima folder and run the application:</p>
-      <pre><code>cd ~/minima
-java -jar minima.jar</code></pre>
-
-      <p style="margin-top: var(--space-4);">Minima will start and show output like:</p>
-      <pre><code>Minima @ [date] : Welcome to Minima
-Minima @ [date] : Generating Base Private Seed Key
-Minima @ [date] : Ready - listening on port 9001</code></pre>
-
-      <h3>Running in Background (tmux/screen)</h3>
-      <p>To keep Minima running after you close the terminal:</p>
-      <pre><code># Using tmux (recommended)
-tmux
-java -jar minima.jar
-# Press Ctrl+B, then D to detach
-
-# Or using screen
-screen -S minima
-java -jar minima.jar
-# Press Ctrl+A, then D to detach</code></pre>
-    </section>
-
-    <!-- Step 4: Your Wallet -->
-    <section class="guide-section">
-      <h2>Step 4: Your Wallet</h2>
-      <p>The Minima node IS your wallet. There's a built-in Wallet MiniDapp for managing your tokens.</p>
-      <ol>
-        <li>Look for the <strong>Wallet</strong> MiniDapp in your MiniDapp Hub</li>
-        <li>Open it to see your addresses and balance</li>
-        <li>Your 24-word recovery phrase is stored securely - back it up if you haven't already</li>
-      </ol>
-    </section>
-
-    <!-- Step 5: Connect to Network -->
-    <section class="guide-section">
-      <h2>Step 5: Connect to Network</h2>
-      <p>On first run, Minima connects to the network - this takes about 10 seconds.</p>
-      <ol>
-        <li>When prompted, confirm to connect to the network</li>
-        <li>Wait a few seconds for the connection</li>
-        <li>You're ready to go!</li>
-      </ol>
-    </section>
-
-    <!-- Step 6: Accessing MiniDapps -->
-    <section class="guide-section">
-      <h2>Step 6: Access MiniDapps</h2>
-      <p>Minima includes a web interface for MiniDapps:</p>
-      <ol>
-        <li>Make sure Minima is running</li>
-        <li>Open your web browser</li>
-        <li>Go to: <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a></li>
-        <li>You'll see the MiniDapp Hub</li>
-      </ol>
-
-      <div class="callout callout-info">
-        <div class="callout-title">🌐 Remote Access</div>
-        <p>To access MiniDapps from another device on your network:</p>
-        <ol>
-          <li>Start Minima with: <code>java -jar minima.jar -mdsenable</code></li>
-          <li>Find your local IP (e.g., <code>192.168.1.100</code>)</li>
-          <li>Access from another device: <code>https://192.168.1.100:9003</code></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Running as a Service -->
-    <section class="guide-section">
-      <h2>Optional: Run as Systemd Service</h2>
-      <p>For auto-start and reliable uptime, create a systemd service:</p>
-      <pre><code>sudo nano /etc/systemd/system/minima.service</code></pre>
-      <p>Add this content:</p>
-      <pre><code>[Unit]
-Description=Minima Node
-After=network.target
-
-[Service]
-Type=simple
-User=YOUR_USERNAME
-WorkingDirectory=/home/YOUR_USERNAME/minima
-ExecStart=/usr/bin/java -jar /home/YOUR_USERNAME/minima/minima.jar
-Restart=on-failure
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target</code></pre>
-      <p>Then enable and start:</p>
-      <pre><code>sudo systemctl daemon-reload
-sudo systemctl enable minima
-sudo systemctl start minima
-
-# Check status
-sudo systemctl status minima</code></pre>
-    </section>
-
-    <!-- Troubleshooting -->
-    <section class="guide-section">
-      <h2>Troubleshooting</h2>
-
-      <h3 style="font-size: var(--font-size-lg);">"java: command not found"</h3>
-      <p>Java is not installed or not in your PATH. Install Java 17+ or add it to PATH.</p>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Permission denied errors</h3>
-      <ul>
-        <li>Make sure you have write permissions to the Minima folder</li>
-        <li>Try: <code>chmod +x minima.jar</code></li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Firewall blocking connections</h3>
-      <ul>
-        <li>Allow port 9001: <code>sudo ufw allow 9001</code></li>
-        <li>For MiniDapps (port 9003): <code>sudo ufw allow 9003</code></li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
-      <ul>
-        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
-        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
-      </ul>
-    </section>
-
-    <!-- Next Steps -->
     <section class="guide-section">
       <h2>Next Steps</h2>
-      <p>Now that you have Minima installed:</p>
-      <div class="cards-grid" style="margin-top: var(--space-6);">
+      <div class="cards-grid" style="margin-top:var(--space-4)">
         <a href="mini-merch.html" class="card">
           <div class="card-icon">🛒</div>
           <h3 class="card-title">Setup miniMerch</h3>
-          <p class="card-description">Create your first miniMerch shop.</p>
+          <p class="card-description">Create your first shop.</p>
         </a>
         <a href="../faq.html" class="card">
           <div class="card-icon">❓</div>
@@ -252,9 +89,75 @@ sudo systemctl status minima</code></pre>
         </a>
       </div>
     </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Troubleshooting</summary>
+        <div style="margin-top:var(--space-4)">
+          <h3 style="font-size:var(--font-size-lg)">"java: command not found"</h3>
+          <p>Install Java 17+ using the commands above for your distro.</p>
+          <h3 style="font-size:var(--font-size-lg);margin-top:var(--space-6)">Firewall blocking connections</h3>
+          <p><code>sudo ufw allow 9001</code> (P2P) and <code>sudo ufw allow 9003</code> (MDS web interface).</p>
+          <h3 style="font-size:var(--font-size-lg);margin-top:var(--space-6)">Need help?</h3>
+          <ul><li><a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li><li><a href="https://docs.minima.global" target="_blank" rel="noopener">docs.minima.global</a></li></ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Advanced: Systemd Service (Always-On VPS)</summary>
+        <div style="margin-top:var(--space-4)">
+          <p>For a server that auto-starts on boot and restarts on failure:</p>
+          <pre><code># Create user and download
+sudo adduser minima
+sudo su minima
+cd /home/minima
+wget https://github.com/minima-global/Minima/raw/master/jar/minima.jar
+exit
+
+# Create service (replace yourpasswordhere)
+sudo tee /etc/systemd/system/minima.service &lt;&lt;EOF &gt;/dev/null
+[Unit]
+Description=minima
+[Service]
+User=minima
+Type=simple
+ExecStart=/usr/bin/java -jar /home/minima/minima.jar -mdsenable -mdspassword yourpasswordhere -daemon -basefolder /home/minima -data /home/minima/.minima
+Restart=always
+RestartSec=100
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Start it
+sudo systemctl daemon-reload
+sudo systemctl enable minima
+sudo systemctl start minima
+sudo journalctl -u minima -f   # Ctrl+C to exit logs</code></pre>
+
+          <h3 style="margin-top:var(--space-6)">Firewall (UFW)</h3>
+          <pre><code>sudo ufw allow ssh
+sudo ufw allow 9001          # P2P relay
+sudo ufw allow from YOUR_IP to any port 9003  # MDS (your IP only)
+sudo ufw enable</code></pre>
+
+          <h3 style="margin-top:var(--space-6)">Useful Commands</h3>
+          <p><code>sudo systemctl status|stop|start|restart minima</code> &mdash; <code>sudo journalctl -u minima -f</code></p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Advanced: Docker</summary>
+        <div style="margin-top:var(--space-4)">
+          <p>For Docker-based installations, see the dedicated <a href="docker.html">Docker guide</a>.</p>
+        </div>
+      </details>
+    </section>
   </article>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-links">
@@ -263,7 +166,7 @@ sudo systemctl status minima</code></pre>
         <a href="index.html" class="footer-link">Guides</a>
         <a href="../faq.html" class="footer-link">FAQ</a>
       </div>
-      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+      <p class="footer-copy">miniMerch &copy; 2025. Built on Minima.</p>
     </div>
   </footer>
 </body>

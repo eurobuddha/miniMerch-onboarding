@@ -12,13 +12,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo">
-        <span class="logo-icon">🛒</span>
-        <span>miniMerch</span>
-      </a>
+      <a href="../index.html" class="logo"><span class="logo-icon">🛒</span><span>miniMerch</span></a>
       <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link active">Guides</a>
@@ -26,30 +22,24 @@
         <a href="../faq.html" class="nav-link">FAQ</a>
       </nav>
       <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
       </button>
     </div>
   </header>
-
-    <nav class="nav-drawer" aria-label="Mobile navigation">
-  <a href="../index.html" class="nav-link">Home</a>
-          <a href="index.html" class="nav-link active">Guides</a>
-          <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
-          <a href="../faq.html" class="nav-link">FAQ</a>
-    </nav>
-    <div class="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-drawer" aria-label="Mobile navigation">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link active">Guides</a>
+    <a href="mini-merch.html" class="nav-link">miniMerch Setup</a>
+    <a href="../faq.html" class="nav-link">FAQ</a>
+  </nav>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="guide-header">
     <div class="container">
       <h1>📱 Android Setup Guide</h1>
-      <p >
-        Install Minima on your Android phone or tablet
-      </p>
-      
+      <p>Get a Minima node running on your phone in seconds</p>
       <nav class="guide-nav">
-        <a href="index.html" class="btn btn-secondary">← All Guides</a>
+        <a href="index.html" class="btn btn-secondary">&larr; All Guides</a>
         <a href="macos.html" class="btn btn-secondary">macOS</a>
         <a href="windows.html" class="btn btn-secondary">Windows</a>
       </nav>
@@ -57,140 +47,40 @@
   </main>
 
   <article class="guide-content">
-    <!-- Prerequisites -->
     <section class="guide-section">
-      <h2>Prerequisites</h2>
-      <ul>
-        <li>Android device running Android 8.0 (Oreo) or later</li>
-        <li>At least 100MB of free storage space</li>
-        <li>Stable internet connection (WiFi recommended for initial sync)</li>
-        <li>A Google account (for Play Store download) or ability to install APKs</li>
-      </ul>
-    </section>
-
-    <!-- Step 1: Download -->
-    <section class="guide-section">
-      <h2>Step 1: Download Minima</h2>
-      <p>You have two options to download Minima for Android:</p>
-      
-      <h3>Option A: Google Play Store (Recommended)</h3>
-      <p>The Play Store version is automatically updated and verified by Google.</p>
-      <ol>
-        <li>Open the <a href="https://play.google.com/store/apps/details?id=com.minima.android&utm_source=emea_Med" target="_blank" rel="noopener">Google Play Store</a> on your device</li>
-        <li>Search for "Minima"</li>
-        <li>Tap <strong>Install</strong></li>
-        <li>Wait for the download to complete</li>
-      </ol>
-
-      <h3>Option B: Direct APK Download</h3>
-      <p>If you can't access the Play Store, download the APK directly:</p>
-      <ol>
-        <li>Visit <a href="https://minima.global/post/2024/04/10/minima-mobile-launch/" target="_blank" rel="noopener">minima.global/post/2024/04/10/minima-mobile-launch/</a></li>
-        <li>Download the latest APK file</li>
-        <li>Open the downloaded file</li>
-        <li>If prompted, enable "Install from unknown sources" in your settings</li>
-      </ol>
-
-      <div class="callout callout-info">
-        <div class="callout-title">💡 Tip</div>
-        <p>The Play Store version is recommended as it handles updates automatically.</p>
+      <h2>Install Minima</h2>
+      <p>Download the <strong>Minima</strong> app from the <a href="https://play.google.com/store/apps/details?id=com.minima.android" target="_blank" rel="noopener">Google Play Store</a>. Open it and allow the battery settings when prompted &mdash; your node starts automatically.</p>
+      <div class="callout callout-info" style="margin-top:var(--space-4)">
+        <div class="callout-title">💡 No Play Store?</div>
+        <p>Download the latest APK directly from <a href="https://github.com/minima-global/Minima/tree/master/jar" target="_blank" rel="noopener">GitHub</a>.</p>
       </div>
     </section>
 
-    <!-- Step 2: Install -->
     <section class="guide-section">
-      <h2>Step 2: Install the App</h2>
-      <ol>
-        <li>Tap the Minima icon in your app drawer or on your home screen</li>
-        <li>If you downloaded via APK, you may need to confirm the installation</li>
-        <li>Grant any required permissions (storage, network) when prompted</li>
-        <li>Wait for the app to initialize</li>
-      </ol>
+      <h2>After Install</h2>
+      <p>Tap to connect to the network when prompted. Your node will sync with the blockchain.</p>
+      <div class="callout callout-warning">
+        <div class="callout-title">&#9888;&#65039; Write Down Your Seed Phrase</div>
+        <p>Open the <strong>Security</strong> MiniDapp and back up your 24-word seed phrase immediately. It is the <em>only</em> way to recover your coins. Write it on paper and store it safely.</p>
+      </div>
     </section>
 
-    <!-- Step 3: Your Wallet -->
     <section class="guide-section">
-      <h2>Step 3: Your Wallet</h2>
-      <p>The Minima node IS your wallet. There's a built-in Wallet MiniDapp for managing your tokens.</p>
-      <ol>
-        <li>Look for the <strong>Wallet</strong> MiniDapp in your MiniDapp Hub</li>
-        <li>Open it to see your addresses and balance</li>
-        <li>Your 24-word recovery phrase is stored securely - back it up if you haven't already</li>
-      </ol>
-    </section>
-
-    <!-- Step 4: Connect to Network -->
-    <section class="guide-section">
-      <h2>Step 4: Connect to Network</h2>
-      <p>On first run, Minima connects to the network - this takes about 10 seconds.</p>
-      <ol>
-        <li>When prompted, tap to connect to the network</li>
-        <li>Wait a few seconds for the connection</li>
-        <li>You're ready to go!</li>
-      </ol>
-    </section>
-
-    <!-- Step 5: Get Your Keys -->
-    <section class="guide-section">
-      <h2>Step 5: Get Your Keys</h2>
-      <p>You'll need your keys for miniMerch setup. Open the <strong>Terminal</strong> MiniDapp in Minima:</p>
-
-      <h3>Minima Address</h3>
-      <p>Your address for receiving payments (starts with <code>0x</code>):</p>
-      <ol>
-        <li>Open the <strong>Wallet</strong> MiniDapp</li>
-        <li>Tap <strong>Receive</strong></li>
-        <li>Copy your address</li>
-      </ol>
-
-      <h3>Maxima mxpublickey</h3>
-      <p>Your public key for encrypting orders (starts with <code>Mx</code>):</p>
-      <ol>
-        <li>Open the <strong>Terminal</strong> MiniDapp</li>
-        <li>Type <code>maxima</code> and press Enter</li>
-        <li>Find the line with <code>"mxpublickey":</code></li>
-        <li>Copy the value</li>
-      </ol>
-    </section>
-
-    <!-- Troubleshooting -->
-    <section class="guide-section">
-      <h2>Troubleshooting</h2>
-      
-      <h3 style="font-size: var(--font-size-lg);">Sync is stuck or very slow</h3>
+      <h2>Get Your Keys for miniMerch</h2>
+      <p>You'll need these for miniMerch setup:</p>
       <ul>
-        <li>Check your internet connection</li>
-        <li>Try toggling Airplane Mode on and off</li>
-        <li>Restart the Minima app</li>
-        <li>Make sure your device's date/time is correct</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">App crashes or won't open</h3>
-      <ul>
-        <li>Clear the app's cache in Settings → Apps → Minima</li>
-        <li>Restart your device</li>
-        <li>Update to the latest version from Play Store</li>
-      </ul>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Forgot your PIN</h3>
-      <p>Use your 24-word recovery phrase to restore your wallet in a new installation.</p>
-
-      <h3 style="font-size: var(--font-size-lg); margin-top: var(--space-6);">Need more help?</h3>
-      <ul>
-        <li>Visit the <a href="https://docs.minima.global" target="_blank" rel="noopener">Minima Documentation</a></li>
-        <li>Join the <a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li>
+        <li><strong>Minima Address</strong> (starts with <code>0x</code>): Open <strong>Wallet</strong> MiniDapp &rarr; Receive &rarr; Copy address</li>
+        <li><strong>Maxima Public Key</strong> (starts with <code>Mx</code>): Open <strong>Terminal</strong> MiniDapp &rarr; type <code>maxima</code> &rarr; copy <code>mxpublickey</code></li>
       </ul>
     </section>
 
-    <!-- Next Steps -->
     <section class="guide-section">
       <h2>Next Steps</h2>
-      <p>Now that you have Minima installed:</p>
-      <div class="cards-grid" style="margin-top: var(--space-6);">
+      <div class="cards-grid" style="margin-top:var(--space-4)">
         <a href="mini-merch.html" class="card">
           <div class="card-icon">🛒</div>
           <h3 class="card-title">Setup miniMerch</h3>
-          <p class="card-description">Create your first miniMerch shop.</p>
+          <p class="card-description">Create your first shop.</p>
         </a>
         <a href="../faq.html" class="card">
           <div class="card-icon">❓</div>
@@ -199,9 +89,40 @@
         </a>
       </div>
     </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Troubleshooting &amp; Battery Settings</summary>
+        <div style="margin-top:var(--space-4)">
+          <h3 style="font-size:var(--font-size-lg)">Minima keeps losing sync</h3>
+          <p>Some manufacturers aggressively kill background apps. Adjust battery settings for Minima:</p>
+          <ul>
+            <li><strong>Samsung:</strong> Settings &rarr; Battery &rarr; Background usage limits &rarr; Never sleeping apps &rarr; Add Minima</li>
+            <li><strong>Huawei / Redmi / ZTE:</strong> Disable "Manage Automatically" for Minima in battery settings</li>
+            <li><strong>OPPO / Realme:</strong> Keep fewer than 5 apps allowed to run in the background</li>
+            <li><strong>Other:</strong> Visit <a href="https://dontkillmyapp.com/" target="_blank" rel="noopener">dontkillmyapp.com</a></li>
+          </ul>
+          <h3 style="font-size:var(--font-size-lg);margin-top:var(--space-6)">Need help?</h3>
+          <ul><li><a href="https://discord.gg/minima" target="_blank" rel="noopener">Minima Discord</a></li><li><a href="https://docs.minima.global" target="_blank" rel="noopener">docs.minima.global</a></li></ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <details>
+        <summary style="cursor:pointer;font-weight:600;color:var(--color-primary)">Advanced: Desktop Connect &amp; Custom Password</summary>
+        <div style="margin-top:var(--space-4)">
+          <h3>Desktop Connect</h3>
+          <p>Access your phone node from a computer on the same WiFi: open the Minima app &rarr; Settings &rarr; Desktop Connect. Visit the URL shown on your computer and enter the displayed password.</p>
+
+          <h3 style="margin-top:var(--space-6)">Custom Password</h3>
+          <p>Tap the top of the screen to show the MinimaOS title bar &rarr; 3 dots &rarr; Startup Params &rarr; enter <code>-mdspassword yOurp@ssw0rdhere</code> &rarr; Save &rarr; Shutdown to restart.</p>
+          <p>Password must be 12+ characters: <code>a-z A-Z 0-9 !@#=?+&lt;&gt;,.-_'()/</code></p>
+        </div>
+      </details>
+    </section>
   </article>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-links">
@@ -210,7 +131,7 @@
         <a href="index.html" class="footer-link">Guides</a>
         <a href="../faq.html" class="footer-link">FAQ</a>
       </div>
-      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
+      <p class="footer-copy">miniMerch &copy; 2025. Built on Minima.</p>
     </div>
   </footer>
 </body>
