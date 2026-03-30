@@ -1,339 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Install miniMerch Studio - The easiest way to create a shop on Minima">
-  <title>Install miniMerch - miniMerch</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <title>Install — miniMerch</title>
+  <script type="text/javascript" src="../../miniweb/mds.js"></script>
+  <script type="text/javascript" src="../../miniweb/miniweb.js"></script>
+  <link rel="stylesheet" href="../../miniweb/libs/jquery/jquery-ui-1.14.1/jquery-ui.css">
+  <script type="text/javascript" src="../../miniweb/libs/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="../../miniweb/libs/jquery/jquery-ui-1.14.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../../miniweb/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">🛒</span>
-        <span>miniMerch</span>
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="guides/index.html" class="nav-link">Guides</a>
-        <a href="guides/mini-merch.html" class="nav-link active">Install</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+
+<!-- Nav -->
+<div class="nav">
+  <div class="nav-brand">
+    <span class="icon">🛒</span>
+    <span>miniMerch</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="install.html">Install</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</div>
+
+<div class="hero" style="padding-bottom:32px;">
+  <h1 style="font-size:32px;">Install Guide</h1>
+  <p>Get a Minima node running, then build and deploy your miniMerch shop.</p>
+</div>
+
+<!-- Step 1: Run a Node -->
+<div class="section">
+  <div class="section-title">Step 1: Run a Minima Node</div>
+  <div class="section-sub">One command installs everything. Pick your platform.</div>
+
+  <div class="steps">
+    <!-- Mac -->
+    <div class="step">
+      <div class="step-num">🍎</div>
+      <div>
+        <h3>Mac</h3>
+        <p>Open <strong>Terminal</strong> and paste this:</p>
+        <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:14px; margin:10px 0; font-family:monospace; font-size:13px; color:var(--text); overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -sL https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.command | bash</div>
+        <p style="font-size:13px; color:var(--dim);">Installs Java and everything else automatically. A setup wizard opens in your browser.</p>
+      </div>
     </div>
-  </header>
 
-    <nav class="nav-drawer" aria-label="Mobile navigation">
-  <a href="index.html" class="nav-link">Home</a>
-          <a href="guides/index.html" class="nav-link">Guides</a>
-          <a href="guides/mini-merch.html" class="nav-link active">Install</a>
-          <a href="faq.html" class="nav-link">FAQ</a>
-    </nav>
-    <div class="nav-overlay" aria-hidden="true"></div>
-
-  <main class="guide-header">
-    <div class="container">
-      <h1>🛒 Install miniMerch</h1>
-      <p>
-        First get a Minima node, then install miniMerch
-      </p>
+    <!-- Windows -->
+    <div class="step">
+      <div class="step-num">🪟</div>
+      <div>
+        <h3>Windows</h3>
+        <p>Open <strong>Command Prompt</strong> and paste this:</p>
+        <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:14px; margin:10px 0; font-family:monospace; font-size:13px; color:var(--text); overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -o %TEMP%\setup-minima.bat https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.bat && %TEMP%\setup-minima.bat</div>
+        <p style="font-size:13px; color:var(--dim);">Installs Java and everything else automatically. A setup wizard opens in your browser.</p>
+      </div>
     </div>
-  </main>
 
-  <section class="guide-content">
-
-    <!-- Step 1: Get a Minima Node -->
-    <section class="guide-section">
-      <h2>Step 1: Get a Minima Node</h2>
-      <p>One command installs everything. Pick your platform.</p>
-
-      <div style="display:flex; flex-direction:column; gap:1.5rem; margin-top:1.5rem;">
-        <!-- Mac -->
-        <div style="background:var(--color-bg-secondary, #1a1a2e); border:1px solid var(--color-border, #333); border-radius:12px; padding:1.25rem;">
-          <h3 style="margin-bottom:0.5rem;">🍎 Mac</h3>
-          <p style="margin-bottom:0.75rem;">Open <strong>Terminal</strong> and paste this:</p>
-          <div style="background:var(--color-bg-card, #111); border:1px solid var(--color-border, #333); border-radius:8px; padding:12px; font-family:var(--font-mono, monospace); font-size:0.85rem; overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -sL https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.command | bash</div>
-          <p style="font-size:0.85rem; color:var(--color-text-secondary, #888); margin-top:0.5rem;">Installs Java and everything else automatically. A setup wizard opens in your browser.</p>
-        </div>
-
-        <!-- Windows -->
-        <div style="background:var(--color-bg-secondary, #1a1a2e); border:1px solid var(--color-border, #333); border-radius:12px; padding:1.25rem;">
-          <h3 style="margin-bottom:0.5rem;">🪟 Windows</h3>
-          <p style="margin-bottom:0.75rem;">Open <strong>Command Prompt</strong> and paste this:</p>
-          <div style="background:var(--color-bg-card, #111); border:1px solid var(--color-border, #333); border-radius:8px; padding:12px; font-family:var(--font-mono, monospace); font-size:0.85rem; overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -o %TEMP%\setup-minima.bat https://raw.githubusercontent.com/eurobuddha/minima-installer/main/setup-minima.bat && %TEMP%\setup-minima.bat</div>
-          <p style="font-size:0.85rem; color:var(--color-text-secondary, #888); margin-top:0.5rem;">Installs Java and everything else automatically. A setup wizard opens in your browser.</p>
-        </div>
-
-        <!-- Android -->
-        <div style="background:var(--color-bg-secondary, #1a1a2e); border:1px solid var(--color-border, #333); border-radius:12px; padding:1.25rem;">
-          <h3 style="margin-bottom:0.5rem;">📱 Android</h3>
-          <p>Download the <strong>Minima</strong> app from the <a href="https://play.google.com/store/apps/details?id=com.minima.android" target="_blank">Google Play Store</a>. Open it — your node starts automatically.</p>
-        </div>
+    <!-- Linux -->
+    <div class="step">
+      <div class="step-num">🐧</div>
+      <div>
+        <h3>Linux</h3>
+        <p>Open a <strong>Terminal</strong> and paste this:</p>
+        <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:14px; margin:10px 0; font-family:monospace; font-size:13px; color:var(--text); overflow-x:auto; cursor:pointer;" onclick="copyCmd(this)" title="Click to copy">curl -sL https://raw.githubusercontent.com/eurobuddha/minima-installer/master/setup-minima-linux.sh | bash</div>
+        <p style="font-size:13px; color:var(--dim);">Installs Java and tmux automatically. Supports apt, dnf, yum, and pacman.</p>
       </div>
-
-      <p style="font-size:0.85rem; color:var(--color-text-secondary, #888); margin-top:1rem;">After your node is running, write down your seed phrase: open the <strong>Security</strong> MiniDapp and back it up immediately.</p>
-
-      <!-- Prerequisites Check -->
-      <div id="prereq-check" style="margin-top: var(--space-6);">
-        <div class="check-item" id="check-minima">
-          <span class="check-icon">⏳</span>
-          <span class="check-text">Checking Minima node...</span>
-        </div>
-      </div>
-    </section>
-
-    <script>
-    function copyCmd(el) {
-      navigator.clipboard.writeText(el.textContent.trim());
-      var orig = el.style.borderColor;
-      el.style.borderColor = '#f0c040';
-      setTimeout(function() { el.style.borderColor = orig; }, 1000);
-    }
-    </script>
-
-    <!-- Step 2: Install miniMerch Studio -->
-    <section class="guide-section">
-      <h2>Step 2: Install miniMerch Studio</h2>
-      <p>The easiest way to create a shop. No terminal, no commands — just download and build.</p>
-
-      <div class="callout callout-info" style="margin: var(--space-6) 0;">
-        <div class="callout-title">🖥 Download the App</div>
-        <p style="margin-bottom: var(--space-4);">Available for macOS and Windows:</p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="guides/studio.html" class="btn btn-primary">🍎 Download for macOS</a>
-          <a href="guides/studio.html" class="btn btn-primary">🪟 Download for Windows</a>
-        </div>
-      </div>
-
-      <h3>Quick Setup</h3>
-      <ol>
-        <li>Download the installer for your platform</li>
-        <li>Run the installer (macOS: drag to Applications, Windows: run the .exe)</li>
-        <li>Open miniMerch Studio</li>
-        <li>Enter your Minima address and public key</li>
-        <li>Add your products</li>
-        <li>Click "Generate Shop" — done!</li>
-      </ol>
-
-      <p style="margin-top: var(--space-4);">
-        <a href="guides/studio.html">📖 View full installation guide →</a>
-      </p>
-    </section>
-
-    <!-- Step 3: Next Steps -->
-    <section class="guide-section">
-      <h2>Step 3: Access Your Shop</h2>
-      <p>Once you've built your shop in miniMerch Studio:</p>
-
-      <ol>
-        <li><strong>Install to your node:</strong> The Studio will install your shop and inbox MiniDapps directly to your Minima node.</li>
-        <li><strong>Open your Wallet:</strong> Go to the MiniDapp Hub at <a href="https://127.0.0.1:9003" target="_blank" rel="noopener">https://127.0.0.1:9003</a></li>
-        <li><strong>Start selling:</strong> Your shop is live! Share your shop link with customers.</li>
-      </ol>
-
-      <div class="callout" style="margin-top: var(--space-6);">
-        <div class="callout-title">💡 Manage Orders</div>
-        <p>The miniMerch Inbox MiniDapp will appear in your MiniDapp Hub. Use it to view and manage orders from your customers.</p>
-      </div>
-    </section>
-
-    <!-- Advanced: CLI Option -->
-    <section class="guide-section">
-      <h2>Developers: CLI Option</h2>
-      <p>Prefer the command line? Use the CLI version. Requires Node.js.</p>
-
-      <div style="margin-top: var(--space-4);">
-        <div class="code-block" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); position: relative;">
-          <code style="font-family: var(--font-mono); font-size: var(--font-size-base); display: block; white-space: pre-wrap; word-break: break-all;" id="install-command">npm install -g @eurobuddha/mini-merch</code>
-          <button onclick="copyCommand()" style="position: absolute; top: var(--space-3); right: var(--space-3); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); cursor: pointer; color: var(--color-text);">
-            📋 Copy
-          </button>
-        </div>
-      </div>
-
-      <div id="copy-success" style="display: none; margin-top: var(--space-3); color: var(--color-success);">
-        ✅ Copied to clipboard!
-      </div>
-
-      <div style="margin-top: var(--space-6);">
-        <h4>CLI Commands</h4>
-        <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-4) 0;">
-          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-2);">
-            <code>mini-merch setup</code>
-          </div>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4);">Configure your shop settings</p>
-
-          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3); margin-bottom: var(--space-2);">
-            <code>mini-merch generate</code>
-          </div>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4);">Generate your shop MiniDapp</p>
-
-          <div style="background: var(--color-bg-card); border-radius: var(--radius-md); padding: var(--space-3);">
-            <code>mini-merch install</code>
-          </div>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Install to your Minima node</p>
-        </div>
-      </div>
-
-      <div class="callout callout-info" style="margin-top: var(--space-6);">
-        <div class="callout-title">💡 No Install Needed</div>
-        <p>Use <code>npx</code> to run without installing:</p>
-        <pre><code>npx mini-merch setup</code></pre>
-      </div>
-
-      <div class="callout" style="margin-top: var(--space-6);">
-        <div class="callout-title">💡 Need Node.js?</div>
-        <p>Install from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> if you see "command not found".</p>
-      </div>
-    </section>
-
-    <!-- Troubleshooting -->
-    <section class="guide-section">
-      <h2>Troubleshooting</h2>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>"Download blocked" or "App can't be opened"</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p><strong>macOS:</strong> Go to System Settings → Privacy & Security → scroll down and click "Open Anyway".</p>
-            <p><strong>Windows:</strong> Click "More info" then "Run anyway" on the SmartScreen warning.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Where do I find my Minima address and public key?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>Open your Minima node and go to:</p>
-            <ul>
-              <li><strong>MDS → Status</strong> for your Public Key</li>
-              <li><strong>Wallet MiniDapp</strong> for your Address (starts with Mx...)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>"npm: command not found" (CLI only)</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>Install Node.js from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. This includes npm automatically.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>"EACCES: permission denied" (CLI only)</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>Fix npm permissions:</p>
-            <pre><code>mkdir ~/.npm-global
-npm config set prefix '~/.npm-global'
-echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc</code></pre>
-            <p>Then try installing again.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-links">
-        <a href="https://minima.global" target="_blank" rel="noopener" class="footer-link">Minima</a>
-        <a href="https://docs.minima.global" target="_blank" rel="noopener" class="footer-link">Docs</a>
-        <a href="guides/index.html" class="footer-link">Guides</a>
-        <a href="faq.html" class="footer-link">FAQ</a>
-      </div>
-      <p class="footer-copy">miniMerch © 2025. Built on Minima.</p>
     </div>
-  </footer>
 
-  <script>
-    // Check if Minima node is running
-    async function checkMinimaNode() {
-      const minimaEl = document.getElementById('check-minima');
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 2000);
+    <!-- Android -->
+    <div class="step">
+      <div class="step-num">📱</div>
+      <div>
+        <h3>Android</h3>
+        <p>Download the <strong>Minima</strong> app from the <a href="https://play.google.com/store/apps/details?id=com.minima.android" target="_blank">Google Play Store</a>. Open it — your node starts automatically.</p>
+      </div>
+    </div>
+  </div>
 
-        await fetch('https://127.0.0.1:9003/', {
-          signal: controller.signal,
-          mode: 'no-cors'
-        });
+  <p style="font-size:13px; color:var(--dim); margin-top:16px;">After your node is running, write down your seed phrase: open the <strong>Security</strong> MiniDapp and back it up immediately.</p>
+</div>
 
-        clearTimeout(timeout);
-        minimaEl.className = 'check-item success';
-        minimaEl.innerHTML = '<span class="check-icon">✅</span><span class="check-text">Minima node detected — ready for miniMerch!</span>';
-      } catch {
-        minimaEl.className = 'check-item error';
-        minimaEl.innerHTML = '<span class="check-icon">⚠️</span><span class="check-text">No local node detected. <a href="guides/index.html">Install Minima first →</a></span>';
-      }
-    }
+<script>
+function copyCmd(el) {
+  navigator.clipboard.writeText(el.textContent.trim());
+  var orig = el.style.borderColor;
+  el.style.borderColor = 'var(--accent, #f0c040)';
+  setTimeout(function() { el.style.borderColor = orig; }, 1000);
+}
+</script>
 
-    // Copy command to clipboard
-    function copyCommand() {
-      const command = document.getElementById('install-command').textContent;
-      navigator.clipboard.writeText(command).then(() => {
-        const successEl = document.getElementById('copy-success');
-        successEl.style.display = 'block';
-        setTimeout(() => {
-          successEl.style.display = 'none';
-        }, 3000);
-      });
-    }
+<!-- Step 2: Get your credentials -->
+<div class="section section-alt">
+  <div class="section-inner">
+    <div class="section-title">Step 2: Get Your Vendor Credentials</div>
+    <div class="section-sub">You need two things from your Minima node.</div>
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      checkMinimaNode();
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Minima Address</h3>
+          <p>Open the <strong>Wallet</strong> MiniDapp → <strong>Receive</strong> tab. Copy your address (starts with <code>0x</code>).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Maxima Public Key</h3>
+          <p>Open the <strong>MDS Terminal</strong> MiniDapp. Type <code>maxima action:info</code> and copy the <code>mxpublickey</code> value (starts with <code>Mx</code>).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      // FAQ accordion
-      document.querySelectorAll('.faq-item').forEach(item => {
-        const question = item.querySelector('.faq-question');
-        if (question) {
-          question.addEventListener('click', () => {
-            const isOpen = item.classList.contains('open');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-            if (!isOpen) {
-              item.classList.add('open');
-            }
-          });
-        }
-      });
-    });
-  </script>
+<!-- Step 3: Build your shop -->
+<div class="section">
+  <div class="section-title">Step 3: Build Your Shop</div>
+  <div class="section-sub">Use miniMerch Studio to create your multi-product store.</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Download miniMerch Studio</h3>
+        <p>Get it from <a href="https://github.com/eurobuddha/miniMerch/releases" target="_blank">GitHub Releases</a>. Available for macOS and Windows.</p>
+        <p style="margin-top:6px;">
+          <strong>macOS:</strong> Open the <code>.dmg</code>, drag to Applications, right-click → Open on first launch.<br>
+          <strong>Windows:</strong> Run the <code>.exe</code> installer. Click "More info" → "Run anyway" on first launch.
+        </p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Configure Your Shop</h3>
+        <p>Studio opens at <code>http://localhost:3456</code>. Set up your vendor details (address + public key), add products with images, descriptions, prices, and shipping options.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Generate Shop</h3>
+        <p>Click <strong>Generate Shop</strong>. Studio creates your shop MiniDapp and installs it directly to your node.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 4: Deploy -->
+<div class="section section-alt">
+  <div class="section-inner">
+    <div class="section-title">Step 4: Share Your Shop</div>
+    <div class="section-sub">Distribute your shop link to customers.</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Your shop is on your node</h3>
+          <p>After generation, your miniMerch shop is installed as a MiniDapp on your Minima node.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Share the link</h3>
+          <p>Share your shop's MiniFS link with customers. They can access it through their own Minima node.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:20px; font-size:13px; color:var(--dim); text-align:center;">
+      Want a single-product shop that's searchable on PocketWeb? Try <a href="https://pocketshop.uk">Pocket Shop</a> instead.
+    </p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Need help?</h2>
+  <p>Check the FAQ or open an issue on GitHub.</p>
+  <div class="btn-row">
+    <a href="faq.html" class="btn btn-gold">FAQ</a>
+    <a href="https://github.com/eurobuddha/miniMerch/issues" target="_blank" class="btn btn-outline">GitHub Issues</a>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://minima.global" target="_blank">Minima</a>
+  <a href="https://docs.minima.global" target="_blank">Docs</a>
+  <a href="https://github.com/eurobuddha/miniMerch" target="_blank">GitHub</a>
+  <a href="https://pocketshop.uk">Pocket Shop</a>
+  <br><br>
+  miniMerch &copy; 2025 &middot; Built on Minima &middot; Published on PocketFS
+</div>
+
+<script type="text/javascript">
+  miniweb_Init();
+  MDS.init(function(msg) {});
+</script>
+
 </body>
 </html>
