@@ -122,6 +122,14 @@ const PlatformDetector = (function() {
         downloadUrl: 'https://docs.minima.global/docs/run-a-node',
         description: 'JAR file (requires Java)',
         badge: 'Desktop'
+      },
+      {
+        id: 'raspberrypi',
+        name: 'Raspberry Pi',
+        icon: '🍓',
+        downloadUrl: 'https://github.com/eurobuddha/raspberry',
+        description: 'One-command setup (Pi 4/5)',
+        badge: 'Headless'
       }
     ];
   }
